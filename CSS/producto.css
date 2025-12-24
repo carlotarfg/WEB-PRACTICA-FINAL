@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+:root {
+  --titulos_tipo: 'Londrina Solid';
+  --textos_tipo: 'Inter';
+  --marron_oscuro: #471406;
+  --background: #F6EEDF;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: var(--background);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px;
+  gap: 60px;
+}
+
+.product-image img {
+  width: 80%;
+}
+
+.product-info h1 {
+  font-size: 48px;
+  font-family: var(--titulos_tipo);
+  color: var(--marron_oscuro);
+}
+
+.product-info h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--marron_oscuro);
+  font-family: var(--textos_tipo);
+  font-weight: 500;
+}
+
+.product-text {
+    font-family: var(--textos_tipo);
+    color: var(--marron_oscuro);
+}
+
+.colors {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.color {
+      width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 20%;
+}
+
+.grey { background: #4b4b4b; }
+.brown { background: #8C5A3C; }
+.green { background: #797d6d; }
+
+.buy {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+    justify-content: space-between;
+    color: var(--marron_oscuro);
+    font-family: var(--textos_tipo);
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: solid #3A2B22;
+  padding: 5px 10px;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  font-family: var(--textos_tipo);
+}
+
+.quantity button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  color: #3A2B22;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--textos_tipo);
+}
+
+.quantity span {
+  min-width: 16px;
+  text-align: center;
+}
+
+.add-to-cart {
+  margin-top: 1rem;
+    padding: 1rem 1rem;
+    background-color: var(--background);
+    color: var(--marron_oscuro);
+    border: solid var(--marron_oscuro);
+    border-radius: 12px;
+    font-family: var(--titulos_tipo);
+    /* font-weight: 400; */
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+  opacity: 0.9;
+}
+
+.accordions {
+  margin: 80px 0;
+}
+
+.accordion-row {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.accordion-content {
+  display: none;
+  margin-top: 20px;
+  max-width: 600px;
+  font-family: var(--textos_tipo);
+  color: var(--marron_oscuro);
+}
+
+
+.accordion-btn {
+  background: transparent;
+  border: 1px solid var(--marron_oscuro);
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-family: var(--titulos_tipo);
+  font-weight: 400;
+  color: var(--marron_oscuro);
+  cursor: pointer;
+/* uniformidad */
+    min-width: 180px;  
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* visible/invisible */
+.accordion-content {
+  display: none;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.accordion-content {
+  max-height: 0;         /* contenido oculto */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;     /* suficiente para tu contenido */
+}
+
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 60px;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+.red-shape {
+  position: absolute;
+  top: -40px;
+  right: 10%;
+  width: 160px;
+  height: 200px;
+  background: #C4473A;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  z-index: 2;
+}
+
+
+.footer {
+  background: #2F4B8F;
+  color: white;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
