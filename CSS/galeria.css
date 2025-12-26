@@ -36,7 +36,7 @@ header {
 
 /* ----------- Texto animado ----------- */
 .words {
-    font-size: clamp(2rem, 8vw, 4rem);
+    font-size: clamp(2rem, 8vw, 5rem);
     font-family: var(--titulos_tipo);
     color: var(--footer-back);
     overflow: hidden;
@@ -286,17 +286,118 @@ header {
     font-family: var(--textos_tipo);
  }
 /* ----------- Responsive ----------- */
-@media (max-width: 768px) {
+
+/* ----------- Responsive ----------- */
+@media (max-width: 850px) {
     .words {
         font-size: clamp(1.5rem, 6vw, 3rem);
         letter-spacing: 0.05em;
     }
 
-}
+    /* Galería 1 */
+    .product-image-sofaverde {
+        width: 100%;
+        height: auto;
+    }
+    .product-image-sillon1 {
+        width: 95%;
+        height: auto;
+    }
+    /* Galería 2 */
+    .product-image-sofamarron {
+        width: 120%;
+        height: auto;
+    }
+    .product-image-sofazules {
+        width: 90%;
+        height: auto;
+    }
 
-@media (max-width: 480px) {
-    .words {
-        font-size: clamp(1.2rem, 5vw, 2.5rem);
-        letter-spacing: 0.03em;
+    /* Galería 3 */
+    .product-image-sofabeige {
+        width: 110%;
+        height: auto;
+    }
+    .product-image-sofarosa {
+        width: 130%;
+        height: auto;
+    }
+
+    /* Galería 4 */
+    .product-image-sillonverde {
+        width: 110%;
+        height: auto;
+    }
+    .product-image-sofaamarillo {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Galería 5 */
+    .product-image-sofamarron2 {
+        width: 100%;
+        height: auto;
+    }
+    .product-image-sillonazul {
+        width: 95%;
+        height: auto;
     }
 }
+
+@media (max-width: 560px) {
+    .words {
+        letter-spacing: 0.03em;
+    }
+
+    /* Todas las galerías se vuelven columna */
+    .galeria1, .galeria2, .galeria3, .galeria4, .galeria5 {
+        flex-direction: column;
+    }
+
+    /* Todos los divs ocupan 100% */
+    .galeria1L, .galeria1R,
+    .galeria2L, .galeria2R,
+    .galeria3L, .galeria3R,
+    .galeria4L, .galeria4R,
+    .galeria5L, .galeria5R {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--marron_oscuro);
+        padding: 0.5rem;
+    }
+
+    /* Últimos divs sin borde-bottom */
+    .galeria1R:last-child,
+    .galeria2R:last-child,
+    .galeria3R:last-child,
+    .galeria4R:last-child,
+    .galeria5R:last-child {
+        border-bottom: none;
+    }
+
+    /* Ajuste de imágenes */
+    .product-image-sofaverde,
+    .product-image-sillon1,
+    .product-image-sofamarron,
+    .product-image-sofazules,
+    .product-image-sofabeige,
+    .product-image-sofarosa,
+    .product-image-sillonverde,
+    .product-image-sofaamarillo,
+    .product-image-sofamarron2,
+    .product-image-sillonazul {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* .product-info {
+        flex-direction: column;
+        align-items: flex-start;
+    } */
+
+    .cart-icon {
+        margin-top: 0.5rem;
+    }
+}
+
