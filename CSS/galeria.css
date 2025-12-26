@@ -1,0 +1,177 @@
+/* ----------- Fuentes ----------- */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ----------- Variables ----------- */
+:root {
+    --titulos_tipo: 'Londrina Solid';
+    --textos_tipo: 'Inter';
+    --marron_oscuro: #471406;
+    --background: #F6EEDF;
+    --footer-back: #2E5098;
+}
+
+/* ----------- Reset y body ----------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+/* ----------- Header ----------- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* ----------- Texto animado ----------- */
+.words {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-family: var(--titulos_tipo);
+    color: var(--footer-back);
+    overflow: hidden;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+/* ----------- Imagen Header ----------- */
+.img-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.img-header img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* GALERIA  */
+
+/* ----------- Galería ----------- */
+.galeria {
+    width: 100%;
+}
+
+.galeria1 {
+    display: flex;
+    width: 100%;
+    height: 55vh;
+    border-top: 1px solid var(--marron_oscuro);
+    border-bottom: 1px solid var(--marron_oscuro);
+}
+
+.galeria1L {
+    width: 60%;
+    padding: 1rem;
+    border-right: 1px solid var(--marron_oscuro);
+}
+
+.galeria1R {
+    width: 40%;
+    padding: 1rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: transparent;
+}
+
+.product-image-container {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-sofaverde {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-image-sillon1 {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.5rem 0 0.25rem 0;
+    margin-top: auto;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-family: var(--textos_tipo);
+    font-size: 0.9rem;
+    color: var(--marron_oscuro);
+    margin-bottom: 0.1rem;
+}
+
+.product-price {
+    font-family: var(--textos_tipo);
+    font-size: 0.9rem;
+    color: var(--marron_oscuro);
+    font-weight: bold;
+}
+
+.cart-icon {
+    color: var(--marron_oscuro);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    color: #333;
+}
+
+
+
+/* ----------- Responsive ----------- */
+@media (max-width: 768px) {
+    .words {
+        font-size: clamp(1.5rem, 6vw, 3rem);
+        letter-spacing: 0.05em;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .words {
+        font-size: clamp(1.2rem, 5vw, 2.5rem);
+        letter-spacing: 0.03em;
+    }
+}
