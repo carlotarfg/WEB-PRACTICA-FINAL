@@ -12,74 +12,90 @@
 
 
         <link rel="stylesheet" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 
     <body>
         <header>
-                <!-- Menú fijo -->
+        <nav class="navbar">
+            <div class="nav-left">
+            <div class="logo">
+                <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+            </div>
+            <div class="nav-links">
+                <a href="producto.html">catalog</a>
+                <a href="#">about us</a>
+            </div>
+            </div>
 
-    <nav class="navbar">
-    <div class="nav-left">
-      <div class="logo">
-        <!-- Reemplaza con tu SVG real -->
-        <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
-      </div>
-      <div class="nav-links">
-        <a href="producto.html">catalog</a>
-        <a href="community.html">about us</a>
-      </div>
-    </div>
+            <div class="carrito">
+            <button class="cart-btn" id="cartBtnDesktop">
+                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+            </button>
+            </div>
+        </nav>
 
-    <div class="carrito">
-      <button class="cart-btn" id="cartBtn">
-        <img src="MEDIA/svg/Vector.svg" alt="Carrito">
-      </button>
-    </div>
-  </nav>
-  <!-- <nav class="navbar">
-    <div class="logo"><img src="MEDIA/svgs/logo.svg" alt="logo MIBO"></div>
-    <div class="nav-links">
-      <a href="#">catalog</a>
-      <a href="#">about us</a>
-    </div>
+        <!-- MENÚ MÓVIL  -->
+            <div class="mobile-bar">
+            <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
 
-    <div class="carrito">
-        <button class="cart-btn" id="cartBtn">
-          <img src="MEDIA/svgs/Vector.svg" alt="Carrito">
-        </button>
-    </div>
-  </nav> -->
+            <button class="mobile-bar-btn" id="openMenu">⋯</button>
+            </div>
 
-  <!-- Panel del carrito -->
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>Tu Carrito</h3>
-      <button class="close-cart" id="closeCart">×</button>
-    </div>
-    <div id="cartItems">
-      <!-- Ejemplo de ítems -->
-      <div class="cart-item">
-        <span>Producto 1</span>
-        <span>$25.00</span>
-      </div>
-      <div class="cart-item">
-        <span>Producto 2</span>
-        <span>$35.00</span>
-      </div>
-      <div class="cart-item">
-        <span>Producto 3</span>
-        <span>$18.00</span>
-      </div>
-    </div>
-    <div class="cart-footer">
-      <strong>Total: $78.00</strong><br><br>
-      <button class="btn-checkout">Finalizar Compra</button>
-    </div>
-  </div>
+            <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-close" id="closeMenu">X</button>
+            <button class="cart-btn-movil" id="cartBtnMobile">
+                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+            </button>
+
+            <nav class="mobile-links">
+                <a href="producto.html">catalog</a>
+                <a href="#">about us</a>
+            </nav>
+
+            <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+
+            </div>
+
+
+        <!-- carrito -->
+       <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>CARRITO</h2>
+            <button class="close-cart" id="closeCart">X</button>
+        </div>
+
+        <div class="cart-items">
+            <!-- Ejemplo de producto 1 -->
+            <div class="cart-item">
+            <img src="MEDIA/img/mesa.webp" alt="Sillón Nixon" class="product-img">
+            <div class="product-info">
+                <p class="product-name">Sillón Nixon</p>
+                <p class="product-price">269,95 €</p>
+            </div>
+            <div class="quantity">1</div>
+            </div>
+
+            <!-- Ejemplo de producto 2 -->
+            <div class="cart-item">
+            <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+            <div class="product-info">
+                <p class="product-name">Sillón Nixon</p>
+                <p class="product-price">269,95 €</p>
+            </div>
+            <div class="quantity">1</div>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="subtotal">
+            <span>Subtotal</span>
+            <span>269,95 €</span>
+            </div>
+            <button class="checkout-btn">FINALIZAR PAGO</button>
+        </div>
+        </div>
         </header>
 
         <main>
@@ -93,7 +109,9 @@
 
 
         <!-- MI JS  -->
-         <script src="js/carrito.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/carrito.js"></script>
+        <!-- <script src="js/script.js"></script> -->
     </body>
 
 </html>
