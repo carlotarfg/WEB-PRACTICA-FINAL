@@ -1,0 +1,31 @@
+/* VARIABLES CSS */
+
+:root {
+  --primary-color: #FDF3E2;
+  --sedond-color: #471406;
+  --third-color: #2E5098;
+  --fourth-color: #FAE9CF;
+  --font-size: 18px;
+  --font-primary: 'Inter Tight', sans-serif;
+  --font-secondary: 'Londrina Solid'; 
+  --font-tertiary: 'Londrina Solid Light'; 
+}
+
+.inter-tight {
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.londrina-solid-light {
+  font-family: "Londrina Solid Light", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
