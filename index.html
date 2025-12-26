@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MIBO</title>
-        <link rel="icon" type="image/svg" href="MEDIA/svg/logo movil.svg">
+        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
 
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -15,8 +16,85 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
-        
     </head>
+
+    <body>
+        <header>
+                <!-- Menú fijo -->
+
+    <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">
+        <!-- Reemplaza con tu SVG real -->
+        <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+      </div>
+      <div class="nav-links">
+        <a href="producto.html">catalog</a>
+        <a href="community.html">about us</a>
+      </div>
+    </div>
+
+    <div class="carrito">
+      <button class="cart-btn" id="cartBtn">
+        <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+      </button>
+    </div>
+  </nav>
+  <!-- <nav class="navbar">
+    <div class="logo"><img src="MEDIA/svgs/logo.svg" alt="logo MIBO"></div>
+    <div class="nav-links">
+      <a href="#">catalog</a>
+      <a href="#">about us</a>
+    </div>
+
+    <div class="carrito">
+        <button class="cart-btn" id="cartBtn">
+          <img src="MEDIA/svgs/Vector.svg" alt="Carrito">
+        </button>
+    </div>
+  </nav> -->
+
+  <!-- Panel del carrito -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div id="cartItems">
+      <!-- Ejemplo de ítems -->
+      <div class="cart-item">
+        <span>Producto 1</span>
+        <span>$25.00</span>
+      </div>
+      <div class="cart-item">
+        <span>Producto 2</span>
+        <span>$35.00</span>
+      </div>
+      <div class="cart-item">
+        <span>Producto 3</span>
+        <span>$18.00</span>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <strong>Total: $78.00</strong><br><br>
+      <button class="btn-checkout">Finalizar Compra</button>
+    </div>
+  </div>
+        </header>
+
+        <main>
+
+
+        </main>
+
+        <footer>
+            
+        </footer>
+
+
+        <!-- MI JS  -->
+         <script src="js/carrito.js"></script>
+    </body>
+
+</html>
+
