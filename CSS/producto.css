@@ -39,6 +39,7 @@ body {
   grid-template-columns: 1fr 1fr;
   padding: 60px;
   gap: 60px;
+  padding-top: 12rem;
 }
 
 .product-image img {
@@ -190,36 +191,18 @@ body {
 }
 
 
-
-
-.gallery {
+/* GAELRIA  */
+.row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-.gallery img {
-  width: 100%;
-}
-
-.red-shape {
-  position: absolute;
-  top: -40px;
-  right: 10%;
-  width: 160px;
-  height: 200px;
-  background: #C4473A;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
-  z-index: 2;
-}
-
-
-.footer {
-  background: #2F4B8F;
-  color: white;
-  padding: 40px;
+.column {
+  grid-column: span 3;
+  width: auto;
+  height: 100%;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  Flex-direction: column;
+  gap: 1rem;
 }
