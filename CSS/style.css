@@ -503,14 +503,46 @@ background-color: var(--third-color);
 }
 
 
+/* TEXTOS 2  */
+
+.muebles {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem;
+    gap: 9rem;
+}
+
+.text-muebles {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    line-height: 1.1;   
+}
+
+.text-muebles p {
+    font-size: 1.7rem;
+    color: var(--second-color);
+    text-align: justify;
+}
 
 
+.img-muebles img {
+    width: 30rem;
+}
 
+.text-mibo a {
+    font-family: var(--font-secundary);
+    color: var(--third-color);
+    font-size: 9rem;
+    width: 70%;
+    margin-left: 10rem;
+    text-decoration: none;
+}
 
-
-
-
-
+.text-mibo a span img{
+    width: 6.5rem;
+    margin-top: -1.5rem;
+}
 
 
 
