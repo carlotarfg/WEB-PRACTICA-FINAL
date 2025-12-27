@@ -1,9 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MIBO - nixon</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MIBO</title>
+        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
+
 
 <!-- ----------- BOOSTRAP DESDE UN CDN ----------- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -18,17 +21,86 @@
   <body>
 <!-- MENU  -->
 <body>  
-    <!-- <header class="header">
-    <div class="logo">MIBO</div>
-    <nav class="nav">
-      <a href="#">catalog</a>
-      <a href="#">about us</a>
-    </nav>
-    <div class="cart">🛒</div>
-  </header> -->
 
-  <!-- PRODUCT -->
-  <main class="product">
+   <header>
+        <nav class="navbar">
+            <div class="nav-left">
+            <div class="logo">
+                <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+            </div>
+            <div class="nav-links">
+                <a href="producto.html">catalog</a>
+                <a href="#">about us</a>
+            </div>
+            </div>
+
+            <div class="carrito">
+            <button class="cart-btn" id="cartBtnDesktop">
+                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+            </button>
+            </div>
+        </nav>
+
+        <!-- MENÚ MÓVIL  -->
+            <div class="mobile-bar">
+            <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
+
+            <button class="mobile-bar-btn" id="openMenu">⋯</button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-close" id="closeMenu">X</button>
+            <button class="cart-btn-movil" id="cartBtnMobile">
+                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+            </button>
+
+            <nav class="mobile-links">
+                <a href="producto.html">catalog</a>
+                <a href="#">about us</a>
+            </nav>
+
+            <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+
+            </div>
+
+
+        <!-- carrito -->
+       <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>CARRITO</h2>
+            <button class="close-cart" id="closeCart">X</button>
+        </div>
+
+        <div class="cart-items">
+            <div class="cart-item">
+            <img src="MEDIA/img/mesa.webp" alt="Sillón Nixon" class="product-img">
+            <div class="product-info">
+                <p class="product-name">Sillón Nixon</p>
+                <p class="product-price">269,95 €</p>
+            </div>
+            <div class="quantity">1</div>
+            </div>
+
+            <div class="cart-item">
+            <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+            <div class="product-info">
+                <p class="product-name">Sillón Nixon</p>
+                <p class="product-price">269,95 €</p>
+            </div>
+            <div class="quantity">1</div>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="subtotal">
+            <span>Subtotal</span>
+            <span>269,95 €</span>
+            </div>
+            <button class="checkout-btn">FINALIZAR PAGO</button>
+        </div>
+        </div>
+
+<main class="product">
 
 <section class="product-main">
   <div class="product-image">
