@@ -1,19 +1,23 @@
 //  - DRAG DE LAS IMAGENES - 
 
- gsap.registerPlugin(Draggable);
+gsap.registerPlugin(Draggable);
 
-  Draggable.create(".draggable", {
-    bounds: ".drag-area",
-    inertia: true
-  });
+// 1. Forzamos a GSAP a aceptar la posición del CSS (rem, !important, etc.)
+gsap.set(".draggable", { 
+  x: 0, 
+  y: 0 
+});
 
-  gsap.registerPlugin(Draggable);
-
+// 2. Creamos el Draggable una sola vez con todas las opciones
 Draggable.create(".draggable", {
   bounds: ".drag-area",
   inertia: true,
   dragClickables: true,
-  allowEventDefault: true
+  allowEventDefault: true,
+  onPress: function() {
+    // Esto refresca la posición para que no salte al tocarlo
+    this.update(); 
+  }
 });
 
 // TRAIL 
