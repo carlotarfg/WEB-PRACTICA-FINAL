@@ -2,29 +2,24 @@
 
 gsap.registerPlugin(Draggable);
 
-// 1. Forzamos a GSAP a aceptar la posición del CSS (rem, !important, etc.)
 gsap.set(".draggable", { 
   x: 0, 
   y: 0 
 });
 
-// 2. Creamos el Draggable una sola vez con todas las opciones
 Draggable.create(".draggable", {
   bounds: ".drag-area",
   inertia: true,
   dragClickables: true,
   allowEventDefault: true,
   onPress: function() {
-    // Esto refresca la posición para que no salte al tocarlo
     this.update(); 
   }
 });
 
 // TRAIL 
 
-// Cambiamos la selección al contenedor de la sección
 const hoverSection = document.querySelector('#hover');
-// Necesitamos el párrafo para leer los datos de las imágenes (data-img)
 const textElement = hoverSection.querySelector('.text-hover p');
 
 let trail = []; 
@@ -37,12 +32,10 @@ window.addEventListener('mousemove', e => {
   mouseY = e.clientY;
 });
 
-// Ahora el evento escucha a toda la sección #hover
 hoverSection.addEventListener('mouseenter', () => {
   const imgs = textElement.dataset.img.split(',');
   let index = 0;
 
-  // Limpia trail anterior
   trail.forEach(img => gsap.to(img, {opacity: 0, duration: 0.3, onComplete: () => img.remove()}));
   trail = [];
 
@@ -87,7 +80,6 @@ hoverSection.addEventListener('mouseleave', () => {
   trail = [];
 });
 
-// Loop de animación (mantiene la separación extrema)
 function animate() {
   let targetX = mouseX;
   let targetY = mouseY;
@@ -106,8 +98,7 @@ function animate() {
       y: currentY + vy
     });
 
-    // Separación exagerada hacia la izquierda
-    targetX = currentX - 80; // He subido a 80 para que se note aún más la distancia
+    targetX = currentX - 80; 
     targetY = currentY + 15; 
   });
 
@@ -115,3 +106,64 @@ function animate() {
 }
 
 animate();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const categories = document.querySelectorAll(".centro-menu h1");
+  const bgIzq = document.querySelector(".img-izq img:not(.mueble-encima)");
+  const svgIzq = document.querySelector(".mueble-encima");
+  const bgDech = document.querySelector(".img-dech img:not(.mueble-encima2)");
+  const svgDech = document.querySelector(".mueble-encima2");
+  const allElements = [bgIzq, svgIzq, bgDech, svgDech];
+
+  const contentByCategory = {
+    "LIVING ROOM": { bgI: "MEDIA/img/salon.webp", svgI: "MEDIA/svg/Vector 4.svg", bgD: "MEDIA/img/salon2.webp", svgD: "MEDIA/svg/Recurso 16.svg" },
+    "BEDROOM": { bgI: "MEDIA/img/dormitorio.webp", svgI: "MEDIA/svg/Group 42.svg", bgD: "MEDIA/img/dormitorio2.webp", svgD: "MEDIA/svg/Recurso 14.svg" },
+    "DINING ROOM": { bgI: "MEDIA/img/comedor.webp", svgI: "MEDIA/svg/Vector 5.svg", bgD: "MEDIA/img/comedor2.webp", svgD: "MEDIA/svg/Recurso 17.svg" },
+    "BATHROOM": { bgI: "MEDIA/img/baño.webp", svgI: "MEDIA/svg/Vector 18.png", bgD: "MEDIA/img/baño2.webp", svgD: "MEDIA/svg/Recurso 13.svg" }
+  };
+
+  // Precarga rápida
+  Object.values(contentByCategory).forEach(cat => {
+    Object.values(cat).forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  });
+
+  let currentCategory = null;
+
+  categories.forEach(h => {
+    h.addEventListener("mouseenter", () => {
+      const cat = h.textContent.trim().toUpperCase();
+      if (!contentByCategory[cat] || cat === currentCategory) return;
+
+      currentCategory = cat;
+
+      // Timeline ultra-rápido
+      const tl = gsap.timeline();
+
+      tl.to(allElements, {
+        opacity: 0,
+        y: 5, // Movimiento mínimo para no perder tiempo
+        duration: 0.1, // Casi instantáneo
+        ease: "power1.in",
+        onComplete: () => {
+          bgIzq.src = contentByCategory[cat].bgI;
+          svgIzq.src = contentByCategory[cat].svgI;
+          bgDech.src = contentByCategory[cat].bgD;
+          svgDech.src = contentByCategory[cat].svgD;
+        }
+      })
+      .fromTo(allElements, 
+        { opacity: 0, y: -5 }, 
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.25, // Entrada rápida pero perceptible
+          ease: "expo.out", // Curva de velocidad profesional
+          stagger: 0.02 // Stagger casi imperceptible pero que da fluidez
+        }
+      );
+    });
+  });
+});
