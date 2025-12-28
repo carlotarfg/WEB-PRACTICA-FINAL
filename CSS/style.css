@@ -236,10 +236,11 @@ flex-grow: 1;
     font-family: var(--font-secundary);
     color: var(--primary-color);
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 8px;
     font-size: 2rem;
-    width: 15rem;
+    text-decoration: none;
+
 }
 
 .checkout-btn:hover {
