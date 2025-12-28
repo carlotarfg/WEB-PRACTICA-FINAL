@@ -167,3 +167,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// FADE DE LOS TEXTOS 
+
+const prepareText = () => {
+  document.querySelectorAll(".texts-main, .text-muebles").forEach((el) => {
+    // Buscamos párrafos, si no hay, usamos el contenedor mismo
+    const targets = el.querySelectorAll("p").length > 0 ? el.querySelectorAll("p") : [el];
+    
+    targets.forEach((target) => {
+      if (target.dataset.prepared) return; // Evita duplicar
+
+      const words = target.innerText.split(/(\s+)/); // Mantiene los espacios originales
+      target.innerHTML = words
+        .map(word => {
+          if (word.trim().length === 0) return word; // Si es un espacio, lo deja tal cual
+          return `<span class="scroll-word" style="opacity: 0.15; transition: opacity 1.2s ease;">${word}</span>`;
+        })
+        .join("");
+      
+      target.dataset.prepared = true;
+    });
+  });
+};
+
+const handleScroll = () => {
+  const allWords = document.querySelectorAll(".scroll-word");
+  const windowHeight = window.innerHeight;
+  
+  // Punto donde la palabra empieza a brillar (ajusta a 0.75 para más lento)
+  const triggerPoint = windowHeight * 0.85;
+
+  allWords.forEach((word) => {
+    const rect = word.getBoundingClientRect();
+    
+    if (rect.top < triggerPoint) {
+      word.style.opacity = "1";
+    } else {
+      word.style.opacity = "0.15";
+    }
+  });
+};
+
+// Inicialización
+prepareText();
+window.addEventListener("scroll", handleScroll);
+handleScroll();
