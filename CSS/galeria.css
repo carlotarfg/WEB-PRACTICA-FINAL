@@ -10,7 +10,15 @@
     --background: #F6EEDF;
     --footer-back: #2E5098;
 }
-
+:root {
+  --font-primary:'Inter' ;
+  --font-secundary: 'Londrina Solid';
+  --primary-color: #FDF3E2;
+  --second-color: #471406;
+  --third-color: #2E5098;
+  --fourth-color: #FAE9CF;
+  --yellow: #FDB309;
+}
 /* ----------- Reset y body ----------- */
 * {
     box-sizing: border-box;
