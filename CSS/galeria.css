@@ -32,23 +32,57 @@ header {
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
-/* ----------- Texto animado ----------- */
-.words {
-    font-size: clamp(2rem, 8vw, 5rem);
-    font-family: var(--titulos_tipo);
-    color: var(--footer-back);
-    overflow: hidden;
-    width: 100vw;
+/* ----------- Texto animado (marquesina) ----------- */
+.marquee-container {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     z-index: 1;
+    overflow: hidden;
     white-space: nowrap;
-    text-align: center;
-    letter-spacing: 0.1em;
+}
+
+.words {
+    font-size: clamp(2rem, 8vw, 6rem);
+    font-family: 'Londrina Solid', sans-serif;
+    color: var(--footer-back);
+    display: inline-block;
+    white-space: nowrap;
+    word-spacing: -0.1em;
+    animation: marquee 20s linear infinite;
+}
+
+/* Duplicamos el contenido para que el scroll sea continuo */
+.words::after {
+    content: " collection collection collection collection collection collection collection collection collection collection collection collection";
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .words {
+        font-size: clamp(1.5rem, 6vw, 3rem);
+        letter-spacing: -0.05em;
+    }
+}
+
+@media (max-width: 560px) {
+    .words {
+        letter-spacing: -0.03em;
+    }
 }
 
 /* ----------- Imagen Header ----------- */
@@ -248,7 +282,7 @@ header {
     object-fit: cover;
 
 }
-/* GALERIA 4  */
+/* GALERIA 5  */
 
 .galeria5 {
     display: flex;
@@ -285,12 +319,11 @@ header {
     padding: 1rem;
     font-family: var(--textos_tipo);
  }
-/* ----------- Responsive ----------- */
 
 /* ----------- Responsive ----------- */
 @media (max-width: 850px) {
     .words {
-        font-size: clamp(1.5rem, 6vw, 3rem);
+        font-size: clamp(1.5rem, 7vw, 3rem);
         letter-spacing: 0.05em;
     }
 
@@ -347,6 +380,7 @@ header {
 @media (max-width: 560px) {
     .words {
         letter-spacing: 0.03em;
+        font-size: 3rem;
     }
 
     /* Todas las galerías se vuelven columna */
@@ -375,20 +409,53 @@ header {
         border-bottom: none;
     }
 
-    /* Ajuste de imágenes */
-    .product-image-sofaverde,
-    .product-image-sillon1,
-    .product-image-sofamarron,
-    .product-image-sofazules,
-    .product-image-sofabeige,
-    .product-image-sofarosa,
-    .product-image-sillonverde,
-    .product-image-sofaamarillo,
-    .product-image-sofamarron2,
-    .product-image-sillonazul {
-        width: 95%;
+    /* Galería 1 */
+    .product-image-sofaverde {
+        width: 100%;
         height: auto;
-        margin: 0 auto;
+    }
+    .product-image-sillon1 {
+        width: 70%;
+        height: auto;
+    }
+    /* Galería 2 */
+    .product-image-sofamarron {
+        width: 120%;
+        height: auto;
+    }
+    .product-image-sofazules {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Galería 3 */
+    .product-image-sofabeige {
+        width: 110%;
+        height: auto;
+    }
+    .product-image-sofarosa {
+        width: 60%;
+        height: auto;
+    }
+
+    /* Galería 4 */
+    .product-image-sillonverde {
+        width: 70%;
+        height: auto;
+    }
+    .product-image-sofaamarillo {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Galería 5 */
+    .product-image-sofamarron2 {
+        width: 100%;
+        height: auto;
+    }
+    .product-image-sillonazul {
+        width: 55%;
+        height: auto;
     }
 
     /* .product-info {
