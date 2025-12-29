@@ -42,6 +42,7 @@ body {
   align-items: center;
 }
 
+
 model-viewer {
   width: 100%;
   height: 650px;
@@ -68,8 +69,6 @@ model-viewer {
   max-width: 600px;
 }
 
-
-
 .colors {
   display: flex;
   gap: 10px;
@@ -80,7 +79,17 @@ model-viewer {
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 20%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
+
+.color:hover {
+  transform: scale(1.15);
+}
+
+.color.active {
+  box-shadow: 0 0 0 2px var(--marron_oscuro);
+} 
 
 .grey { background: #4b4b4b; }
 .brown { background: #8C5A3C; }
@@ -135,7 +144,14 @@ model-viewer {
   letter-spacing: 0.05em;
   cursor: pointer;
   font-size: 1.6rem;
-  }
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.25s ease;
+}
+
+.add-to-cart:hover {
+  background-color: var(--marron_oscuro);
+  color: var(--background);
+  transform: translateY(-2px);
+}
 
 .add-to-cart:hover {
   opacity: 0.9;
@@ -150,6 +166,8 @@ model-viewer {
   justify-content: center;
   gap: 4rem;
   margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .accordion-content {
@@ -181,6 +199,13 @@ model-viewer {
   justify-content: center;
   text-align: center;
   font-size: 2rem;
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.25s ease;
+}
+
+.accordion-btn:hover {
+  background-color: var(--marron_oscuro);
+  color: var(--background);
+  transform: translateY(-2px);
 }
 
 /* visible/invisible */
@@ -210,6 +235,17 @@ model-viewer {
   break-inside: avoid;
 }
 
+.add-to-cart,
+.accordion-btn,
+.checkout-btn {
+  position: relative;
+  overflow: hidden;
+  transition: 
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.25s ease;
+}
+
 
 @media (max-width: 1440px) {
 
@@ -237,6 +273,10 @@ model-viewer {
 
     .add-to-cart {
     font-size: 1.4rem;
+  }
+
+   .accordion-content {
+    font-size: 1rem;
   }
 }
 
@@ -297,13 +337,13 @@ model-viewer {
     padding: 10px 24px;
     min-width: 160px;
     min-height: 46px;
-    margin: 2rem;
+    /* margin: 2rem; */
   }
 
   .accordion-content {
     font-size: 0.95rem;
     max-width: 100%;
-    margin: 2rem;
+    /* margin: 2rem; */
   }
 
   .photo-gallery {
@@ -365,7 +405,7 @@ model-viewer {
   .accordion-content {
     font-size: 0.9rem;
     text-align: center;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
   }
 
   .photo-gallery {
