@@ -25,15 +25,21 @@ html, body {
 
 /* ----------- AJUSTAR HEADER Y QUE FUNCIONE LA MITAD DE LO ENTERO ----------- */
 
-header {
+/* header {
   height: 80px;
   background: linear-gradient(to right, var(--background) 50%, var(--background_check_right) 50%);
-}
+} */
 
 
 .checkout-layout {
   display: flex;
   height: calc(100vh - 80px); 
+}
+
+.checkout-left::-webkit-scrollbar,
+.checkout-right::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 /* columnas */
@@ -42,6 +48,9 @@ header {
   width: 50%;
   overflow-y: auto;
   padding: 2rem;
+  padding-top: 7rem;
+  -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
 }
 
 /* ----------- PARA QUE NO DE ERROR EL PANEL DEL CARRITO ----------- */
@@ -101,6 +110,15 @@ input {
   font-weight: bold;
 }
 
+.checkout-left h1 {
+  font-family: var(--titulos_tipo);
+  color: var(--footer-back);
+  font-size: 5rem;
+}
+
+.checkout-product {
+  padding-bottom: 3rem;
+}
 
 
 /* ----------- CSS DEL CHECKOUT DERECHO ----------- */
@@ -109,7 +127,7 @@ input {
   width: 50%;
   overflow-y: auto;
   background: var(--background_check_right);
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box; 
 }
 
@@ -199,7 +217,6 @@ input {
   
 .tab:hover {
   background: var(--background);
-  
 }
 
 .tab.active {
