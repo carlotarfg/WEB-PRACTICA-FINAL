@@ -115,94 +115,146 @@
             <section class="checkout-form">
                 <form>
                     <div class="row">
+                        <!-- ---- INFORMACIÓN USUARIO ---- -->
                         <div class="input-group">
                             <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" placeholder="Nombre" required>
+                            <input type="text" id="nombre" placeholder="Ej: John" required>
                         </div>
                         <div class="input-group">
                             <label for="apellidos">Apellidos:</label>
-                            <input type="text" id="apellidos" placeholder="Apellidos" required>
+                            <input type="text" id="apellidos" placeholder="Ej: Doe" required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-group">
                             <label for="dirección">Dirección:</label>
-                            <input type="text" placeholder="Dirección" required>
+                            <input type="text" placeholder="Ej: C/..." required>
                         </div>
                         <div class="input-group">
                             <label for="apartamento">Apartamento, casa, etc. (opcional):</label>
-                            <input type="text" placeholder="Apartamento, casa, etc. (opcional)">
+                            <input type="text" placeholder="Ej: Apartamento 2">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-group">
                             <label for="código postal">Código Postal:</label>
-                            <input type="text" placeholder="Código Postal" required>
+                            <input type="text" placeholder="Ej: 00000" required>
                         </div>
                         <div class="input-group">
                             <label for="teléfono">Número de Teléfono:</label>
-                            <input type="text" placeholder="Número de Teléfono" required>
+                            <input type="text" placeholder="Ej: 000 00 00 00" required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-group">
                             <label for="País">País:</label>
-                            <input type="text" placeholder="País" required>
+                            <input type="text" placeholder="Ej: España" required>
                         </div>
                         <div class="input-group">
                             <label for="Ciudad">Ciudad:</label>
-                            <input type="text" placeholder="Ciudad" required>
+                            <input type="text" placeholder="Ej: Madrid" required>
                         </div>
                     </div>
-
+                    <!-- ---- MÉTODO DE PAGO ---- -->
                     <div class="payment">
-                    <p>Método de pago</p>
-                    <div class="methods">
-                        <img src="MEDIA/img/Mastercard-Logo.png" alt="Mastercard" class="methods_type_mc">
-                        <img src="MEDIA/svg/Visa_Inc._logo.svg.webp" alt="Visa" class="methods_type_visa">
-                        <img src="MEDIA/svg/PayPal.svg.webp" alt="PayPal" class="methods_type_pp">
-                    </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-group">
-                            <label for="nombre">Nombre del titular:</label>
-                            <input type="text" placeholder="Nombre del titular" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="número tarjeta">Número de la tarjeta:</label>
-                            <input type="text" placeholder="Número de la tarjeta" required>
+                        <p>Método de pago</p>        
+                        <div class="tabs">
+                            <button class="tab" data-category="mastercard">
+                                <img class="methods_type_mc" src="MEDIA/img/Mastercard-Logo.png" alt="Mastercard">
+                            </button>
+                            <button class="tab" data-category="visa">
+                                <img class="methods_type_visa"  src="MEDIA/svg/Visa_Inc._logo.svg.webp" alt="Visa">
+                            </button>
+                            <button class="tab" data-category="paypal">
+                                <img class="methods_type_pp" src="MEDIA/svg/PayPal.svg.webp" alt="PayPal">
+                            </button>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="input-group">
-                            <label for="Fecha caducidad">Fecha de caducidad:</label>
-                            <input type="text" placeholder="Fecha de caducidad" required>
+                    <!-- ---- CLICKAR IMG SALEN RESULTADOS DIFERENTES ---- -->
+
+                    <!-- __ MASTERCARD __ -->
+
+                     <div class="content">
+                      <div class="category mastercard">
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="nombre">Nombre del titular:</label>
+                                <input type="text" placeholder="Ej: John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="número tarjeta">Número de la tarjeta:</label>
+                                <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="código seguridad">Código de seguridad:</label>
-                            <input type="text" placeholder="Código de seguridad" required>
+    
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="Fecha caducidad">Fecha de caducidad:</label>
+                                <input type="text" placeholder="Ej: 00/00" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="código seguridad">Código de seguridad (CVC2):</label>
+                                <input type="text" placeholder="000" required>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="dirección facturación">Dirección de facturación:</label>
+                               <input type="text" placeholder="Ej: C/...." required>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="input-group">
-                            <label for="dirección facturación">Dirección de facturación:</label>
-                           <input type="text" placeholder="Dirección de facturación" required>
+                    <!-- __ VISA __ -->
+
+                    <div class="content">
+                      <div class="category visa">
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="nombre">Nombre del titular:</label>
+                                <input type="text" placeholder="Ej: John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="número tarjeta">Número de la tarjeta:</label>
+                                <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
+                            </div>
                         </div>
+    
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="Fecha caducidad">Fecha de caducidad:</label>
+                                <input type="text" placeholder="Ej: 00/00" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="código seguridad">Código de seguridad (CVV):</label>
+                                <input type="text" placeholder="Ej: 000" required>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="dirección facturación">Dirección de facturación:</label>
+                               <input type="text" placeholder="Ej: C/...." required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- __ PAYPAL __ -->
+
+                     <div class="content">
+                      <div class="category paypal">
+                        <p>Serás redirigido a PayPal para completar tu pago de forma segura.</p>
                     </div>
 
 
                     <label class="remember">
-                    <input type="checkbox" required>
-                    Guardar mi información para pagar más rápido
+                        <input class="checkbox_remember" type="checkbox" required> Guardar mi información para pagar más rápido
                     </label>
-
-                    <button type="submit" class="btn-primary">Finalizar compra</button>
                 </form>
             </section>
 
@@ -223,5 +275,6 @@
     <script src="js/menu.js"></script>
     <script src="js/carrito.js"></script>
     <script src="js/script.js"></script>
+    <script src="JS/compra.js"></script>
 </body>
 </html>

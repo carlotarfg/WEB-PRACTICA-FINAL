@@ -20,6 +20,7 @@ html, body {
   margin: 0;
   overflow: hidden;
   background: var(--background);
+  font-family: var(--textos_tipo);
 }
 
 /* ----------- AJUSTAR HEADER Y QUE FUNCIONE LA MITAD DE LO ENTERO ----------- */
@@ -32,7 +33,7 @@ header {
 
 .checkout-layout {
   display: flex;
-  height: calc(100vh - 80px); /* 100% pantalla menos header */
+  height: calc(100vh - 80px); 
 }
 
 /* columnas */
@@ -53,9 +54,6 @@ header {
   overflow-y: auto;
   z-index: 999;
 }
-
-/* ----------- PARA QUE LOS BORDES SE PONGAN ROJOS EN EL FORMS ----------- */
-
 
 /* Borde normal gris */
 input {
@@ -112,11 +110,8 @@ input {
   overflow-y: auto;
   background: var(--background_check_right);
   height: 100%;
-  box-sizing: border-box; /* Importante para que el padding no aumente el tamaño real */
+  box-sizing: border-box; 
 }
-
-
-
 
 .row {
   display: grid;
@@ -133,7 +128,7 @@ input {
 }
 
 .btn-primary {
-  background: #2f5aa8;
+  background: var(--footer-back);
   color: white;
   border: none;
   padding: 16px;
@@ -141,32 +136,33 @@ input {
   font-weight: bold;
   cursor: pointer;
 } 
+
 .payment {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .payment .methods {
   display: flex;
-  gap: 15px;           /* espacio entre imágenes */
-  align-items: center;  /* centra verticalmente */
+  gap: 15px;           
+  align-items: center;  
 }
 
 .payment .methods_type_mc {
-  height: 29px;         /* altura uniforme */
-  width: auto;          /* mantiene proporción */
-  object-fit: contain;  /* evita que se deformen */
+  height: 29px;         
+  width: auto;          
+  object-fit: contain;  
 }
 
 .payment .methods_type_visa {
-  height: 25px;         /* altura uniforme */
-  width: auto;          /* mantiene proporción */
-  object-fit: contain;  /* evita que se deformen */
+  height: 25px;         
+  width: auto;          
+  object-fit: contain;  
 }
 
 .payment .methods_type_pp {
-  height: 31px;         /* altura uniforme */
-  width: auto;          /* mantiene proporción */
-  object-fit: contain;  /* evita que se deformen */
+  height: 31px;        
+  width: auto;          
+  object-fit: contain; 
 }
 
 .checkout-form .input-group > * {
@@ -176,8 +172,83 @@ input {
 }
 
 .checkout-right .checkout-form .row .input-group label {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
+
+/* ___ PARA CLICKAR IMG Y QUE SE VEAN DIFERENTES OPCIONES ___ */
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5%;
+  margin-left: 1%;
+  gap: 1%;
+}
+  
+.tab {
+  padding: 10px 20px;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: var(--textos_tipo);
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+  
+.tab:hover {
+  background: var(--background);
+  
+}
+
+.tab.active {
+  background: var(--background);
+  border-radius: 11px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category {
+  display: none;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category.active {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* ____ CHECKBOX AL LADO FRASE ____ */
+
+label.remember {
+  display: flex;
+  align-items: center;      
+  gap: 10px;                
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  white-space: nowrap;      
+}
+
+input.checkbox_remember {
+  width: 18px;              
+  height: 18px;             
+  vertical-align: middle;   
+  margin: 0;                
+}
+
+
 
 
 
