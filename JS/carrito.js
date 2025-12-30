@@ -3,7 +3,7 @@ const cartBtnMobile = document.getElementById('cartBtnMobile');
 const cartPanel = document.getElementById('cartPanel');
 const closeCart = document.getElementById('closeCart');
 
-// --- FUNCIONES DE APERTURA Y CIERRE ---
+// --- APERTURA Y CIERRE ---
 
 function openCart() {
   cartPanel.classList.add('open');
@@ -16,7 +16,6 @@ closeCart?.addEventListener('click', () => {
   cartPanel.classList.remove('open');
 });
 
-// Cierre al hacer clic fuera
 document.addEventListener('click', (e) => {
   const clickedInsidePanel = cartPanel && cartPanel.contains(e.target);
   const clickedOnCartBtn = [cartBtnDesktop, cartBtnMobile].some(btn => btn && (e.target === btn || btn.contains(e.target)));
@@ -26,10 +25,10 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// --- LÓGICA: ELIMINAR Y CALCULAR ---
+// --- ELIMINAR Y CALCULAR ---
 
 const cartItemsContainer = document.querySelector('.cart-items');
-const cartTotalElement = document.getElementById('cartTotal'); // Asegúrate de que en tu HTML diga id="cartTotal"
+const cartTotalElement = document.getElementById('cartTotal');
 
 function updateCartTotal() {
     let total = 0;
@@ -37,7 +36,6 @@ function updateCartTotal() {
 
     items.forEach(item => {
         const priceText = item.querySelector('.product-price').textContent;
-        // Limpiamos el texto para convertirlo a número funcional
         const price = parseFloat(priceText.replace('€', '').replace(/\./g, '').replace(',', '.').trim());
         const quantity = parseInt(item.querySelector('.quantity').textContent);
         
@@ -52,45 +50,20 @@ function updateCartTotal() {
     }
 }
 
-// Evento para eliminar productos sin cerrar el panel
 cartItemsContainer?.addEventListener('click', (e) => {
     const deleteBtn = e.target.closest('.delete-item');
-    
     if (deleteBtn) {
-        // ESTA LÍNEA ES LA CLAVE: 
-        // Evita que el clic llegue al document y ejecute la función de cerrar panel
         e.stopPropagation(); 
-
         const itemToRemove = deleteBtn.closest('.cart-item');
         itemToRemove.remove();
-        
         updateCartTotal();
     }
 });
 
-// --- CARRITO ---
-
-const addToCartIcons = document.querySelectorAll('.cart-icon');
-
-addToCartIcons.forEach(icon => {
-    icon.addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        const productCard = icon.closest('.product-card');
-        const name = productCard.querySelector('.product-title').textContent;
-        const price = productCard.querySelector('.product-price').textContent;
-        const imgSrc = productCard.querySelector('img').src;
-
-        addProductToCart(name, price, imgSrc);
-        
-        openCart();
-    });
-});
+// --- AÑADIR ---
 
 function addProductToCart(name, price, imgSrc) {
-    const cartItemsContainer = document.querySelector('.cart-items');
-
-    
+    const container = document.querySelector('.cart-items');
     const newCartItem = document.createElement('div');
     newCartItem.classList.add('cart-item');
 
@@ -106,7 +79,33 @@ function addProductToCart(name, price, imgSrc) {
         </button>
     `;
 
-    cartItemsContainer.appendChild(newCartItem);
-
+    container.appendChild(newCartItem);
     updateCartTotal();
+    openCart(); 
+}
+
+// --- ESCUCHADORES DE EVENTOS (BOTONES) ---
+
+const addToCartIcons = document.querySelectorAll('.cart-icon');
+addToCartIcons.forEach(icon => {
+    icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productCard = icon.closest('.product-card');
+        const name = productCard.querySelector('.product-title').textContent;
+        const price = productCard.querySelector('.product-price').textContent;
+        const imgSrc = productCard.querySelector('img').src;
+        addProductToCart(name, price, imgSrc);
+    });
+});
+
+const mainAddBtn = document.querySelector('.add-to-cart');
+if (mainAddBtn) {
+    mainAddBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const name = "Nixon";
+        const price = "269,95 €";
+        const imgSrc = "MEDIA/img/sillon.webp";
+        
+        addProductToCart(name, price, imgSrc);
+    });
 }
