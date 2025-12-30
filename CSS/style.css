@@ -114,7 +114,7 @@ body {
     position: fixed;
     top: -0.5rem;
     right: -0.5rem;
-    width: 37vw;
+    width: 730px;
     height: 92vh;
     background-color: var(--fourth-color); 
     z-index: 2001;
@@ -510,6 +510,7 @@ background-color: var(--third-color);
     display: flex;
     flex-direction: row;
     margin: 10rem;
+    overflow-x: hidden;
     gap: 9rem;
 }
 
@@ -628,20 +629,20 @@ footer {
 .silla-footer {
     rotate: 19deg;
     position: relative;
-    top: -3rem;
-    left: 85rem;
-    width: 31rem;
+    top: -5%;
+    left: 79%;
+    width: 30rem;
 }
 
 .logo-footer {
-    width: 60rem;
+    width: 52%;
 }
 
 .bottom {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    gap: 3rem;
+    justify-content: space-between;
 }
 
 .bottom2 {
@@ -673,8 +674,8 @@ footer {
   align-items: center;
   background-color: var(--second-color); 
   border-radius: 20px; 
-  padding: 1rem;
-  width: 74rem;
+  padding: 0.8rem;
+  width: 70rem;
 }
 
 .cta-form input {
@@ -746,13 +747,490 @@ footer {
 
 /* MEDIA QUERYS  */
 
-@media (max-width: 1500px) {
-.nav-left {
-    width: 40rem;
+@media (max-width: 1800px) {
+    .text-hover p {
+        font-size: clamp(3rem, 7vw, 9rem);
+    }
+   
 }
+
+@media (max-width: 1700px) {
+    .word span {
+        font-size: clamp(3rem, 17vw, 18rem);
+    }
+
+    .container-w {
+        margin-left: 8%;
+    }
+
+}
+
+@media (max-width: 1600px) {
+    .word span {
+        font-size: clamp(3rem, 17vw, 18rem);
+    }
+
+
+    .text-main-1 {
+        width: 90%;
+        gap: 13rem;
+    }
+
+    .foto-silla img {
+        width: min(28rem, 150%);
+    }
+
+    /* footer  */
+
+    .silla-footer {
+        width: 26rem;
+    }
+
+    footer {
+        height: 85vh;
+    }
+
+    .cta-text {
+        font-size: 1.8rem;
+    }
+
+    .cta-form {
+        width: 63rem;
+    }
+}
+
+
+@media (max-width: 1500px) {
+    .nav-left {
+        width: 40rem;
+    }
+
+    .word span {
+        font-size: clamp(3rem, 19vw, 18rem);
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 13rem;
+        line-height: 1.1;
+    }
+
+    .section-d {
+        margin-bottom: 6rem;
+        gap: 2rem;
+    }
+
+    .muebles {
+        margin: 7rem;
+        gap: 7rem;
+    }
+
+    .text-muebles p {
+        font-size: 1.6rem;
+    }
+
+    .text-mibo a {
+        margin-left: 7rem;
+    }
+
+    .centro-menu {
+        margin-top: 7rem;
+    }
+}
+
+
+@media (max-width: 1400px) {
+
+    /* carrito  */
+
+    .cart-panel {
+        width: 670px;
+    }
+
+    /* -- */
+
+    .container-w {
+        margin-left: 7%;
+        top: 17rem;
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 10rem;
+        line-height: 1.1;
+    }
+
+    .foto-silla img {
+        width: min(25rem, 150%);
+    }
+
+    .lampara {
+        top: 8rem !important;
+    }
+
+    .text-hover p {
+        font-size: clamp(3rem, 7.5vw, 9rem);
+        margin: 4rem;
+    }
+
+    #hover {
+        padding: 4rem;
+    }
+
+    .img-muebles img {
+        width: 27rem;
+    }
+
+    .muebles {
+        margin: 10rem 5rem 10rem 5rem;
+        gap: 5rem;
+    }
+
+    .text-mibo a {
+        margin-left: 5rem;
+        font-size: 8rem;
+    }
+
+    .text-mibo a span img {
+        width: 5.5rem;
+        margin-top: -1.5rem;
+    }
+
+    .centro-menu {
+        margin-top: 7rem;
+        gap: 1rem;
+    }
+
+    /* footer  */
+
+    .logo-footer {
+        width: 50%;
+    }
+
+    .cta-form input {
+        font-size: 1.8rem;
+    }
+
+    .silla-footer {
+        width: 23rem;
+        left: 79%;
+        top: 1%;
+        margin-bottom: 5rem;
+    }
+
+    .cta-form {
+        padding: 0.6%;
+        width: 58rem;
+    }
+
+    .form {
+        gap: 0rem;
+    }
+    
+}
+
+
+@media (max-width: 1300px) {
+
+    .container-w {
+        margin-left: 7%;
+        top: 20rem;
+    }
+
+    .foto-silla img {
+        margin-left: 0rem;
+    }
+
+    .text-muebles p {
+        font-size: 1.5rem;
+    }
+
+    .img-muebles img {
+        width: 26rem;
+    }
+
+    /* footer  */
+
+    .silla-footer {
+        width: 21rem;
+        left: 79%;
+        top: 5%;
+        margin-bottom: 11rem;
+    }
+
+    footer {
+        padding: 4rem;
+    }
+
+    .logo-footer {
+        width: 45%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .word span {
+        font-size: clamp(3rem, 20vw, 18rem);
+    }
+
+    .icon-welcome {
+        width: clamp(60px, 24vw, 22rem);
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 8rem;
+        line-height: 1;
+    }
+
+    .foto-silla img {
+        width: min(22rem, 150%);
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 8rem;
+        line-height: 1;
+    }
+
+    .texts-main p {
+        font-size: 1.4rem;
+    }
+
+    .cuadro2 {
+        top: 1rem;
+        left: 16rem;
+        rotate: -90deg;
+        width: 18rem;
+    }
+
+    .mesa {
+        top: 45rem !important;
+        left: 36rem;
+        width: 31rem;
+    }
+
+    .sillon {
+        top: 52rem !important;
+        left: 10rem;
+        width: 32rem;
+    }
+
+    .lampara {
+        top: 12rem !important;
+        left: -1rem;
+        width: 16rem;
+    }
+
+    .section-d {
+        margin-top: 0rem;
+        gap: 4rem;
+    }
+
+    .text-hover p {
+        margin: 6rem 3rem 5rem 3rem;
+    }
+
+    .text-muebles {
+        gap: 2rem;
+        line-height: 1;
+    }
+
+    .img-muebles img {
+        width: 23rem;
+    }
+
+    .text-mibo a {
+        margin-left: 5rem;
+        font-size: 7rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -1.5rem;
+    }
+
+    #galeria {
+        padding: 3rem;
+    }
+
+    .centro-menu {
+        margin-top: 6rem;
+        gap: 0.5rem;
+    }
+
+    .silla-footer {
+        width: 21rem;
+        left: 76%;
+        top: 13%;
+        margin-bottom: 12rem;
+    }
+
+    .cookies ul li {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+@media (max-width: 1100px) {
+    .container-w {
+        margin-left: 6%;
+        top: 25rem;
+    }
+
+    .silla-footer {
+        margin-bottom: 13rem;
+    }
+
+    .logo-footer {
+        width: 43%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container-w {
+        margin-left: 6%;
+        top: 29rem;
+        gap: clamp(3rem, 20vw, 12rem);
+    }
+
+    .video-h {
+        margin: 8rem auto 11rem auto;
+    }
+
+    .foto-silla img {
+        width: min(20rem, 150%);
+    }
+
+    .text-main-1 {
+        gap: 4rem;
+        margin: 1rem auto 2rem auto;
+    }
+
+    .texts-main p {
+        font-size: 1.3rem;
+    }
+
+    .lampara {
+        top: 10rem !important;
+        left: -1rem;
+        width: 16rem;
+    }
+
+    .sillon {
+        top: 53rem !important;
+        left: 9rem;
+        width: 29rem;
+    }
+
+    .mesa {
+        top: 43rem !important;
+        left: 30rem;
+        width: 30rem;
+    }
+
+    .cuadro {
+        top: 12rem;
+        left: 39rem;
+        width: 17rem;
+    }
+
+    .cuadro2 {
+        top: 5rem;
+        left: 16rem;
+        width: 18rem;
+    }
+
+    .section-d {
+        gap: 1rem;
+    }
+
+    .text-hover p {
+        font-size: clamp(3rem, 9.5vw, 9rem);
+    }
+
+    .muebles {
+        margin: 10rem 4rem 4rem 4rem;
+        gap: 4rem;
+    }
+
+    .img-muebles img {
+        width: 20rem;
+    }
+
+    .text-mibo a {
+        margin-left: 4rem;
+        font-size: 6rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -1rem;
+        width: 5rem;
+    }
+
+    #galeria {
+        padding: 2rem;
+    }
+
+    .img-izq, .img-dech {
+        width: 33%;
+    }
+
+    .centro-menu h1 {
+        font-size: clamp(2.2rem, 2vw, 5rem);
+        letter-spacing: -2px;
+    }
+
+    .centro-menu {
+        margin-top: 7rem;
+        gap: 0.5rem;
+    }
+
+    .img-dech .mueble-encima2 {
+        width: 50%;
+        top: -82%;
+        left: -13%;
+    }
+
+    .img-izq .mueble-encima {
+        top: -11%;
+        width: 57%;
+        left: 67%;
+    }
+
+    /* footer  */
+
+    .cta-text {
+        font-size: 1.6rem;
+    }
+
+    .cta-form input {
+        font-size: 1.5rem;
+    }
+
+    .cta-form {
+        width: 52rem;
+    }
+
+    .silla-footer {
+        width: 21rem;
+        left: 70%;
+        margin-bottom: 16rem;
+    }
+
+    .cookies ul li {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 3rem;
+    }
 }
 
 @media (max-width: 900px) {
+
+/* menu  */
 
 .navbar {
         display: none;
@@ -881,6 +1359,8 @@ footer {
 
 @media (max-width: 375px) {
 
+/* menu  */
+
 .mobile-bar {
     top: 2rem;
     left: 7%;
@@ -965,6 +1445,8 @@ footer {
     rotate: -8deg;
     width: 11rem;
 }
+
+/* carrito */
 
 .cart-header h2 {
     font-size: 3rem;
