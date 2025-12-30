@@ -67,3 +67,46 @@ cartItemsContainer?.addEventListener('click', (e) => {
         updateCartTotal();
     }
 });
+
+// --- CARRITO ---
+
+const addToCartIcons = document.querySelectorAll('.cart-icon');
+
+addToCartIcons.forEach(icon => {
+    icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        const productCard = icon.closest('.product-card');
+        const name = productCard.querySelector('.product-title').textContent;
+        const price = productCard.querySelector('.product-price').textContent;
+        const imgSrc = productCard.querySelector('img').src;
+
+        addProductToCart(name, price, imgSrc);
+        
+        openCart();
+    });
+});
+
+function addProductToCart(name, price, imgSrc) {
+    const cartItemsContainer = document.querySelector('.cart-items');
+
+    
+    const newCartItem = document.createElement('div');
+    newCartItem.classList.add('cart-item');
+
+    newCartItem.innerHTML = `
+        <img src="${imgSrc}" alt="${name}" class="product-img">
+        <div class="product-info">
+            <p class="product-name">${name}</p>
+            <p class="product-price">${price}</p>
+        </div>
+        <div class="quantity">1</div>
+        <button class="delete-item" aria-label="Eliminar">
+            <i class="trash-icon"></i>
+        </button>
+    `;
+
+    cartItemsContainer.appendChild(newCartItem);
+
+    updateCartTotal();
+}
