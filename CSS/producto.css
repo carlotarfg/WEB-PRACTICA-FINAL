@@ -191,7 +191,6 @@ model-viewer {
   font-weight: 400;
   color: var(--marron_oscuro);
   cursor: pointer;
-/* uniformidad */
   min-width: 180px;  
   min-height: 50px;
   display: flex;
@@ -337,13 +336,11 @@ model-viewer {
     padding: 10px 24px;
     min-width: 160px;
     min-height: 46px;
-    /* margin: 2rem; */
   }
 
   .accordion-content {
     font-size: 0.95rem;
     max-width: 100%;
-    /* margin: 2rem; */
   }
 
   .photo-gallery {
@@ -398,14 +395,12 @@ model-viewer {
   .accordion-btn {
     font-size: 1.2rem;
     padding: 12px 20px;
-    /* min-width: 100%; */
     min-height: 48px;
   }
 
   .accordion-content {
     font-size: 0.9rem;
     text-align: center;
-    /* margin-right: 2rem; */
   }
 
   .photo-gallery {
