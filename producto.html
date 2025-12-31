@@ -1,15 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MIBO - nixon</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MIBO</title>
+        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
+
 
 <!-- ----------- BOOSTRAP DESDE UN CDN ----------- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 <!-- ----------- PROPIO CSS ----------- -->
      <link rel="stylesheet" href="CSS/producto.css">
+     <link rel="stylesheet" href="CSS/style.css">
+     
 
 <!-- FONT AWESOME  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,22 +23,96 @@
   <body>
 <!-- MENU  -->
 <body>  
-    <!-- <header class="header">
-    <div class="logo">MIBO</div>
-    <nav class="nav">
-      <a href="#">catalog</a>
-      <a href="#">about us</a>
-    </nav>
-    <div class="cart">🛒</div>
-  </header> -->
 
-  <!-- PRODUCT -->
-  <main class="product">
+   <header>
+        <nav class="navbar">
+            <div class="nav-left">
+            <div class="logo">
+                <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+            </div>
+            <div class="nav-links">
+                <a href="galeria.html">catalog</a>
+                <a href="#">about us</a>
+            </div>
+            </div>
+
+            <div class="carrito">
+            <button class="cart-btn" id="cartBtnDesktop">
+                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+            </button>
+            </div>
+        </nav>
+
+        <!-- MENÚ MÓVIL  -->
+            <div class="mobile-bar">
+            <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
+
+            <button class="mobile-bar-btn" id="openMenu">⋯</button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-close" id="closeMenu">X</button>
+            <button class="cart-btn-movil" id="cartBtnMobile">
+                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+            </button>
+
+            <nav class="mobile-links">
+                <a href="producto.html">catalog</a>
+                <a href="#">about us</a>
+            </nav>
+
+            <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+
+            </div>
+
+
+        <!-- carrito -->
+       <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>CARRITO</h2>
+            <button class="close-cart" id="closeCart">X</button>
+        </div>
+
+        <div class="cart-items">
+            <div class="cart-item">
+            <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
+            <div class="product-info">
+                <p class="product-name">Munden</p>
+                <p class="product-price">435,56 €</p>
+            </div>
+            <div class="quantity">1</div>
+            </div>
+
+            <div class="cart-item">
+            <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+            <div class="product-info">
+                <p class="product-name">Nixon</p>
+                <p class="product-price">269,95 €</p>
+            </div>
+            <div class="quantity">1</div>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="subtotal">
+            <span>Subtotal</span>
+            <span>705,51 €</span>
+            </div>
+            <a class="checkout-btn" href="">FINALIZAR PAGO </a>
+        </div>
+        </div>
+
+   </header>
+
+<main class="product">
 
 <section class="product-main">
-  <div class="product-image">
-    <img id="product-img" src="MEDIA/img/sillom.png" alt="Sillón Nixon">
-  </div>
+
+  <model-viewer src="MEDIA/modelos/125719.glb" camera-controls>
+
+  </model-viewer>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
 
   <div class="product-info">
      <h1>Nixon</h1>
@@ -51,9 +130,9 @@
 </div>
 
 
-       <div class="buy">
+<div class="buy">
   <span class="price">269,95 €</span>
-  <div class="quantity">
+  <div class="quantity-product">
     <button id="minus">-</button>
     <span id="qty">1</span>
     <button id="plus">+</button>
@@ -72,8 +151,8 @@
     <div class="accordion-item">
       <button class="accordion-btn">DESCRIPCIÓN +</button>
       <div class="accordion-content"><p>Su estructura está fabricada en madera contrachapada de pino y tapizada en poliéster con acabado borreguito, un material muy resistente y con una suavidad incomparable. Nicxon destaca por presentar un diseño muy vanguardista, gracias al revestimiento de sus patas y la forma tan particular de las mismas. Cuenta con relleno de espuma, donde el respaldo tiene una densidad 20 kg/m³ y su asiento de densidad 24 kg/m³.  Incluye unos tacos antideslizantes, que le otorgan mayor seguridad y protegen tu suelo de posibles desperfectos. <br>
-
-Aconsejamos limpiarlo con un paño húmedo y evitar el uso de productos químicos.</p></div>
+        <br>
+      Aconsejamos limpiarlo con un paño húmedo y evitar el uso de productos químicos.</p></div>
     </div>
     <div class="accordion-item">
       <button class="accordion-btn">MEDIDAS +</button>
@@ -113,51 +192,84 @@ Aconsejamos limpiarlo con un paño húmedo y evitar el uso de productos químico
     <div class="accordion-item">
       <button class="accordion-btn">COLORES +</button>
       <div class="accordion-content"><p>El sillón Nixon está disponible en tres tonalidades cuidadosamente seleccionadas para adaptarse a distintos estilos de interior. El gris aporta sobriedad y equilibrio, ideal para espacios contemporáneos y minimalistas. El marrón transmite calidez y carácter, encajando especialmente bien en ambientes acogedores y naturales. Por último, el verde introduce un toque orgánico y distintivo, perfecto para quienes buscan añadir personalidad sin renunciar a la armonía del conjunto. <br>
-
-Cada color mantiene la misma textura y acabado, garantizando una estética coherente independientemente de la elección.</p></div>
+        <br>
+      Cada color mantiene la misma textura y acabado, garantizando una estética coherente independientemente de la elección.</p>
+    </div>
     </div>
   </div>
 </section>
 
 
-    <!-- GALLERY
-<section class="gallery container my-5 position-relative">
+<!-- GALERIA  -->
 
-  figura roja
-  <div class="red-shape"></div>
+<div class="container">
+  <div class="photo-gallery">
 
-  <div class="row g-4">
-    <div class="col-md-6">
-      <img src="media/habitacion.webp" class="img-fluid">
-    </div>
-    <div class="col-md-6">
-      <img src="media/naranja.webp" class="img-fluid">
-    </div>
-    <div class="col-md-4">
-      <img src="media/sillones.webp" class="img-fluid">
-    </div>
-    <div class="col-md-8">
-      <img src="img/4.jpg" class="img-fluid">
-    </div>
+   
+        <img src="MEDIA/img/producto_salon.webp" alt="">
+        <img src="MEDIA/img/producto_verde.webp" alt="">
+        <img src="MEDIA/img/producto_doble.webp" alt="">
+        <img src="MEDIA/img/producto_habitacion.webp" alt="">
+     
+        <img src="MEDIA/img/producto_zoom.jpg" alt="" srcset="">
+        <img src="MEDIA/img/producto_minimalista.webp" alt="" srcset="">
+        <img src="MEDIA/img/producto_textura.jpg" alt="" srcset="">
+        <img src="MEDIA/img/producto_sobrio.webp" alt="" srcset="">
+  
+        <img src="MEDIA/img/producto_vista_lado.webp" alt="" srcset="">
+        <img src="MEDIA/img/producto_sol.webp" alt="" srcset="">
+        <img src="MEDIA/img/producto_playa.webp" alt="" srcset="">
+        <img src="MEDIA/img/producto_pasillo.webp" alt="" srcset="">
+    
   </div>
-</section>  -->
+</div>
+
+</div>
+
+</main>
+
+<footer>
+            <div class="form">
+                <p class="cta-text">
+                    Join the community: access offers, free programs, and consumer insights
+                </p>
+
+              <form class="cta-form">
+                <input type="email" placeholder="Hello@gmail.com" required/>
+                <button type="submit" aria-label="Enviar">
+                    <img class="flecha2" src="MEDIA/img/flecha2.png" alt="flecha">
+                </button>
+              </form>
+
+            </div>
+
+            <img class="silla-footer" src="MEDIA/svg/Recurso 12.svg" alt="silla amarilla">
+
+            <div class="bottom">
+                    <div class="logo-footer">
+                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                    </div>                
+                    <div>
+                    <div class="bottom2">
+                        <div class="socials">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-tiktok"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-x-twitter"></i>                       
+                         </div>
+                        <div class="cookies">
+                            <ul>
+                                <li>Terms & Conditions</li>
+                                <li>©2025 Mibo. All rights reserved.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
 
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="newsletter">
-      <p>Join the community access offers, new programs, and consumer insights</p>
-      <input type="email" placeholder="Hello@gmail.com">
-    </div>
-    <div class="footer-logo">MIBO</div>
-  </footer>
-
-
-
-<!-- JAVASCRIPT LENIS -->
-  <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script> 
 
 <!-- JAVASCRIPT BOOTSTRAP  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -165,12 +277,15 @@ Cada color mantiene la misma textura y acabado, garantizando una estética coher
 <!-- JAVASCRIPT: JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- GSAP + ScrollTrigger (CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>   
+ <!-- GSAP -->
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-<!-- MY JS SCRIPT  -->
-  <script src="JS/producto.js"></script>
+
+        <!-- MI JS  -->
+        <script src="js/menu.js"></script>
+        <script src="js/carrito.js"></script>
+        <script src="js/producto.js"></script>
 
   </body>
 </html>

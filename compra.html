@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MIBO PAGO</title>
+        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
+
+<!-- __________ BOOSTRAP DESDE UN CDN __________ -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<!-- __________ PROPIO CSS __________ -->
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/compra.css">
+
+<!-- __________ FONT AWESOME __________ -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="nav-left">
+                <div class="logo">
+                    <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+                </div>
+                <div class="nav-links">
+                    <a href="producto.html">catalog</a>
+                    <a href="#">about us</a>
+                </div>
+                </div>
+
+                <div class="carrito">
+                <button class="cart-btn" id="cartBtnDesktop">
+                    <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                </button>
+                </div>
+            </nav>
+
+<!-- __________ MENÚ MÓVIL __________ -->
+            <div class="mobile-bar">
+                <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
+                <button class="mobile-bar-btn" id="openMenu">⋯</button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="mobile-close" id="closeMenu">X</button>
+                <button class="cart-btn-movil" id="cartBtnMobile">
+                    <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                </button>
+                <nav class="mobile-links">
+                    <a href="producto.html">catalog</a>
+                    <a href="#">about us</a>
+                </nav>
+                <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+            </div>
+
+<!-- __________ CARRITO __________ -->
+            <div class="cart-panel" id="cartPanel">
+                <div class="cart-header">
+                    <h2>CARRITO</h2>
+                    <button class="close-cart" id="closeCart">X</button>
+                </div>
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="MEDIA/img/mesa.webp" alt="Sillón Nixon" class="product-img">
+                        <div class="product-info">
+                            <p class="product-name">Sillón Nixon</p>
+                            <p class="product-price">269,95 €</p>
+                        </div>
+                        <div class="quantity">1</div>
+                    </div>
+                    <div class="cart-item">
+                        <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+                        <div class="product-info">
+                            <p class="product-name">Sillón Nixon</p>
+                            <p class="product-price">269,95 €</p>
+                        </div>
+                        <div class="quantity">1</div>
+                    </div>
+                </div>
+                <div class="cart-footer">
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <span>269,95 €</span>
+                    </div>
+                    <button class="checkout-btn">FINALIZAR PAGO</button>
+                </div>
+            </div>
+        </header>
+
+<!-- __________ IZQUIERDO __________ -->
+
+        <main class="checkout-layout">
+            <div class="checkout-left">
+                <h1>Carrito</h1>
+
+    <!-- _____ PRODUCTOS CHECKOUT IZQUIERDO _____ -->
+                <section class="checkout-product">
+                    <div class="product-card">
+                        <img src="MEDIA/svg/sillon_header.svg" alt="Sillón Nixon">
+                        <div class="product-info">
+                            <h2>Sillón Nixon</h2>
+                            <p class="price">269,95 €</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="checkout-product">
+                    <div class="product-card">
+                        <img src="MEDIA/img/mesa.webp" alt="Mesa">
+                        <div class="product-info">
+                            <h2>Mesa noseque</h2>
+                            <p class="price">269,95 €</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="product-total">
+                    <span>Total:</span>
+                    <strong>269,95 €</strong>
+                </div>
+                <section class="checkout-finalizar">
+                    <a href="#" class="continue-shopping">Sigue comprando →</a>
+                    <button class="btn-primary">Finalizar compra</button>
+                </section>
+            </div>
+
+<!-- __________ DERECHO __________ -->
+            <div class="checkout-right">
+                <section class="checkout-form">
+                    <form>
+                        <div class="row">
+    <!-- _____ INFORMACIÓN USUARIO _____ -->
+                            <div class="input-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" placeholder="Ej: John" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="apellidos">Apellidos:</label>
+                                <input type="text" id="apellidos" placeholder="Ej: Doe" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="dirección">Dirección:</label>
+                                <input type="text" placeholder="Ej: C/..." required>
+                            </div>
+                            <div class="input-group">
+                                <label for="apartamento">Apartamento, casa, etc. (opcional):</label>
+                                <input type="text" placeholder="Ej: Apartamento 2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="código postal">Código Postal:</label>
+                                <input type="text" placeholder="Ej: 00000" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="teléfono">Número de Teléfono:</label>
+                                <input type="text" placeholder="Ej: 000 00 00 00" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="País">País:</label>
+                                <input type="text" placeholder="Ej: España" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="Ciudad">Ciudad:</label>
+                                <input type="text" placeholder="Ej: Madrid" required>
+                            </div>
+                        </div>
+
+    <!-- _____ MÉTODO DE PAGO _____ -->
+                        <div class="payment">
+                            <p>Método de pago</p>        
+                            <div class="tabs">
+                                <button class="tab" data-category="mastercard">
+                                    <img class="methods_type_mc" src="MEDIA/img/Mastercard-Logo.png" alt="Mastercard">
+                                </button>
+                                <button class="tab" data-category="visa">
+                                    <img class="methods_type_visa"  src="MEDIA/svg/Visa_Inc._logo.svg.webp" alt="Visa">
+                                </button>
+                                <button class="tab" data-category="paypal">
+                                    <img class="methods_type_pp" src="MEDIA/svg/PayPal.svg.webp" alt="PayPal">
+                                </button>
+                            </div>
+                        </div>
+
+<!-- __________ CLICKAR IMG SALEN RESULTADOS DIFERENTES __________ -->
+
+    <!-- _____ MASTERCARD _____ -->
+
+                        <div class="content">
+                        <div class="category mastercard">
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="nombre">Nombre del titular:</label>
+                                    <input type="text" placeholder="Ej: John Doe" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="número tarjeta">Número de la tarjeta:</label>
+                                    <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="Fecha caducidad">Fecha de caducidad:</label>
+                                    <input type="text" placeholder="Ej: 00/00" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="código seguridad">Código de seguridad (CVC2):</label>
+                                    <input type="text" placeholder="000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="dirección facturación">Dirección de facturación:</label>
+                                <input type="text" placeholder="Ej: C/...." required>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- _____ VISA _____ -->
+
+                        <div class="content">
+                        <div class="category visa">
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="nombre">Nombre del titular:</label>
+                                    <input type="text" placeholder="Ej: John Doe" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="número tarjeta">Número de la tarjeta:</label>
+                                    <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="Fecha caducidad">Fecha de caducidad:</label>
+                                    <input type="text" placeholder="Ej: 00/00" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="código seguridad">Código de seguridad (CVV):</label>
+                                    <input type="text" placeholder="Ej: 000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="dirección facturación">Dirección de facturación:</label>
+                                <input type="text" placeholder="Ej: C/...." required>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- _____ PAYPAL _____ -->
+
+                        <div class="content">
+                        <div class="category paypal">
+                            <p>Serás redirigido a PayPal para completar tu pago de forma segura.</p>
+                        </div>
+
+
+                        <label class="remember">
+                            <input class="checkbox_remember" type="checkbox" required> Guardar mi información para pagar más rápido
+                        </label>
+                    </form>
+                </section>
+
+            </div>
+        </main>
+
+<!-- __________ JAVASCRIPT BOOTSTRAP __________ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- __________ JAVASCRIPT: JQUERY __________ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- __________ GSAP __________ -->
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+
+<!-- __________ MI JAVASCRIPT __________  -->
+        <script src="js/menu.js"></script>
+        <script src="js/carrito.js"></script>
+        <script src="js/script.js"></script>
+        <script src="JS/compra.js"></script>
+    </body>
+</html>

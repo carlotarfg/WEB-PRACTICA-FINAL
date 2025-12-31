@@ -1,0 +1,295 @@
+/* ----------- Fuentes ----------- */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ----------- Variables ----------- */
+:root {
+    --titulos_tipo: 'Londrina Solid';
+    --textos_tipo: 'Inter';
+    --marron_oscuro: #471406;
+    --background: #F6EEDF;
+    --background_check_right: #f0e1c6;
+    --footer-back: #2E5098;
+}
+
+
+/* ----------- RESET ----------- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--background);
+  font-family: var(--textos_tipo);
+}
+
+/* ----------- AJUSTAR HEADER Y QUE FUNCIONE LA MITAD DE LO ENTERO ----------- */
+
+/* header {
+  height: 80px;
+  background: linear-gradient(to right, var(--background) 50%, var(--background_check_right) 50%);
+} */
+
+
+.checkout-layout {
+  display: flex;
+  height: calc(100vh - 80px); 
+}
+
+.checkout-left::-webkit-scrollbar,
+.checkout-right::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* columnas */
+.checkout-left,
+.checkout-right {
+  width: 50%;
+  overflow-y: auto;
+  padding: 2rem;
+  padding-top: 7rem;
+  -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* ----------- PARA QUE NO DE ERROR EL PANEL DEL CARRITO ----------- */
+
+.cart-panel {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+/* Borde normal gris */
+input {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+
+/* ----------- CSS DEL CHECKOUT IZQUIERDO ----------- */
+
+.checkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.product {
+  padding: 60px;
+  background: #f6efe4;
+}
+
+.checkout-form {
+  padding: 60px;
+  background: var(--background_check_right);
+}
+
+.product-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.product-card img {
+  width: 200px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  font-weight: bold;
+}
+
+.checkout-left h1 {
+  font-family: var(--titulos_tipo);
+  color: var(--footer-back);
+  font-size: 5rem;
+}
+
+.checkout-product {
+  padding-bottom: 3rem;
+}
+
+
+/* ----------- CSS DEL CHECKOUT DERECHO ----------- */
+
+.checkout-right {
+  width: 50%;
+  overflow-y: auto;
+  background: var(--background_check_right);
+  height: 100vh;
+  box-sizing: border-box; 
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  background: var(--footer-back);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+} 
+
+.payment {
+  padding-bottom: 2rem;
+}
+
+.payment .methods {
+  display: flex;
+  gap: 15px;           
+  align-items: center;  
+}
+
+.payment .methods_type_mc {
+  height: 29px;         
+  width: auto;          
+  object-fit: contain;  
+}
+
+.payment .methods_type_visa {
+  height: 25px;         
+  width: auto;          
+  object-fit: contain;  
+}
+
+.payment .methods_type_pp {
+  height: 31px;        
+  width: auto;          
+  object-fit: contain; 
+}
+
+.checkout-form .input-group > * {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  margin-left: 0 !important;
+}
+
+.checkout-right .checkout-form .row .input-group label {
+  padding-bottom: 1rem;
+}
+
+/* ___ PARA CLICKAR IMG Y QUE SE VEAN DIFERENTES OPCIONES ___ */
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5%;
+  margin-left: 1%;
+  gap: 1%;
+}
+  
+.tab {
+  padding: 10px 20px;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: var(--textos_tipo);
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+  
+.tab:hover {
+  background: var(--background);
+}
+
+.tab.active {
+  background: var(--background);
+  border-radius: 11px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category {
+  display: none;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category.active {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* ____ CHECKBOX AL LADO FRASE ____ */
+
+label.remember {
+  display: flex;
+  align-items: center;      
+  gap: 10px;                
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  white-space: nowrap;      
+}
+
+input.checkbox_remember {
+  width: 18px;              
+  height: 18px;             
+  vertical-align: middle;   
+  margin: 0;                
+}
+
+
+
+
+
+
+
+
+
+/* ----------- MEDIA QUERYS ----------- */
+
+/* ----------- MEDIA QUERYS MOVIL ----------- */
+
+@media (max-width: 991px) {
+  body {
+    overflow: auto;
+  }
+
+  .checkout-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .checkout-left,
+  .checkout-right {
+    width: 100%;
+    overflow: visible;
+  }
+}

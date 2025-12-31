@@ -1,31 +1,2294 @@
 /* VARIABLES CSS */
 
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 :root {
+  --font-primary:'Inter' ;
+  --font-secundary: 'Londrina Solid';
   --primary-color: #FDF3E2;
-  --sedond-color: #471406;
+  --second-color: #471406;
   --third-color: #2E5098;
   --fourth-color: #FAE9CF;
-  --font-size: 18px;
-  --font-primary: 'Inter Tight', sans-serif;
-  --font-secondary: 'Londrina Solid'; 
-  --font-tertiary: 'Londrina Solid Light'; 
+  --yellow: #FDB309;
 }
 
-.inter-tight {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
+
+/* GENERAL  */
+* {
+    font-family: var(--font-primary);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -1px;
 }
 
-.londrina-solid-light {
-  font-family: "Londrina Solid Light", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+body {
+    background-color: var(--primary-color);
 }
 
-.londrina-solid-regular {
-  font-family: "Londrina Solid", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+/* MENU */
+
+.navbar {
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    border-radius: 10px;
+    padding: 1rem;
+    gap: 2rem; 
+    z-index: 1000; 
+    flex-wrap: nowrap;   
+}
+
+.nav-left {
+    background-color: var(--second-color);
+    border-radius: 10px;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.logo img {
+    height: 2.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.carrito {
+    background-color: var(--second-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-btn img {
+    width: 2.5rem;
+    height: auto;
+
+}
+
+/* MENU MOVIL  */
+
+.mobile-bar {
+    display: none;
+}
+.mobile-menu {
+    display: none;
+}
+
+
+/* CARRITO  */
+
+.cart-panel {
+    position: fixed;
+    top: -0.5rem;
+    right: -0.5rem;
+    width: 730px;
+    height: 92vh;
+    background-color: var(--fourth-color); 
+    z-index: 2001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    overflow-y: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); 
+}
+
+.cart-panel.open {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-bottom: 2px solid var(--third-color);
+}
+
+.cart-header h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: var(--font-secundary);
+    color: var(--third-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 5em;
+    font-family: var(--font-secundary);
+    color: var(--third-color);
+    line-height: 1;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 8px;
+}
+
+.product-img {
+    width: 20rem;
+    height: auto;
+}
+
+.product-info {
+flex-grow: 1;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--second-color);
+    margin: 6rem 0 0 0;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: var(--second-color);
+    margin: 0;
+    opacity: 0.7;
+}
+
+.quantity {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+    border: 2px solid var(--second-color); 
+    border-radius: 6px;
+    font-weight: bold;
+    color: var(--second-color);
+    font-size: 1rem;
+}
+
+.cart-footer {
+    padding-top: 1rem;
+    border-top: 2px solid var(--third-color);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    margin-top: 9rem;
+    flex-direction: column;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--third-color);
+}
+
+.subtotal span:last-child {
+    font-weight: 700;
+}
+
+.checkout-btn {
+    background-color: var(--third-color);
+    font-family: var(--font-secundary);
+    color: var(--primary-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    text-decoration: none;
+
+}
+
+.checkout-btn:hover {
+    background-color: var(--third-color);
+}
+
+.delete-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 7.5rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.delete-item:hover {
+    transform: scale(1.1);
+}
+
+.trash-icon {
+    position: relative;
+    width: 1rem;
+    height: 16px;
+    border: 3px solid var(--second-color); 
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+}
+
+.trash-icon::before { 
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 20px;
+    height: 3px;
+    background: var(--second-color);
+}
+
+.trash-icon::after { 
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 1px;
+    width: 8px;
+    height: 3px;
+    border: 3px solid var(--second-color);
+    border-bottom: none;
+}
+
+
+/* HEADER  */
+
+
+#welcome {
+    background-color: var(--third-color);
+    height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.container-w {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(3rem, 14vw, 10rem);
+    position: relative;
+    top: 14rem;
+    margin-left: 6%;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.left-section {
+    flex: 0.8;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.word {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    line-height: 0.9;
+    font-weight: bold;
+    letter-spacing: 3px;
+    flex-wrap: nowrap;
+}
+
+.word span {
+    font-size: clamp(3rem, 15vw, 18rem);
+    color: var(--primary-color);
+    letter-spacing: 10px;
+    font-family: var(--font-secundary);
+    max-width: 100%;
+}
+
+.icon-welcome {
+    width: clamp(60px, 18vw, 22rem);
+    height: auto;
+}
+
+.icon-welcome2 {
+    width: clamp(60px, 6vw, 10rem);
+    height: auto;
+}
+
+.right-section {
+    flex: 0 1 22rem;
+    font-size: clamp(0.8rem, 3vw, 1.7rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-align: left;
+    color: var(--primary-color);
+}
+
+/* VIDEO */
+
+.video-h {
+    border-radius: 10px;
+    margin: 8rem auto 15rem auto;
+    width: min(90%, 100rem);
+    position: relative;
+    display: block;
+}
+
+/* TEXT 1 */
+
+.text-main-1 {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 7rem auto 5rem auto;
+    line-height: 1.2;
+    text-align: justify;
+    gap: 16rem;
+    box-sizing: border-box;
+}
+
+.texts-main {
+    display: flex;
+    gap: 2rem;
+    width: 62%;
+    flex-direction: column;
+}
+
+.texts-main p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--second-color);
+}
+
+.texts-main p:last-child {
+    margin-left: 3rem;
+}
+
+.foto-silla img {
+    width: min(30rem, 150%);
+    margin-left: 2rem;
+    display: block;
+}
+
+/* IMG ARRASTABLES  */
+
+/* MARQUEE  */
+
+.marquework {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.marquework .wrapper {
+    display: flex;
+    align-items: center;
+    animation: marquework 15s linear infinite;
+    width: max-content; 
+}
+
+.marquework h1 {
+    color: var(--third-color);
+    font-family: var(--font-secundary);
+    font-size: 7rem;
+    white-space: nowrap;
+    padding: 0 0.3%;
+    margin-top: 8rem;
+}
+
+@keyframes marquework {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* DRAG  */
+
+.drag-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  overflow: hidden;
+  z-index: 1;
+  flex: 1;
+}
+
+.draggable {
+  position: absolute;
+  width: 90%;
+  cursor: grab;
+}
+
+.cuadro {
+    top: 10rem;
+    left: 39rem;
+    width: 20rem;
+}
+
+.cuadro2 {
+    top: 1rem;
+    left: 11rem;
+    rotate: -90deg;
+    width: 20rem;
+}
+
+.sillon {
+    top: 46rem !important;
+    left: 13rem;
+    width: 35rem;
+}
+
+.mesa {
+    top: 42rem !important;
+    left: 42rem;
+    width: 35rem;
+}
+
+.lampara {
+    top: 23rem !important;
+    left: 1rem;
+    width: 17rem;
+}
+
+
+.section-d {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 7rem;
+    margin-top: 4rem;
+}
+
+.text-drag {
+    z-index: 10;
+
+}
+
+.text-drag a {
+    text-decoration: none;
+    color: var(--third-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: -36rem;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+
+}
+
+/* TRAIL IMG  */
+
+#hover {
+  background-color: var(--fourth-color);
+  padding: 5rem;
+  margin-bottom: 5rem;
+}
+
+.text-hover p {
+  font-size: clamp(3rem, 8vw, 9rem);
+  text-transform: uppercase;
+  color: var(--third-color);
+  font-family: var(--font-secundary);
+  margin: 6rem;
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.trail-img {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 8rem;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+
+/* TEXTOS 2  */
+
+.muebles {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem;
+    overflow: hidden;
+    gap: 9rem;
+}
+
+.text-muebles {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    line-height: 1.1;   
+}
+
+.text-muebles p {
+    font-size: 1.7rem;
+    color: var(--second-color);
+    text-align: justify;
+}
+
+
+.img-muebles img {
+    width: 30rem;
+}
+
+.text-mibo a {
+    font-family: var(--font-secundary);
+    color: var(--third-color);
+    font-size: 9rem;
+    width: 70%;
+    margin-left: 10rem;
+    text-decoration: none;
+}
+
+.text-mibo a span img{
+    width: 6.5rem;
+    margin-top: -1.5rem;
+}
+
+/* GALERIA CAMBIANTE  */
+
+#galeria {
+ display: flex;
+    overflow-x: hidden;
+    padding: 4rem;
+}
+
+.galeria-contenedor {
+  display: flex;
+    margin-top: 11rem;
+    justify-content: space-between;
+}
+
+.img-izq, .img-dech {
+  width: 30%; 
+}
+
+.img-izq img, .img-dech img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  width: 100%;
+
+}
+
+.centro-menu {
+  text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 11rem;
+}
+
+.centro-menu h1 {
+    font-size: clamp(3rem, 2.7vw, 6rem);
+    color: var(--third-color);
+    letter-spacing: -3px;
+    cursor: pointer;
+    margin: 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    line-height: 1;
+}
+
+.centro-menu:hover h1 {
+  opacity: 0.3;
+}
+
+.centro-menu h1:hover {
+  opacity: 1;
+  color: var(--third-color);
+}
+
+.img-izq .mueble-encima {
+    z-index: 5;
+    top: -18%;
+    position: relative;
+    width: 55%;
+    left: 67%;
+}
+
+.img-dech .mueble-encima2 {
+     z-index: 5;
+    position: relative;
+    width: 47%;
+    top: -77%;
+    left: -21%;
+}
+
+
+/* FOOTER  */
+
+footer {
+    background-color: var(--third-color);
+    position: absolute;
+    width: 100%;
+    height: 95vh;
+    padding: 5rem;
+    overflow: hidden;
+}
+
+.silla-footer {
+    rotate: 19deg;
+    position: relative;
+    top: -5%;
+    left: 79%;
+    width: 30rem;
+}
+
+.logo-footer {
+    width: 52%;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.bottom2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.cookies ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.cookies ul li {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.cta-text {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.cta-form {
+  display: flex;
+  align-items: center;
+  background-color: var(--second-color); 
+  border-radius: 20px; 
+  padding: 0.8rem;
+  width: 70rem;
+}
+
+.cta-form input {
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  flex-grow: 1; 
+  outline: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.cta-form input::placeholder {
+  color: var(--primary-color);
+  opacity: 0.4;
+}
+
+.cta-form button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    font-size: 24px;
+}
+
+.cta-form button:hover {
+  transform: scale(1.05);
+}
+
+.flecha-f img{
+      mix-blend-mode: multiply;
+
+}
+
+.socials {
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: right;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERYS  */
+
+@media (max-width: 1800px) {
+    .text-hover p {
+        font-size: clamp(3rem, 7vw, 9rem);
+    }
+   
+}
+
+@media (max-width: 1700px) {
+    .word span {
+        font-size: clamp(3rem, 17vw, 18rem);
+    }
+
+    .container-w {
+        margin-left: 8%;
+    }
+
+}
+
+@media (max-width: 1600px) {
+    .word span {
+        font-size: clamp(3rem, 17vw, 18rem);
+    }
+
+
+    .text-main-1 {
+        width: 90%;
+        gap: 13rem;
+    }
+
+    .foto-silla img {
+        width: min(28rem, 150%);
+    }
+
+    /* footer  */
+
+    .silla-footer {
+        width: 26rem;
+    }
+
+    footer {
+        height: 85vh;
+    }
+
+    .cta-text {
+        font-size: 1.8rem;
+    }
+
+    .cta-form {
+        width: 63rem;
+    }
+}
+
+
+@media (max-width: 1500px) {
+    .nav-left {
+        width: 40rem;
+    }
+
+    .word span {
+        font-size: clamp(3rem, 19vw, 18rem);
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 13rem;
+        line-height: 1.1;
+    }
+
+    .section-d {
+        margin-bottom: 6rem;
+        gap: 2rem;
+    }
+
+    .muebles {
+        margin: 7rem;
+        gap: 7rem;
+    }
+
+    .text-muebles p {
+        font-size: 1.6rem;
+    }
+
+    .text-mibo a {
+        margin-left: 7rem;
+    }
+
+    .centro-menu {
+        margin-top: 7rem;
+    }
+}
+
+
+@media (max-width: 1400px) {
+
+    /* carrito  */
+
+    .cart-panel {
+        width: 670px;
+    }
+
+    /* -- */
+
+    .container-w {
+        margin-left: 7%;
+        top: 17rem;
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 10rem;
+        line-height: 1.1;
+    }
+
+    .foto-silla img {
+        width: min(25rem, 150%);
+    }
+
+    .lampara {
+        top: 8rem !important;
+    }
+
+    .text-hover p {
+        font-size: clamp(3rem, 7.5vw, 9rem);
+        margin: 4rem;
+    }
+
+    #hover {
+        padding: 4rem;
+    }
+
+    .img-muebles img {
+        width: 27rem;
+    }
+
+    .muebles {
+        margin: 10rem 5rem 10rem 5rem;
+        gap: 5rem;
+    }
+
+    .text-mibo a {
+        margin-left: 5rem;
+        font-size: 8rem;
+    }
+
+    .text-mibo a span img {
+        width: 5.5rem;
+        margin-top: -1.5rem;
+    }
+
+    .centro-menu {
+        margin-top: 7rem;
+        gap: 1rem;
+    }
+
+    /* footer  */
+
+    .logo-footer {
+        width: 50%;
+    }
+
+    .cta-form input {
+        font-size: 1.8rem;
+    }
+
+    .silla-footer {
+        width: 23rem;
+        left: 79%;
+        top: 1%;
+        margin-bottom: 5rem;
+    }
+
+    .cta-form {
+        padding: 0.6%;
+        width: 58rem;
+    }
+
+    .form {
+        gap: 0rem;
+    }
+    
+}
+
+
+@media (max-width: 1300px) {
+
+    .container-w {
+        margin-left: 7%;
+        top: 20rem;
+    }
+
+    .foto-silla img {
+        margin-left: 0rem;
+    }
+
+    .text-muebles p {
+        font-size: 1.5rem;
+    }
+
+    .img-muebles img {
+        width: 26rem;
+    }
+
+    /* footer  */
+
+    .silla-footer {
+        width: 21rem;
+        left: 79%;
+        top: 5%;
+        margin-bottom: 11rem;
+    }
+
+    footer {
+        padding: 4rem;
+    }
+
+    .logo-footer {
+        width: 45%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .word span {
+        font-size: clamp(3rem, 20vw, 18rem);
+    }
+
+    .icon-welcome {
+        width: clamp(60px, 24vw, 22rem);
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 8rem;
+        line-height: 1;
+    }
+
+    .foto-silla img {
+        width: min(22rem, 150%);
+    }
+
+    .text-main-1 {
+        width: 89%;
+        gap: 8rem;
+        line-height: 1;
+    }
+
+    .texts-main p {
+        font-size: 1.4rem;
+    }
+
+    .cuadro2 {
+        top: 1rem;
+        left: 16rem;
+        rotate: -90deg;
+        width: 18rem;
+    }
+
+    .mesa {
+        top: 45rem !important;
+        left: 36rem;
+        width: 31rem;
+    }
+
+    .sillon {
+        top: 52rem !important;
+        left: 10rem;
+        width: 32rem;
+    }
+
+    .lampara {
+        top: 12rem !important;
+        left: -1rem;
+        width: 16rem;
+    }
+
+    .section-d {
+        margin-top: 0rem;
+        gap: 4rem;
+    }
+
+    .text-hover p {
+        margin: 6rem 3rem 5rem 3rem;
+    }
+
+    .text-muebles {
+        gap: 2rem;
+        line-height: 1;
+    }
+
+    .img-muebles img {
+        width: 23rem;
+    }
+
+    .text-mibo a {
+        margin-left: 5rem;
+        font-size: 7rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -1.5rem;
+    }
+
+    #galeria {
+        padding: 3rem;
+    }
+
+    .centro-menu {
+        margin-top: 6rem;
+        gap: 0.5rem;
+    }
+
+    .silla-footer {
+        width: 21rem;
+        left: 76%;
+        top: 13%;
+        margin-bottom: 12rem;
+    }
+
+    .cookies ul li {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+@media (max-width: 1100px) {
+    .container-w {
+        margin-left: 6%;
+        top: 25rem;
+    }
+
+    .silla-footer {
+        margin-bottom: 13rem;
+    }
+
+    .logo-footer {
+        width: 43%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container-w {
+        margin-left: 6%;
+        top: 29rem;
+        gap: clamp(3rem, 20vw, 12rem);
+    }
+
+    .video-h {
+        margin: 8rem auto 11rem auto;
+    }
+
+    .foto-silla img {
+        width: min(20rem, 150%);
+    }
+
+    .text-main-1 {
+        gap: 4rem;
+        margin: 1rem auto 2rem auto;
+    }
+
+    .texts-main p {
+        font-size: 1.3rem;
+    }
+
+    .lampara {
+        top: 10rem !important;
+        left: -1rem;
+        width: 16rem;
+    }
+
+    .sillon {
+        top: 53rem !important;
+        left: 9rem;
+        width: 29rem;
+    }
+
+    .mesa {
+        top: 43rem !important;
+        left: 30rem;
+        width: 30rem;
+    }
+
+    .cuadro {
+        top: 12rem;
+        left: 39rem;
+        width: 17rem;
+    }
+
+    .cuadro2 {
+        top: 5rem;
+        left: 16rem;
+        width: 18rem;
+    }
+
+    .section-d {
+        gap: 1rem;
+    }
+
+    .text-hover p {
+        font-size: clamp(3rem, 9.5vw, 9rem);
+    }
+
+    .muebles {
+        margin: 10rem 4rem 4rem 4rem;
+        gap: 4rem;
+    }
+
+    .img-muebles img {
+        width: 20rem;
+    }
+
+    .text-mibo a {
+        margin-left: 4rem;
+        font-size: 6rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -1rem;
+        width: 5rem;
+    }
+
+    #galeria {
+        padding: 2rem;
+    }
+
+    .img-izq, .img-dech {
+        width: 33%;
+    }
+
+    .centro-menu h1 {
+        font-size: clamp(2.2rem, 2vw, 5rem);
+        letter-spacing: -2px;
+    }
+
+    .centro-menu {
+        margin-top: 7rem;
+        gap: 0.5rem;
+    }
+
+    .img-dech .mueble-encima2 {
+        width: 50%;
+        top: -82%;
+        left: -13%;
+    }
+
+    .img-izq .mueble-encima {
+        top: -11%;
+        width: 57%;
+        left: 67%;
+    }
+
+    /* footer  */
+
+    .cta-text {
+        font-size: 1.6rem;
+    }
+
+    .cta-form input {
+        font-size: 1.5rem;
+    }
+
+    .cta-form {
+        width: 52rem;
+    }
+
+    .silla-footer {
+        width: 21rem;
+        left: 70%;
+        margin-bottom: 16rem;
+    }
+
+    .cookies ul li {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* menu  */
+
+    .navbar {
+            display: none;
+    }
+
+    .mobile-bar {
+        position: fixed;
+        top: 2rem;
+        left: 7%;
+        width: 85%;
+        background: var(--second-color);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .mobile-bar-logo {
+        height: 32px;
+    }
+
+    .mobile-bar-btn {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 32px;
+        line-height: 1;
+    }
+
+    .mobile-open {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: var(--primary-color);
+    }
+
+    .mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: var(--second-color); 
+        z-index: 2000;
+        display: none;
+        
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-close {
+        position: absolute;
+        font-family: var(--font-secundary);
+        top: 3rem;
+        left: 4rem;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 3rem;
+    }
+
+    .cart-btn-movil {
+        position: absolute;
+        top: 4rem;
+        right: 3rem;
+        background: none;
+        border: none;
+    }
+
+    .cart-btn-movil img {
+        width: 3rem;
+    }
+
+    .mobile-links {
+        position: absolute;
+        bottom: 5rem;
+        left: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .mobile-links a {
+        color: var(--primary-color);
+        font-size: 3rem;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .mobile-deco {
+        position: absolute;
+        position: absolute;
+        right: -2rem;
+        bottom: 4.7rem;
+        rotate: -8deg;
+        width: 16rem;
+    }
+
+    /* CARRITO  */
+
+    .cart-panel {
+        position: fixed;
+        top: 0rem;
+        right: 0rem;
+        border-radius: 0px;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .cart-footer {
+        padding-top: 1rem;
+        border-top: 2px solid var(--third-color);
+        display: flex;
+        gap: 1rem;
+        align-items: flex-end;
+        margin-top: 13rem;
+        flex-direction: column;
+    }
+
+    /* --  */
+
+    .container-w {
+        margin-left: 8%;
+        top: 20rem;
+        gap: clamp(3rem, 10vw, 12rem);
+        flex-direction: column;
+        width: 90vw;
+        align-items: flex-start;
+    }
+
+    .word span {
+        font-size: clamp(3rem, 23vw, 18rem);
+    }
+    
+    .word {
+        gap: 2rem;
+        line-height: 0.8;
+    }
+
+    .right-section {
+        margin-left: 51%;
+        width: 45%;
+    }
+
+    .icon-welcome {
+        width: clamp(60px, 30vw, 22rem);
+    }
+
+    .icon-welcome2 {
+        width: clamp(60px, 9vw, 10rem);
+        height: auto;
+    }
+
+    .foto-silla img {
+        width: min(18rem, 150%);
+    }
+
+    .text-main-1 {
+        width: 88%;
+    }
+
+    .mesa {
+        top: 45rem !important;
+        left: 25rem;
+        width: 27rem;
+    }
+
+    .sillon {
+        top: 56rem !important;
+        left: 9rem;
+        width: 26rem;
+    }
+
+    .cuadro2 {
+        top: 5rem;
+        left: 13rem;
+        width: 18rem;
+    }
+
+    .cuadro {
+        top: 12rem;
+        left: 36rem;
+        width: 17rem;
+    }
+
+    .text-hover p {
+        font-size: clamp(3rem, 10vw, 9rem);
+    }
+
+    .muebles {
+        margin: 10rem 3rem 4rem 3rem;
+        gap: 3rem;
+    }
+
+    .text-muebles p {
+        font-size: 1.4rem;
+    }
+
+    .galeria-contenedor {
+        display: flex;
+        margin-top: 8rem;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-izq, .img-dech {
+        width: 83%;
+    }
+
+    .img-izq .mueble-encima {
+        top: -11%;
+        width: 37%;
+        left: 76%;
+    }
+
+    .img-dech .mueble-encima2 {
+        width: 30%;
+        top: -88%;
+        left: -8%;
+    }
+
+    .centro-menu {
+        margin-bottom: 7rem;
+        margin-top: -7rem;
+        gap: 0.5rem;
+    }
+
+    /* footer  */
+
+    .cta-form {
+        width: 49rem;
+    }
+
+    .cookies ul li {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .container-w {
+        margin-left: 9%;
+        top: 22rem;
+        gap: clamp(3rem, 16vw, 12rem);
+        width: 90vw;
+    }
+
+    .texts-main {
+        display: flex;
+        gap: 2rem;
+        width: 54%;
+        flex-direction: column;
+    }
+    .texts-main p {
+        font-size: 1.3rem;
+    }
+
+    .foto-silla img {
+        width: min(18rem, 150%);
+    }
+
+    .sillon {
+        top: 58rem !important;
+        left: 4rem;
+        width: 25rem;
+    }
+
+    .mesa {
+        top: 45rem !important;
+        left: 21rem;
+        width: 26rem;
+    }
+    .lampara {
+        top: 14rem !important;
+        left: -2rem;
+        width: 14rem;
+    }
+
+    .cuadro2 {
+        top: 10rem;
+        left: 11rem;
+        width: 15rem;
+    }
+
+    .cuadro {
+        top: 16rem;
+        left: 30rem;
+        width: 15rem;
+    }
+
+    .img-muebles img {
+        width: 19rem;
+    }
+
+    .muebles {
+        margin: 10rem 3rem 4rem 3rem;
+        gap: 3rem;
+    }
+
+    .text-mibo a {
+        margin-left: 3rem;
+        font-size: 5rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -1rem;
+        width: 4rem;
+    }
+
+
+    /* footer  */
+
+    .cta-form {
+        width: 43rem;
+        border-radius: 19px;
+    }
+
+    .cta-form input {
+        font-size: 1.4rem;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+    }
+
+    .cta-form button {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .silla-footer {
+        width: 21rem;
+        left: 59%;
+        margin-bottom: 16rem;
+    }
+
+    .logo-footer {
+        width: 81%;
+    }
+
+    .cookies ul {
+        line-height: 1;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        text-align: end;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .icon-welcome2 {
+        width: clamp(60px, 10vw, 10rem);
+        height: auto;
+    }
+
+    .icon-welcome {
+        width: clamp(60px, 35vw, 22rem);
+    }
+
+    .word span {
+        font-size: clamp(3rem, 25vw, 18rem);
+    }
+
+    .container-w {
+        margin-left: 8%;
+        top: 25rem;
+    }
+
+    .texts-main {
+        display: flex;
+        gap: 2rem;
+        width: 93%;
+        margin-left: 2rem;
+        flex-direction: column;
+    }
+
+    .text-main-1 {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 90%;
+    }
+
+    .cuadro {
+        top: 20rem;
+        left: 28rem;
+        width: 13rem;
+    }
+
+    .cuadro2 {
+        top: 13rem;
+        left: 10rem;
+        width: 15rem;
+    }
+
+    .mesa {
+        top: 46rem !important;
+        left: 17rem;
+        width: 25rem;
+    }
+
+    .sillon {
+        top: 61rem !important;
+        left: 1rem;
+        width: 24rem;
+    }
+
+    .lampara {
+        top: 14rem !important;
+        left: -2rem;
+        width: 14rem;
+    }
+
+    .text-hover p {
+        margin: 6rem 0rem 5rem 0rem;
+        font-size: clamp(3rem, 11vw, 9rem);
+    }
+
+    #hover {
+        padding: 3rem;
+    }
+
+    .muebles {
+        display: flex;
+        flex-direction: column;
+        margin: 10rem 4rem 4rem 4rem;
+        gap: 5rem;
+    }
+
+    .text-muebles {
+        gap: 1rem;
+        line-height: 1;
+    }
+
+    .text-muebles p {
+        font-size: 1.3rem;
+    }
+
+    .img-muebles img {
+        width: 19rem;
+        margin-left: 43%;
+        rotate: -4deg;
+    }
+
+    /* footer  */
+
+    .cta-form {
+        width: 36rem;
+        border-radius: 19px;
+    }
+
+    .cta-text {
+        font-size: 1.5rem;
+        width: 85%;
+        line-height: 1.2;
+    }
+
+    .silla-footer {
+        width: 19rem;
+        left: 58%;
+        margin-bottom: 16rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-w {
+        margin-left: 8%;
+        top: 30rem;
+    }
+
+    .video-h {
+        margin: 8rem auto 8rem auto;
+    }
+
+    .marquework h1 {
+        font-size: 4rem;
+        margin-top: 6rem;
+    }
+
+    .section-d {
+        margin-top: -8rem;
+    }
+
+    .cuadro {
+        top: 22rem;
+        left: 28rem;
+        width: 12rem;
+    }
+
+    .mesa {
+        top: 46rem !important;
+        left: 17rem;
+        width: 23rem;
+    }
+
+    .sillon {
+        top: 63rem !important;
+        left: 1rem;
+        width: 21rem;
+    }
+
+    .lampara {
+        top: 14rem !important;
+        left: -2rem;
+        width: 12rem;
+    }
+
+    .cuadro2 {
+        top: 17rem;
+        left: 10rem;
+        width: 12rem;
+    }
+
+    .text-drag a {
+        margin-left: -33rem;
+    } 
+
+    .img-muebles img {
+        width: 17rem;
+        margin-left: 38%;
+    }
+
+    .text-mibo a {
+        margin-left: 3rem;
+        font-size: 4rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -0.8rem;
+        width: 3rem;
+    }
+
+    .centro-menu {
+        margin-top: -3rem;
+    }
+    
+    /* footer  */
+
+    .cta-form {
+        width: 31rem;
+        border-radius: 19px;
+        padding: 1.3%;
+    }
+
+    .silla-footer {
+        width: 19rem;
+        left: 51%;
+        margin-bottom: 17rem;
+    }
+
+    .socials {
+        font-size: 2rem;
+        gap: 1rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    /* CARRITO  */
+
+    .product-img {
+        width: 17rem;
+        height: auto;
+    }
+
+    .cart-footer {
+        margin-top: 17rem;
+    }
+
+    .word {
+        gap: 1rem;
+        line-height: 0.8;
+    }
+
+    .container-w {
+        margin-left: 9%;
+        top: 36rem;
+    }
+
+    .text-main-1 {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 93%;
+        line-height: 0.9;
+    }
+
+    .foto-silla img {
+        width: min(16rem, 150%);
+        margin-left: 2rem;
+    }
+
+    .mesa {
+        top: 46rem !important;
+        left: 14rem;
+        width: 21rem;
+    }
+
+    .cuadro2 {
+        top: 16rem;
+        left: 10rem;
+        width: 15rem;
+    }
+
+    .cuadro {
+        display: none;
+    }
+
+    .sillon {
+        top: 63rem !important;
+        left: 1rem;
+        width: 19rem;
+    }
+
+    .text-drag a {
+        margin-left: -25rem;
+        font-size: 1.5rem;
+    }
+
+    .text-hover p {
+        margin: 6rem 0rem 5rem 0rem;
+        font-size: clamp(3rem, 16vw, 9rem);
+    }
+
+    .muebles {
+        margin: 10rem 3rem 4rem 3rem;
+        gap: 5rem;
+    }
+
+    .text-mibo a {
+        margin-left: 3rem;
+        font-size: 3.5rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -0.6rem;
+        width: 2.5rem;
+    }
+
+    .centro-menu {
+        margin-top: 0rem;
+        margin-bottom: 9rem;
+    }
+
+    .img-izq .mueble-encima {
+        top: -11%;
+        width: 45%;
+        left: 70%;
+    }
+
+    .img-dech .mueble-encima2 {
+        width: 39%;
+        top: -85%;
+        left: -8%;
+    }
+
+    /* footer  */
+
+    .cta-form {
+        width: 25rem;
+        
+    }
+
+    .cta-text {
+        font-size: 1.5rem;
+        width: 90%;
+        line-height: 1.2;
+    }
+
+    .silla-footer {
+        width: 16rem;
+        left: 51%;
+        margin-bottom: 20rem;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+
+    .cookies ul li {
+        font-size: 1rem;
+    }
+    
+}
+
+@media (max-width: 375px) {
+
+/* menu  */
+
+    .mobile-bar {
+        top: 2rem;
+        left: 7%;
+        width: 85%;
+        border-radius: 10px;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .mobile-bar-logo {
+        height: 28px;
+    }
+
+    .mobile-bar-btn {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 32px;
+        line-height: 1;
+    }
+    .mobile-open {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: var(--primary-color);
+    }
+
+    .mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: var(--second-color); 
+        z-index: 2000;
+        display: none;
+        
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-close {
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 2.5rem;
+    }
+
+    .cart-btn-movil {
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
+        background: none;
+        border: none;
+    }
+
+    .cart-btn-movil img {
+        width: 2rem;
+    }
+
+    .mobile-links {
+        bottom: 4rem;
+        left: 3rem;
+        gap: 1rem;
+    }
+
+    .mobile-links a {
+        color: var(--primary-color);
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .mobile-deco {
+        right: -2rem;
+        bottom: 4.7rem;
+        rotate: -8deg;
+        width: 11rem;
+    }
+
+    /* carrito */
+
+    .cart-header h2 {
+        font-size: 3rem;
+    }
+
+    .close-cart {
+        font-size: 3em;
+        line-height: 1;
+    }
+
+
+    .product-img {
+        width: 10rem;
+        height: auto;
+    }
+
+    .product-name {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 3rem 0 0 0;
+    }
+
+    .product-price {
+        font-size: 1rem;
+        color: var(--second-color);
+        margin: 0;
+    }
+
+    .quantity {
+        width: 2rem;
+        height: 2rem;
+        margin-top: 4rem;
+        font-size: 1rem;
+    }
+
+    .cart-footer {
+        padding-top: 1rem;
+        gap: 1rem;
+        margin-top: 8rem;
+    }
+
+    .subtotal {
+        font-size: 1.2rem;
+        color: var(--third-color);
+    }
+
+    .checkout-btn {
+        padding: 0.5rem;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        width: 9rem;
+    }
+
+    .cart-panel {
+        padding: 1.5rem;
+    }
+
+/* --  */
+
+    .right-section {
+        margin-left: 45%;
+        width: 50%;
+    }
+
+    .container-w {
+        margin-left: 9%;
+        top: 16rem;
+    }
+
+    .video-h {
+        margin: 3rem auto 4rem auto;
+        border-radius: 4px
+    }
+
+    .texts-main {
+        display: flex;
+        gap: 1rem;
+        width: 93%;
+        margin-left: 1rem;
+        flex-direction: column;
+    }
+
+    .texts-main p {
+        font-size: 0.8rem;
+    }
+
+    .foto-silla img {
+        width: min(10rem, 150%);
+        margin-left: 2rem;
+    }
+
+    .marquework h1 {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
+
+    .section-d {
+        margin-top: -13rem;
+    }
+
+    .lampara {
+        top: 15rem !important;
+        left: -3rem;
+        width: 9rem;
+    }
+
+    .cuadro2 {
+        top: 17rem;
+        left: 13rem;
+        width: 10rem;
+    }
+
+    .mesa {
+        top: 42rem !important;
+        left: 19rem;
+        width: 15rem;
+    }
+
+    .sillon {
+        top: 58rem !important;
+        left: 0rem;
+        width: 16rem;
+    }
+
+    .text-drag a {
+        margin-left: -20rem;
+        font-size: 1.2rem;
+    }
+
+    .drag-area {
+        height: 80vh;
+        min-height: 730px;
+    }
+
+    .text-hover p {
+        margin: 3rem 0rem 3rem 0rem;
+        font-size: clamp(3rem, 16vw, 9rem);
+    }
+
+    .muebles {
+        margin: 5rem 3rem 4rem 3rem;
+        gap: 3rem;
+    }
+
+    .text-muebles p {
+        font-size: 0.9rem;
+    }
+
+    .img-muebles img {
+        width: 12rem;
+        margin-left: 30%;
+    }
+
+    .text-mibo a {
+        margin-left: 2rem;
+        font-size: 3rem;
+    }
+
+    .text-mibo a span img {
+        margin-top: -0.6rem;
+        width: 2rem;
+    }
+
+    .galeria-contenedor {
+        margin-top: 3rem;
+    }
+
+    .centro-menu h1 {
+        font-size: clamp(1.5rem, 2vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    .centro-menu {
+        margin-top: 0rem;
+        margin-bottom: 7rem;
+        gap: 0.4rem;
+    }
+
+    #galeria {
+        padding: 1rem;
+    }
+
+    /* footer  */
+
+    .cta-text {
+        font-size: 1.1rem;
+        width: 98%;
+        line-height: 1.2;
+    }
+
+    .cta-form input {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .cta-form {
+        width: 20rem;
+        border-radius: 7px;
+        padding: 1%;
+    }
+
+    .cta-form button {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 4px;
+        margin-right: 0.2rem;
+    }
+
+    .flecha2 {
+        width: 1rem;
+    }
+
+    .silla-footer {
+        width: 11rem;
+        left: 54%;
+        margin-bottom: 10rem;
+    }
+
+    .socials {
+        font-size: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .cookies ul li {
+        font-size: 0.6rem;
+        letter-spacing: -0.5px;
+    }
+
+    .logo-footer {
+        width: 80%;
+    }
+
 }
