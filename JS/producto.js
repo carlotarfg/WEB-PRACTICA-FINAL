@@ -21,15 +21,6 @@ document.getElementById('minus').addEventListener('click', () => {
   }
 });
 
-// const productImg = document.getElementById('product-img');
-// const colors = document.querySelectorAll('.color');
-
-// colors.forEach(color => {
-//   color.addEventListener('click', () => {
-//     productImg.src = color.dataset.img;
-//   });
-// });
-
 const accordionButtons = document.querySelectorAll('.accordion');
 
 accordionButtons.forEach(btn => {
@@ -73,10 +64,42 @@ accordionBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const item = btn.parentElement;
 
-    // Si quieres que solo un acordeón esté abierto a la vez:
+    // solo un acordeón esté abierto a la vez:
     // document.querySelectorAll('.accordion-item').forEach(i => i !== item ? i.classList.remove('active') : null);
 
     item.classList.toggle("active");
   });
 });
 
+
+// modelo 
+
+gsap.from("model-viewer", {
+  opacity: 0,
+  y: 40,
+  duration: 1.2,
+  ease: "power3.out"
+});
+
+gsap.from(".product-info", {
+  opacity: 0,
+  y: 40,
+  duration: 1.2,
+  delay: 0.2,
+  ease: "power3.out"
+});
+
+// galeria 
+gsap.utils.toArray(".photo-gallery img").forEach((img, i) => {
+  gsap.from(img, {
+    scrollTrigger: {
+      trigger: img,
+      start: "top 85%",
+    },
+    opacity: 0,
+    x: i % 2 === 0 ? -60 : 60,
+    y: 40,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+});
