@@ -28,10 +28,10 @@
         <nav class="navbar">
             <div class="nav-left">
             <div class="logo">
-                <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+                <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
             </div>
             <div class="nav-links">
-                <a href="producto.html">catalog</a>
+                <a href="galeria.html">catalog</a>
                 <a href="#">about us</a>
             </div>
             </div>
@@ -75,10 +75,10 @@
 
         <div class="cart-items">
             <div class="cart-item">
-            <img src="MEDIA/img/mesa.webp" alt="Sillón Nixon" class="product-img">
+            <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
             <div class="product-info">
-                <p class="product-name">Sillón Nixon</p>
-                <p class="product-price">269,95 €</p>
+                <p class="product-name">Munden</p>
+                <p class="product-price">435,56 €</p>
             </div>
             <div class="quantity">1</div>
             </div>
@@ -86,7 +86,7 @@
             <div class="cart-item">
             <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
             <div class="product-info">
-                <p class="product-name">Sillón Nixon</p>
+                <p class="product-name">Nixon</p>
                 <p class="product-price">269,95 €</p>
             </div>
             <div class="quantity">1</div>
@@ -96,21 +96,18 @@
         <div class="cart-footer">
             <div class="subtotal">
             <span>Subtotal</span>
-            <span>269,95 €</span>
+            <span>705,51 €</span>
             </div>
-            <button class="checkout-btn">FINALIZAR PAGO</button>
+            <a class="checkout-btn" href="">FINALIZAR PAGO </a>
         </div>
         </div>
 
-  
+   </header>
 
 <main class="product">
 
-
 <section class="product-main">
-  <!-- <div class="product-image">
-    <img id="product-img" src="MEDIA/img/sillom.png" alt="Sillón Nixon">
-  </div> -->
+
   <model-viewer src="MEDIA/modelos/125719.glb" camera-controls>
 
   </model-viewer>
@@ -133,7 +130,7 @@
 </div>
 
 
-       <div class="buy">
+<div class="buy">
   <span class="price">269,95 €</span>
   <div class="quantity-product">
     <button id="minus">-</button>
@@ -154,8 +151,8 @@
     <div class="accordion-item">
       <button class="accordion-btn">DESCRIPCIÓN +</button>
       <div class="accordion-content"><p>Su estructura está fabricada en madera contrachapada de pino y tapizada en poliéster con acabado borreguito, un material muy resistente y con una suavidad incomparable. Nicxon destaca por presentar un diseño muy vanguardista, gracias al revestimiento de sus patas y la forma tan particular de las mismas. Cuenta con relleno de espuma, donde el respaldo tiene una densidad 20 kg/m³ y su asiento de densidad 24 kg/m³.  Incluye unos tacos antideslizantes, que le otorgan mayor seguridad y protegen tu suelo de posibles desperfectos. <br>
-
-Aconsejamos limpiarlo con un paño húmedo y evitar el uso de productos químicos.</p></div>
+        <br>
+      Aconsejamos limpiarlo con un paño húmedo y evitar el uso de productos químicos.</p></div>
     </div>
     <div class="accordion-item">
       <button class="accordion-btn">MEDIDAS +</button>
@@ -195,8 +192,9 @@ Aconsejamos limpiarlo con un paño húmedo y evitar el uso de productos químico
     <div class="accordion-item">
       <button class="accordion-btn">COLORES +</button>
       <div class="accordion-content"><p>El sillón Nixon está disponible en tres tonalidades cuidadosamente seleccionadas para adaptarse a distintos estilos de interior. El gris aporta sobriedad y equilibrio, ideal para espacios contemporáneos y minimalistas. El marrón transmite calidez y carácter, encajando especialmente bien en ambientes acogedores y naturales. Por último, el verde introduce un toque orgánico y distintivo, perfecto para quienes buscan añadir personalidad sin renunciar a la armonía del conjunto. <br>
-
-Cada color mantiene la misma textura y acabado, garantizando una estética coherente independientemente de la elección.</p></div>
+        <br>
+      Cada color mantiene la misma textura y acabado, garantizando una estética coherente independientemente de la elección.</p>
+    </div>
     </div>
   </div>
 </section>
@@ -207,43 +205,69 @@ Cada color mantiene la misma textura y acabado, garantizando una estética coher
 <div class="container">
   <div class="photo-gallery">
 
-    <div class="column">
-      <div class="photo">
+   
         <img src="MEDIA/img/producto_salon.webp" alt="">
         <img src="MEDIA/img/producto_verde.webp" alt="">
         <img src="MEDIA/img/producto_doble.webp" alt="">
         <img src="MEDIA/img/producto_habitacion.webp" alt="">
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="photo">
+     
         <img src="MEDIA/img/producto_zoom.jpg" alt="" srcset="">
         <img src="MEDIA/img/producto_minimalista.webp" alt="" srcset="">
         <img src="MEDIA/img/producto_textura.jpg" alt="" srcset="">
         <img src="MEDIA/img/producto_sobrio.webp" alt="" srcset="">
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="photo">
+  
         <img src="MEDIA/img/producto_vista_lado.webp" alt="" srcset="">
         <img src="MEDIA/img/producto_sol.webp" alt="" srcset="">
         <img src="MEDIA/img/producto_playa.webp" alt="" srcset="">
         <img src="MEDIA/img/producto_pasillo.webp" alt="" srcset="">
-      </div>
-    </div>
-
+    
   </div>
 </div>
 
 </div>
 
-  </main>
+</main>
 
-  
+<footer>
+            <div class="form">
+                <p class="cta-text">
+                    Join the community: access offers, free programs, and consumer insights
+                </p>
 
+              <form class="cta-form">
+                <input type="email" placeholder="Hello@gmail.com" required/>
+                <button type="submit" aria-label="Enviar">
+                    <img class="flecha2" src="MEDIA/img/flecha2.png" alt="flecha">
+                </button>
+              </form>
 
+            </div>
+
+            <img class="silla-footer" src="MEDIA/svg/Recurso 12.svg" alt="silla amarilla">
+
+            <div class="bottom">
+                    <div class="logo-footer">
+                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                    </div>                
+                    <div>
+                    <div class="bottom2">
+                        <div class="socials">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-tiktok"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-x-twitter"></i>                       
+                         </div>
+                        <div class="cookies">
+                            <ul>
+                                <li>Terms & Conditions</li>
+                                <li>©2025 Mibo. All rights reserved.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
 
 
 
@@ -255,6 +279,8 @@ Cada color mantiene la misma textura y acabado, garantizando una estética coher
 
  <!-- GSAP -->
         <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
 
         <!-- MI JS  -->
         <script src="js/menu.js"></script>
