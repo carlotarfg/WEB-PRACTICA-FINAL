@@ -30,6 +30,12 @@ html, body {
   background: linear-gradient(to right, var(--background) 50%, var(--background_check_right) 50%);
 } */
 
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+
 
 .checkout-layout {
   display: flex;
@@ -59,8 +65,7 @@ html, body {
   position: fixed;
   right: 0;
   height: calc(100vh - 80px);
-  overflow-y: auto;
-  z-index: 999;
+  z-index: 2000;
 }
 
 /* Borde normal gris */
