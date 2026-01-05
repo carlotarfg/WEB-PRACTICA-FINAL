@@ -119,6 +119,8 @@ input {
   border-top: 2px solid var(--footer-back);
   border-bottom: 2px solid var(--footer-back);
   padding: 1rem 0; 
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .product-total p {

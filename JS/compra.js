@@ -1,9 +1,7 @@
 $(document).ready(function () {
-
   const animationDuration = 0.4; // segundos
 
   $(".tab").on("click", function () {
-
     const category = $(this).data("category");
     const $categoryDiv = $(".category." + category);
 
@@ -22,7 +20,7 @@ $(document).ready(function () {
 
     // Cerrar cualquier otra categoría abierta
     $(".tab").removeClass("active");
-    $(".category.active").each(function() {
+    $(".category.active").each(function () {
       gsap.to(this, {
         height: 0,
         autoAlpha: 0,
@@ -36,6 +34,7 @@ $(document).ready(function () {
     $(this).addClass("active");
     $categoryDiv.addClass("active");
 
+    // Calcular altura automática
     let autoHeight = $categoryDiv.css("height", "auto").height();
     $categoryDiv.height(0);
 
@@ -50,10 +49,7 @@ $(document).ready(function () {
     if (category === "paypal") {
       setTimeout(() => {
         window.location.href = "https://www.paypal.com/checkoutnow?token=65U984472L9049229";
-      }, animationDuration * 1000); 
+      }, animationDuration * 1000);
     }
-
   });
-
 });
-
