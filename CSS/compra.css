@@ -57,7 +57,6 @@ html, body {
 
 .cart-panel {
   position: fixed;
-  top: 80px;
   right: 0;
   height: calc(100vh - 80px);
   overflow-y: auto;
@@ -110,11 +109,42 @@ input {
   font-weight: bold;
 }
 
+.product-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  font-weight: bold;
+
+  /* Líneas arriba y abajo */
+  border-top: 2px solid var(--footer-back);
+  border-bottom: 2px solid var(--footer-back);
+  padding: 1rem 0; 
+}
+
+.product-total p {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+
 .checkout-left h1 {
   font-family: var(--titulos_tipo);
   color: var(--footer-back);
   font-size: 5rem;
 }
+
+.checkout-layout {
+  display: flex;
+  height: calc(100vh - 80px); 
+}
+.checkout-left {
+  width: 50%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2rem;
+  padding-top: 7rem;
+}
+
 
 .checkout-product {
   padding-bottom: 3rem;
@@ -149,14 +179,77 @@ input {
   background: var(--footer-back);
   color: white;
   border: none;
-  padding: 16px;
-  border-radius: 12px;
-  font-weight: bold;
+
+  padding: 18px 28px;
+  border-radius: 14px;
+
+  font-family: var(--titulos_tipo);
+  font-size: 1.6rem;
+  letter-spacing: 0.03rem;
+
   cursor: pointer;
-} 
+
+  box-shadow: 0 8px 20px rgba(46, 80, 152, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(46, 80, 152, 0.45);
+}
+
+.checkout-finalizar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 20px;
+  margin-top: 3rem;
+}
+
+
+.checkout-finalizar .continue-shopping {
+  display: inline-block;
+  font-family: var(--textos_tipo);
+  font-weight: bold;
+  letter-spacing: 0.01rem;
+
+  color: var(--footer-back);
+  text-decoration: none;
+  background: transparent;
+
+  border-radius: 12px;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.checkout-finalizar .continue-shopping::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--footer-back);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.checkout-finalizar .continue-shopping:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+
 
 .payment {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .payment .methods {
@@ -224,23 +317,24 @@ input {
   border-radius: 11px;
 }
 
-.content {
+/* .content {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
+} */
 
 .category {
-  display: none;
-  width: 100%;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.category.active {
-  display: flex;
-  justify-content: space-around;
-}
+
+
+
 
 
 /* ____ CHECKBOX AL LADO FRASE ____ */
