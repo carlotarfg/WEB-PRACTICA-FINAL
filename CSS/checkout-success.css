@@ -1,0 +1,218 @@
+/* ----------- Fuentes ----------- */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ----------- Variables ----------- */
+:root {
+    --titulos_tipo: 'Londrina Solid';
+    --textos_tipo: 'Inter';
+    --marron_oscuro: #471406;
+    --background: #F6EEDF;
+    --background_check_right: #f0e1c6;
+    --footer-back: #2E5098;
+}
+
+/* ----------- RESET ----------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--background);
+  font-family: var(--textos_tipo);
+}
+
+/* ----------- LAYOUT CHECKOUT ----------- */
+.checkout-layout {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.checkout-left::-webkit-scrollbar,
+.checkout-right::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.checkout-left,
+.checkout-right {
+  width: 50%;
+  overflow-y: auto;
+  padding: 2rem;
+  padding-top: 7rem;
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+
+/* ----------- PANEL CARRITO ----------- */
+.cart-panel {
+  position: fixed;
+  right: 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* ----------- CHECKOUT IZQUIERDO ----------- */
+.checkout-left h1 {
+  font-family: var(--titulos_tipo);
+  color: var(--footer-back);
+  font-size: 5rem;
+}
+
+.checkout-left {
+  width: 50%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2rem;
+  padding-top: 7rem;
+}
+
+.checkout-finalizar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 3rem;
+}
+
+.checkout-finalizar .continue-shopping {
+  display: inline-block;
+  font-family: var(--textos_tipo);
+  font-weight: bold;
+  letter-spacing: 0.01rem;
+  color: var(--footer-back);
+  text-decoration: none;
+  background: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkout-finalizar .continue-shopping::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--footer-back);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.checkout-finalizar .continue-shopping:hover::after {
+  transform: scaleX(1);
+}
+
+/* ----------- CHECKOUT DERECHO / RESUMEN PEDIDO ----------- */
+.checkout-right {
+  width: 50%;
+  overflow-y: auto;
+  background: var(--background_check_right);
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+/* Título resumen */
+.checkout-right h2 {
+  margin-bottom: 2rem;
+  font-family: var(--titulos_tipo);
+  color: var(--footer-back);
+}
+
+/* Cada producto del resumen en columna */
+.checkout-right .checkout-product {
+  display: flex;
+  flex-direction: column; /* Apila productos verticalmente */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Tarjeta del producto */
+.checkout-right .product-card {
+  display: flex;
+  flex-direction: row; /* imagen a la izquierda, info a la derecha */
+  gap: 1rem;
+  align-items: center;
+}
+
+.checkout-right .product-card img {
+  width: 100px;
+  height: auto;
+}
+
+.checkout-right .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Total del pedido */
+.checkout-right .product-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-weight: bold;
+  border-top: 2px solid var(--footer-back);
+  border-bottom: 2px solid var(--footer-back);
+  padding: 1rem 2rem;
+}
+
+.checkout-right .product-total p {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+/* ----------- BOTONES ----------- */
+.btn-primary {
+  background: var(--footer-back);
+  color: white;
+  border: none;
+  padding: 18px 28px;
+  border-radius: 14px;
+  font-family: var(--titulos_tipo);
+  font-size: 1.6rem;
+  letter-spacing: 0.03rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(46, 80, 152, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(46, 80, 152, 0.45);
+}
+
+/* ----------- MEDIA QUERIES ----------- */
+@media (max-width: 991px) {
+  body {
+    overflow: auto;
+  }
+
+  .checkout-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .checkout-left,
+  .checkout-right {
+    width: 100%;
+    overflow: visible;
+    padding-top: 2rem;
+  }
+
+  .checkout-right .product-card img {
+    width: 80px;
+  }
+}

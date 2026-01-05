@@ -53,3 +53,29 @@ $(document).ready(function () {
     }
   });
 });
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const finalizeBtn = document.querySelector('.btn-primary');
+
+//   finalizeBtn?.addEventListener('click', (e) => {
+//     e.preventDefault();
+
+//     // Obtener productos del carrito
+//     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+//     if(cartItems.length === 0){
+//       alert("Tu carrito está vacío. Añade productos antes de finalizar.");
+//       return;
+//     }
+
+//     // Guardar carrito para página de éxito
+//     sessionStorage.setItem('checkoutCart', JSON.stringify(cartItems));
+
+//     // Limpiar carrito si quieres resetearlo al finalizar
+//     localStorage.removeItem('cartItems');
+
+//     // Redirigir a la página de éxito
+//     window.location.href = "checkout-success.html";
+//   });
+// });
