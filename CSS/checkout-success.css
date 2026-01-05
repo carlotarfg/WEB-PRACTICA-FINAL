@@ -49,7 +49,7 @@ html, body {
   right: 0;
   height: calc(100vh - 80px);
   overflow-y: auto;
-  z-index: 999;
+  z-index: 2000;
 }
 
 input {
@@ -122,6 +122,10 @@ input {
   height: 100vh;
   box-sizing: border-box;
   padding: 2rem;
+}
+
+.checkout-right .row {
+    grid-template-columns: 1fr;
 }
 
 /* Título resumen */
