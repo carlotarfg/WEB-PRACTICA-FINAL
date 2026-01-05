@@ -55,27 +55,55 @@ $(document).ready(function () {
 });
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const finalizeBtn = document.querySelector('.btn-primary');
+document.addEventListener("DOMContentLoaded", () => {
 
-//   finalizeBtn?.addEventListener('click', (e) => {
-//     e.preventDefault();
+  // Evitar animaciones en móvil
+  if (window.innerWidth < 991) return;
 
-//     // Obtener productos del carrito
-//     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const tl = gsap.timeline({
+    defaults: {
+      duration: 0.8,
+      ease: "power3.out"
+    }
+  });
 
-//     if(cartItems.length === 0){
-//       alert("Tu carrito está vacío. Añade productos antes de finalizar.");
-//       return;
-//     }
+  // Columna izquierda (productos)
+  tl.from(".checkout-left", {
+    x: -80,
+    opacity: 0
+  })
 
-//     // Guardar carrito para página de éxito
-//     sessionStorage.setItem('checkoutCart', JSON.stringify(cartItems));
+  // Productos con pequeño stagger
+  .from(".checkout-product", {
+    x: -40,
+    opacity: 0,
+    stagger: 0.15
+  }, "-=0.4")
 
-//     // Limpiar carrito si quieres resetearlo al finalizar
-//     localStorage.removeItem('cartItems');
+  // Total y botones
+  .from(".product-total, .checkout-finalizar", {
+    y: 40,
+    opacity: 0
+  }, "-=0.3")
 
-//     // Redirigir a la página de éxito
-//     window.location.href = "checkout-success.html";
-//   });
-// });
+  // Columna derecha (formulario)
+  .from(".checkout-right", {
+    x: 80,
+    opacity: 0
+  }, "-=0.8")
+
+  // Inputs del formulario
+  .from(".checkout-form .input-group", {
+    y: 30,
+    opacity: 0,
+    stagger: 0.08
+  }, "-=0.4")
+
+  // Métodos de pago
+  .from(".tabs .tab", {
+    scale: 0.9,
+    opacity: 0,
+    stagger: 0.1
+  }, "-=0.3");
+
+});
