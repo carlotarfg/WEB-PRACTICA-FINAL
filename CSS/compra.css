@@ -157,6 +157,51 @@ input {
   padding-bottom: 3rem;
 }
 
+.delete-item-compra {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.delete-item-compra:hover {
+    transform: scale(1.1);
+}
+
+.trash-icon-compra {
+    position: relative;
+    width: 1rem;
+    height: 16px;
+    border: 3px solid var(--second-color); 
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+}
+
+.trash-icon-compra::before { 
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 20px;
+    height: 3px;
+    background: var(--second-color);
+}
+
+.trash-icon-compra::after { 
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 1px;
+    width: 8px;
+    height: 3px;
+    border: 3px solid var(--second-color);
+    border-bottom: none;
+}
+
 
 /* ----------- CSS DEL CHECKOUT DERECHO ----------- */
 

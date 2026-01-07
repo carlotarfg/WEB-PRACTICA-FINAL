@@ -107,3 +107,60 @@ document.addEventListener("DOMContentLoaded", () => {
   }, "-=0.3");
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionamos el contenedor del total y los botones de eliminar
+    const totalContainer = document.querySelector('.product-total strong');
+    const deleteButtons = document.querySelectorAll('.delete-item-compra');
+
+    /**
+     * Función para calcular y actualizar el total en el DOM
+     */
+    const calcularTotal = () => {
+        const precios = document.querySelectorAll('.product-info .price');
+        let total = 0;
+
+        precios.forEach(precioElemento => {
+            // Limpiamos el texto: quitamos '€', espacios y cambiamos ',' por '.'
+            let precioTexto = precioElemento.textContent
+                .replace('€', '')
+                .replace('.', '') // Quita puntos de miles si los hubiera
+                .replace(',', '.')
+                .trim();
+            
+            total += parseFloat(precioTexto) || 0;
+        });
+
+        // Actualizamos el texto del total con formato local (español)
+        if (totalContainer) {
+            totalContainer.textContent = total.toLocaleString('es-ES', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }) + ' €';
+        }
+    };
+
+    /**
+     * Evento para eliminar productos
+     */
+    // Usamos delegación de eventos para que funcione incluso si el DOM cambia
+    document.addEventListener('click', (event) => {
+        const btn = event.target.closest('.delete-item-compra');
+        
+        if (btn) {
+            // Buscamos el contenedor principal del producto (section)
+            const productSection = btn.closest('.checkout-product');
+            
+            if (productSection) {
+                // Eliminamos el elemento del HTML
+                productSection.remove();
+                
+                // Recalculamos el total inmediatamente
+                calcularTotal();
+            }
+        }
+    });
+
+    // Ejecutamos el cálculo inicial por si los precios vienen de base de datos
+    calcularTotal();
+});
