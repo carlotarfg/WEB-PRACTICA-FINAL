@@ -142,6 +142,7 @@ input {
 
 .checkout-right h2 {
   margin-bottom: 2rem;
+  font-size: 4rem;
   font-family: var(--titulos_tipo);
   color: var(--footer-back);
 }
