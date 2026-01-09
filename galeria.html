@@ -6,14 +6,10 @@
     <title>MIBO</title>
     <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
     <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
-
-  <!-- ----------- BOOSTRAP DESDE UN CDN ----------- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-<!-- ----------- PROPIO CSS ----------- -->
-     <link rel="stylesheet" href="CSS/galeria.css">
-
-<!-- FONT AWESOME  -->
+    <link rel="stylesheet" href="CSS/galeria.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 </head>
@@ -21,10 +17,10 @@
     <nav class="navbar">
             <div class="nav-left">
             <div class="logo">
-                <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+                <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
             </div>
             <div class="nav-links">
-                <a href="producto.html">catalog</a>
+                <a href="galeria.html">catalog</a>
                 <a href="#">about us</a>
             </div>
             </div>
@@ -50,7 +46,7 @@
             </button>
 
             <nav class="mobile-links">
-                <a href="producto.html">catalog</a>
+                <a href="galeria.html">catalog</a>
                 <a href="#">about us</a>
             </nav>
 
@@ -68,30 +64,36 @@
 
         <div class="cart-items">
             <div class="cart-item">
-            <img src="MEDIA/img/mesa.webp" alt="Sillón Nixon" class="product-img">
+            <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
             <div class="product-info">
-                <p class="product-name">Sillón Nixon</p>
-                <p class="product-price">269,95 €</p>
+                <p class="product-name">Munden</p>
+                <p class="product-price">435,56 €</p>
             </div>
             <div class="quantity">1</div>
+             <button class="delete-item" aria-label="Eliminar">
+                <i class="trash-icon"></i>
+            </button>
             </div>
 
             <div class="cart-item">
             <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
             <div class="product-info">
-                <p class="product-name">Sillón Nixon</p>
+                <p class="product-name">Nixon</p>
                 <p class="product-price">269,95 €</p>
             </div>
             <div class="quantity">1</div>
+             <button class="delete-item" aria-label="Eliminar">
+                <i class="trash-icon"></i>
+            </button>
             </div>
         </div>
 
         <div class="cart-footer">
             <div class="subtotal">
             <span>Subtotal</span>
-            <span>269,95 €</span>
+            <span id="cartTotal">705,51 €</span>
             </div>
-            <button class="checkout-btn">FINALIZAR PAGO</button>
+            <a class="checkout-btn" href="compra.html">FINALIZAR PAGO </a>
         </div>
         </div>
 
@@ -270,50 +272,50 @@
         </div>
     </section>
 
-
-
     <div class="paginas"><p> <1-20> </p></div>
 
     <footer>
-                <div class="form">
-                    <p class="cta-text">
-                        Join the community: access offers, free programs, and consumer insights
-                    </p>
+            <div class="form">
+                <p class="cta-text">
+                    Join the community: access offers, free programs, and consumer insights
+                </p>
 
-                <form class="cta-form">
-                    <input type="email" placeholder="Hello@gmail.com" required/>
-                    <button type="submit" aria-label="Enviar">
-                        <img class="flecha2" src="MEDIA/img/flecha2.png" alt="flecha">
-                    </button>
-                </form>
+              <form class="cta-form">
+                <input type="email" placeholder="Hello@gmail.com" required/>
+                <button type="submit" aria-label="Enviar">
+                    <img class="flecha2" src="MEDIA/img/flecha2.png" alt="flecha">
+                </button>
+              </form>
 
-                </div>
+            </div>
 
-                <img class="silla-footer" src="MEDIA/svg/Recurso 12.svg" alt="silla amarilla">
+            <img class="silla-footer" src="MEDIA/svg/Recurso 12.svg" alt="silla amarilla">
 
-                <div class="bottom">
-                        <div class="logo-footer">
-                        <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
-                        </div>                
-                        <div>
-                        <div class="bottom2">
-                            <div class="socials">
-                                <i class="fa-brands fa-instagram"></i>
-                                <i class="fa-brands fa-tiktok"></i>
-                                <i class="fa-brands fa-youtube"></i>
-                                <i class="fa-brands fa-x-twitter"></i>                       
-                            </div>
-                            <div class="cookies">
-                                <ul>
-                                    <li>Terms & Conditions</li>
-                                    <li>©2025 Mibo. All rights reserved.</li>
-                                </ul>
-                            </div>
+            <div class="bottom">
+                    <div class="logo-footer">
+                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                    </div>                
+                    <div>
+                    <div class="bottom2">
+                        <div class="socials">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-tiktok"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-x-twitter"></i>                       
+                         </div>
+                        <div class="cookies">
+                            <ul>
+                                <li>Terms & Conditions</li>
+                                <li>©2025 Mibo. All rights reserved.</li>
+                            </ul>
                         </div>
                     </div>
-                    
                 </div>
-    </footer>
+                
+            </div>
+        </footer>
+
+    
 
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
