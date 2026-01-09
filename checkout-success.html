@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MIBO CONFIRMACIÓN COMPRA</title>
+        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
+
+<!-- __________ BOOSTRAP DESDE UN CDN __________ -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<!-- __________ PROPIO CSS __________ -->
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet"  href="CSS/checkout-success.css">
+
+<!-- __________ FONT AWESOME __________ -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+         <header>
+            <nav class="navbar">
+                <div class="nav-left">
+                <div class="logo">
+                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                </div>
+                <div class="nav-links">
+                    <a href="galeria.html">catalog</a>
+                    <a href="#">about us</a>
+                </div>
+                </div>
+
+                <div class="carrito">
+                <button class="cart-btn" id="cartBtnDesktop">
+                    <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                </button>
+                </div>
+            </nav>
+
+<!-- __________ MENÚ MÓVIL __________  -->
+            <div class="mobile-bar">
+                <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
+                <button class="mobile-bar-btn" id="openMenu">⋯</button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="mobile-close" id="closeMenu">X</button>
+                <button class="cart-btn-movil" id="cartBtnMobile">
+                    <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                </button>
+                <nav class="mobile-links">
+                    <a href="galeria.html">catalog</a>
+                    <a href="#">about us</a>
+                </nav>
+                <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+            </div>
+
+<!-- __________ CARRITO __________ -->
+            <div class="cart-panel" id="cartPanel">
+                <div class="cart-header">
+                    <h2>CARRITO</h2>
+                    <button class="close-cart" id="closeCart">X</button>
+                </div>
+                <div class="cart-items">
+                    <div class="cart-item">
+                    <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
+                    <div class="product-info">
+                        <p class="product-name">Munden</p>
+                        <p class="product-price">435,56 €</p>
+                    </div>
+
+                    <div class="quantity">1</div>
+                    <button class="delete-item" aria-label="Eliminar">
+                        <i class="trash-icon"></i>
+                    </button>
+                    </div>
+
+                    <div class="cart-item">
+                    <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+                    <div class="product-info">
+                        <p class="product-name">Nixon</p>
+                        <p class="product-price">269,95 €</p>
+                    </div>
+                    <div class="quantity">1</div>
+                    <button class="delete-item" aria-label="Eliminar">
+                        <i class="trash-icon"></i>
+                    </button>
+                    </div>
+                </div>
+
+                <div class="cart-footer">
+                    <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span id="cartTotal">705,51 €</span>
+                    </div>
+                    <a class="checkout-btn" href="compra.html">FINALIZAR PAGO </a>
+                </div>
+            </div>
+        </header>
+
+<!-- __________ IZQUIERDO __________ -->
+        <main class="checkout-layout">
+            <div class="checkout-left">
+                <h1>¡Gracias por tu compra!</h1>
+                <p>Hemos recibido tu pedido correctamente y estamos procesando tu pago.</p>
+                <p class="texto-tablet">El RESUMEN DE SU PEDIDO se encuentra más abajo en esta misma página.</p>
+                <div class="checkout-finalizar">
+                    <a href="galeria.html" class="btn-primary">Seguir comprando</a>
+                </div>
+           </div>
+
+<!-- __________ DERECHO __________ -->
+            <div class="checkout-right">
+                <h2>Resumen de tu pedido</h2>
+                <section class="checkout-product">
+                    <div class="product-card">
+                        <img src="MEDIA/svg/sillon_header.svg" alt="Sillón Nixon">
+                        <div class="product-info">
+                        <h3>Sillón Nixon</h3>
+                        <p>269,95 €</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="checkout-product">
+                    <div class="product-card">
+                        <img src="MEDIA/img/mesa.webp" alt="Mesa">
+                        <div class="product-info">
+                        <h3>Mesa Munden</h3>
+                        <p>435,56 €</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="product-total">
+                <p>Total pagado:</p>
+                <strong>705,51 €</strong>
+                </div>
+            </div>
+        </main>
+
+<!-- __________ JAVASCRIPT BOOTSTRAP __________ -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- __________ JAVASCRIPT: JQUERY __________ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- __________ GSAP __________ -->
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+
+<!-- __________ MI JAVASCRIPT __________  -->
+        <script src="js/menu.js"></script>
+        <script src="js/carrito.js"></script>
+        <script src="js/script.js"></script>
+        <script src="JS/compra.js"></script>
+        <script src="JS/checkout-success.js"></script>
+    </body>
+</html>

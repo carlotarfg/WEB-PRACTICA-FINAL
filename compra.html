@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MIBO PAGO</title>
+        <title>MIBO</title>
         <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
         <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
 
@@ -18,14 +18,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <header>
+         <header>
             <nav class="navbar">
                 <div class="nav-left">
                 <div class="logo">
-                    <img src="MEDIA/svg/logo.svg" alt="logo MIBO">
+                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
                 </div>
                 <div class="nav-links">
-                    <a href="producto.html">catalog</a>
+                    <a href="galeria.html">catalog</a>
                     <a href="#">about us</a>
                 </div>
                 </div>
@@ -37,18 +37,19 @@
                 </div>
             </nav>
 
-<!-- __________ MENÚ MÓVIL __________ -->
+<!-- __________ MENÚ MÓVIL __________  -->
             <div class="mobile-bar">
                 <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
                 <button class="mobile-bar-btn" id="openMenu">⋯</button>
             </div>
+
             <div class="mobile-menu" id="mobileMenu">
                 <button class="mobile-close" id="closeMenu">X</button>
                 <button class="cart-btn-movil" id="cartBtnMobile">
                     <img src="MEDIA/svg/Vector.svg" alt="Carrito">
                 </button>
                 <nav class="mobile-links">
-                    <a href="producto.html">catalog</a>
+                    <a href="galeria.html">catalog</a>
                     <a href="#">about us</a>
                 </nav>
                 <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
@@ -62,28 +63,37 @@
                 </div>
                 <div class="cart-items">
                     <div class="cart-item">
-                        <img src="MEDIA/img/mesa.webp" alt="Sillón Nixon" class="product-img">
-                        <div class="product-info">
-                            <p class="product-name">Sillón Nixon</p>
-                            <p class="product-price">269,95 €</p>
-                        </div>
-                        <div class="quantity">1</div>
+                    <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
+                    <div class="product-info">
+                        <p class="product-name">Munden</p>
+                        <p class="product-price">435,56 €</p>
                     </div>
+
+                    <div class="quantity">1</div>
+                    <button class="delete-item" aria-label="Eliminar">
+                        <i class="trash-icon"></i>
+                    </button>
+                    </div>
+
                     <div class="cart-item">
-                        <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
-                        <div class="product-info">
-                            <p class="product-name">Sillón Nixon</p>
-                            <p class="product-price">269,95 €</p>
-                        </div>
-                        <div class="quantity">1</div>
+                    <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+                    <div class="product-info">
+                        <p class="product-name">Nixon</p>
+                        <p class="product-price">269,95 €</p>
+                    </div>
+                    <div class="quantity">1</div>
+                    <button class="delete-item" aria-label="Eliminar">
+                        <i class="trash-icon"></i>
+                    </button>
                     </div>
                 </div>
+
                 <div class="cart-footer">
                     <div class="subtotal">
-                        <span>Subtotal</span>
-                        <span>269,95 €</span>
+                    <span>Subtotal</span>
+                    <span id="cartTotal">705,51 €</span>
                     </div>
-                    <button class="checkout-btn">FINALIZAR PAGO</button>
+                    <a class="checkout-btn" href="compra.html">FINALIZAR PAGO </a>
                 </div>
             </div>
         </header>
@@ -94,7 +104,7 @@
             <div class="checkout-left">
                 <h1>Carrito</h1>
 
-    <!-- _____ PRODUCTOS CHECKOUT IZQUIERDO _____ -->
+<!-- _____ PRODUCTOS CHECKOUT IZQUIERDO _____ -->
                 <section class="checkout-product">
                     <div class="product-card">
                         <img src="MEDIA/svg/sillon_header.svg" alt="Sillón Nixon">
@@ -102,6 +112,9 @@
                             <h2>Sillón Nixon</h2>
                             <p class="price">269,95 €</p>
                         </div>
+                         <button class="delete-item-compra" aria-label="Eliminar">
+                            <i class="trash-icon-compra"></i>
+                          </button>
                     </div>
                 </section>
 
@@ -109,27 +122,32 @@
                     <div class="product-card">
                         <img src="MEDIA/img/mesa.webp" alt="Mesa">
                         <div class="product-info">
-                            <h2>Mesa noseque</h2>
-                            <p class="price">269,95 €</p>
+                            <h2>Mesa Munden</h2>
+                            <p class="price">435,56 €</p>
                         </div>
+                          <button class="delete-item-compra" aria-label="Eliminar">
+                            <i class="trash-icon-compra"></i>
+                          </button>
                     </div>
                 </section>
                 <div class="product-total">
-                    <span>Total:</span>
-                    <strong>269,95 €</strong>
+                    <p>Total:</p>
+                    <strong>705,51 €</strong>
                 </div>
                 <section class="checkout-finalizar">
-                    <a href="#" class="continue-shopping">Sigue comprando →</a>
-                    <button class="btn-primary">Finalizar compra</button>
+                    <a href="galeria.html" class="continue-shopping">Sigue comprando →</a>
+                    <a href="checkout-success.html">
+                        <button class="btn-primary">Finalizar compra</button>
+                    </a>
                 </section>
             </div>
 
 <!-- __________ DERECHO __________ -->
             <div class="checkout-right">
-                <section class="checkout-form">
+                <section id="checkoutForm" class="checkout-form">
                     <form>
                         <div class="row">
-    <!-- _____ INFORMACIÓN USUARIO _____ -->
+<!-- _______________ INFORMACIÓN USUARIO _______________ -->
                             <div class="input-group">
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" id="nombre" placeholder="Ej: John" required>
@@ -170,7 +188,7 @@
                             </div>
                         </div>
 
-    <!-- _____ MÉTODO DE PAGO _____ -->
+<!-- ________________________ MÉTODO DE PAGO _________________________ -->
                         <div class="payment">
                             <p>Método de pago</p>        
                             <div class="tabs">
@@ -188,7 +206,7 @@
 
 <!-- __________ CLICKAR IMG SALEN RESULTADOS DIFERENTES __________ -->
 
-    <!-- _____ MASTERCARD _____ -->
+<!-- _________________________ MASTERCARD _________________________ -->
 
                         <div class="content">
                         <div class="category mastercard">
@@ -222,7 +240,7 @@
                             </div>
                         </div>
 
-    <!-- _____ VISA _____ -->
+<!-- _________________________ VISA _________________________ -->
 
                         <div class="content">
                         <div class="category visa">
@@ -256,7 +274,7 @@
                             </div>
                         </div>
 
-    <!-- _____ PAYPAL _____ -->
+<!-- _________________________ PAYPAL _________________________ -->
 
                         <div class="content">
                         <div class="category paypal">

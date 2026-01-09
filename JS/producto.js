@@ -26,7 +26,6 @@ const accordionButtons = document.querySelectorAll('.accordion');
 accordionButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     btn.classList.toggle('active');
-    // aquí luego conectas contenido real
   });
 });
 
@@ -63,10 +62,6 @@ const accordionBtns = document.querySelectorAll(".accordion-btn");
 accordionBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const item = btn.parentElement;
-
-    // solo un acordeón esté abierto a la vez:
-    // document.querySelectorAll('.accordion-item').forEach(i => i !== item ? i.classList.remove('active') : null);
-
     item.classList.toggle("active");
   });
 });
