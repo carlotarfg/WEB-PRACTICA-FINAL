@@ -87,7 +87,7 @@ mobileCartBtn?.addEventListener('click', (e) => {
       if (scrollTop > lastScrollTop && scrollTop > 50) {
         mobileBar.style.top = '-100px'; 
       } else {
-        mobileBar.style.top = '0';
+        mobileBar.style.top = '1rem';
       }
       
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
