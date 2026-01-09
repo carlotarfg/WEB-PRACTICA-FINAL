@@ -44,3 +44,29 @@ mobileCartBtn?.addEventListener('click', (e) => {
 });
 
 });
+
+// --- Lógica para ocultar/mostrar Navbar al hacer scroll ---
+
+(function() {
+  const navbar = document.querySelector('.navbar');
+  let lastScrollTop = 0;
+  
+  // Aplicamos la transición por JS para no tocar tu CSS
+  navbar.style.transition = 'transform 0.4s ease, top 0.4s ease';
+
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Al bajar: movemos la barra hacia arriba ocultándola
+      // Usamos -150% para asegurar que salga del todo sin importar el padding
+      navbar.style.top = '-150px'; 
+    } else {
+      // Al subir: restauramos su posición original definida en tu CSS
+      navbar.style.top = '3%';
+    }
+    
+    // Evitamos valores negativos en el scroll (común en iOS)
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }, { passive: true });
+})();
