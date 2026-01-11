@@ -20,6 +20,11 @@ body {
   background: var(--background);
 }
 
+* {
+  outline: 1px solid red;
+}
+
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -41,6 +46,8 @@ body {
   padding-top: 11rem;
   align-items: center;
 }
+
+
 
 
 model-viewer {
