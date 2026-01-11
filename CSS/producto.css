@@ -20,11 +20,6 @@ body {
   background: var(--background);
 }
 
-* {
-  outline: 1px solid red;
-}
-
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -41,13 +36,15 @@ body {
 .product-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-right:120px;
+  /* padding-right:120px; */
   gap: 100px;
   padding-top: 11rem;
   align-items: center;
+
+  padding-right: 0;
+  margin: 0 auto;
+  max-width: 1600px;
 }
-
-
 
 
 model-viewer {
@@ -252,6 +249,12 @@ model-viewer {
     transform 0.25s ease;
 }
 
+@media (max-width: 1621px) {
+  .buy{
+    margin-right: 2rem;
+  }
+
+}
 
 @media (max-width: 1440px) {
 
