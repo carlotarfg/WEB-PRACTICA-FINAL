@@ -19,7 +19,7 @@
   --fourth-color: #FAE9CF;
   --yellow: #FDB309;
 }
-/* ----------- Reset y body ----------- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,6 +31,7 @@ body {
     background: var(--background);
     overflow-x: hidden;
 }
+
 /* MENU */
 
 .navbar {
@@ -116,7 +117,7 @@ body {
     position: fixed;
     top: -0.5rem;
     right: -0.5rem;
-    width: 37vw;
+    width: 730px;
     height: 92vh;
     background-color: var(--fourth-color); 
     z-index: 2001;
@@ -238,14 +239,60 @@ flex-grow: 1;
     font-family: var(--font-secundary);
     color: var(--primary-color);
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 8px;
     font-size: 2rem;
-    width: 15rem;
+    text-decoration: none;
+
 }
 
 .checkout-btn:hover {
-background-color: var(--third-color);
+    background-color: var(--third-color);
+}
+
+.delete-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 7.5rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.delete-item:hover {
+    transform: scale(1.1);
+}
+
+.trash-icon {
+    position: relative;
+    width: 1rem;
+    height: 16px;
+    border: 3px solid var(--second-color); 
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+}
+
+.trash-icon::before { 
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 20px;
+    height: 3px;
+    background: var(--second-color);
+}
+
+.trash-icon::after { 
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 1px;
+    width: 8px;
+    height: 3px;
+    border: 3px solid var(--second-color);
+    border-bottom: none;
 }
 
 /* ----------- Header ----------- */
@@ -259,7 +306,6 @@ header {
     overflow: hidden;
 }
 
-/* ----------- Texto animado (marquesina) ----------- */
 .marquee-container {
     position: absolute;
     top: 50%;
@@ -281,7 +327,6 @@ header {
     animation: marquee 20s linear infinite;
 }
 
-/* Duplicamos el contenido para que el scroll sea continuo */
 .words::after {
     content: " collection collection collection collection collection collection collection collection collection collection collection collection";
 }
@@ -295,21 +340,6 @@ header {
     }
 }
 
-/* Responsive */
-@media (max-width: 850px) {
-    .words {
-        font-size: clamp(1.5rem, 6vw, 3rem);
-        letter-spacing: -0.05em;
-    }
-}
-
-@media (max-width: 560px) {
-    .words {
-        letter-spacing: -0.03em;
-    }
-}
-
-/* ----------- Imagen Header ----------- */
 .img-header {
     position: absolute;
     top: 50%;
@@ -326,218 +356,11 @@ header {
     display: block;
 }
 
-/* GALERIA  */
-
-/* ----------- Galería ----------- */
-/* .galeria {
-    width: 100%;
-}
-
-.galeria1 {
-    display: flex;
-    width: 100%;
-    border-top: 1px solid var(--marron_oscuro);
-    border-bottom: 1px solid var(--marron_oscuro);
-}
-
-.galeria1L {
-    width: 60%;
-    padding: 1rem;
-    border-right: 1px solid var(--marron_oscuro);
-}
-
-.galeria1R {
-    width: 40%;
-    padding: 1rem;
-}
-
-.product-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: transparent;
-}
-
-.product-image-container {
-    width: 100%;
-    padding: 3rem;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-image-sofaverde {
-    width: 90%;
-    height: 100%;
-    object-fit: cover;
-}
-.product-image-sillon1 {
-    width: 70%;
-    height: 100%;
-    object-fit: cover;
-
-}
-.product-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0.5rem 0 0.25rem 0;
-    margin-top: auto;
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.product-title {
-    font-family: var(--textos_tipo);
-    font-size: 0.9rem;
-    color: var(--marron_oscuro);
-    margin-bottom: 0.1rem;
-}
-
-.product-price {
-    font-family: var(--textos_tipo);
-    font-size: 0.9rem;
-    color: var(--marron_oscuro);
-    font-weight: bold;
-}
-
-.cart-icon {
-    color: var(--marron_oscuro);
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.cart-icon:hover {
-    color: #333;
-}
-
-
-.galeria2 {
-    display: flex;
-    width: 100%;
-    border-top: 1px solid var(--marron_oscuro);
-    border-bottom: 1px solid var(--marron_oscuro);
-}
-
-.galeria2L {
-    width: 45%;
-    padding: 1rem;
-    border-right: 1px solid var(--marron_oscuro);
-}
-
-.galeria2R {
-    width: 55%;
-    padding: 1rem;
-}
-.product-image-sofamarron {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.product-image-sofazules {
-    width: 95%;
-    height: 100%;
-    object-fit: cover;
-
-}
-
-.galeria3 {
-    display: flex;
-    width: 100%;
-    border-top: 1px solid var(--marron_oscuro);
-    border-bottom: 1px solid var(--marron_oscuro);
-}
-
-.galeria3L {
-    width: 70%;
-    padding: 1rem;
-    border-right: 1px solid var(--marron_oscuro);
-}
-
-.galeria3R {
-    width: 30%;
-    padding: 1rem;
-}
-.product-image-sofabeige {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.product-image-sofarosa {
-    width: 80%;
-    height: 100%;
-    object-fit: cover;
-
-}
-
-.galeria4 {
-    display: flex;
-    width: 100%;
-    border-top: 1px solid var(--marron_oscuro);
-    border-bottom: 1px solid var(--marron_oscuro);
-}
-
-.galeria4L {
-    width: 40%;
-    padding: 1rem;
-    border-right: 1px solid var(--marron_oscuro);
-}
-
-.galeria4R {
-    width: 60%;
-    padding: 1rem;
-}
-.product-image-sillonverde {
-    width: 70%;
-    height: 100%;
-    object-fit: cover;
-}
-.product-image-sofaamarillo {
-    width: 75%;
-    height: 100%;
-    object-fit: cover;
-
-}
-
-.galeria5 {
-    display: flex;
-    width: 100%;
-    border-top: 1px solid var(--marron_oscuro);
-    border-bottom: 1px solid var(--marron_oscuro);
-}
-
-.galeria5L {
-    width: 65%;
-    padding: 1rem;
-    border-right: 1px solid var(--marron_oscuro);
-}
-
-.galeria5R {
-    width: 35%;
-    padding: 1rem;
-}
-.product-image-sofamarron2 {
-    width: 95%;
-    height: 100%;
-    object-fit: cover;
-}
-.product-image-sillonazul {
-    width: 65%;
-    height: 100%;
-    object-fit: cover;
-
-} */
 /* GALERIA */
+
 .galeria {
     width: 100%;
 }
-
-/* PRODUCT CARD GENERAL */
 .product-card {
     display: flex;
     flex-direction: column;
@@ -553,6 +376,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.product-image-container img {
+    display: block;
+    margin: 0 auto;
 }
 
 .product-info {
@@ -592,7 +419,6 @@ header {
     color: #333;
 }
 
-/* IMAGENES INDIVIDUALES */
 .product-image-sofaverde { width: 90%; height: 100%; object-fit: cover; }
 .product-image-sillon1 { width: 70%; height: 100%; object-fit: cover; }
 .product-image-sofamarron { width: 100%; height: 100%; object-fit: cover; }
@@ -604,12 +430,10 @@ header {
 .product-image-sofamarron2 { width: 95%; height: 100%; object-fit: cover; }
 .product-image-sillonazul { width: 65%; height: 100%; object-fit: cover; }
 
-/* BORDES ENTRE COLUMNAS */
 .border-end {
     border-right: 1px solid var(--marron_oscuro) !important;
 }
 
-/* ROWS CON BORDES SUPERIORES E INFERIORES */
 .row.border-top.border-bottom {
     border-top: 1px solid var(--marron_oscuro);
     border-bottom: 1px solid var(--marron_oscuro);
@@ -622,21 +446,136 @@ header {
     font-family: var(--textos_tipo);
  }
 
+ /* FOOTER  */
 
-/* ----------- Responsive ----------- */
+footer {
+    background-color: var(--third-color);
+    position: absolute;
+    width: 100%;
+    height: 95vh;
+    padding: 5rem;
+    overflow: hidden;
+}
+
+.silla-footer {
+    rotate: 19deg;
+    position: relative;
+    top: -5%;
+    left: 79%;
+    width: 30rem;
+}
+
+.logo-footer {
+    width: 52%;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.bottom2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.cookies ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.cookies ul li {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.cta-text {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.cta-form {
+  display: flex;
+  align-items: center;
+  background-color: var(--second-color); 
+  border-radius: 20px; 
+  padding: 0.8rem;
+  width: 70rem;
+}
+
+.cta-form input {
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  flex-grow: 1; 
+  outline: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.cta-form input::placeholder {
+  color: var(--primary-color);
+  opacity: 0.4;
+}
+
+.cta-form button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    font-size: 24px;
+}
+
+.cta-form button:hover {
+  transform: scale(1.05);
+}
+
+.flecha-f img{
+      mix-blend-mode: multiply;
+
+}
+
+.socials {
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: right;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+
 @media (max-width: 850px) {
     .words {
         font-size: clamp(1.5rem, 7vw, 3rem);
         letter-spacing: 0.05em;
     }
-        /* Galerías se vuelven columna */
+        
     .row {
         flex-direction: column !important;
-        border-top: 1px solid var(--marron_oscuro);  /* borde superior */
-        border-bottom: 1px solid var(--marron_oscuro); /* borde inferior */
+        border-top: 1px solid var(--marron_oscuro);  
+        border-bottom: 1px solid var(--marron_oscuro); 
     }
 
-    /* Columnas ocupan 100% y ajuste bordes */
+    
     .col-12.col-md-7,
     .col-12.col-md-5,
     .col-12.col-md-8,
@@ -647,28 +586,18 @@ header {
         padding: 0.5rem !important;
     }
 
-    /* Últimos divs sin border-bottom */
+    
     .col-12.col-md-5:last-child,
     .col-12.col-md-4:last-child {
-        border-bottom: none !important;
-    }
-    /* Galería 1 */
+        border-bottom: none !important;}
     .product-image-sofaverde { width: 80%; height: auto; }
     .product-image-sillon1 { width: 60%; height: auto; }
-
-    /* Galería 2 */
     .product-image-sofamarron { width: 85%; height: auto; }
     .product-image-sofazules { width: 85%; height: auto; }
-
-    /* Galería 3 */
     .product-image-sofabeige { width: 85%; height: auto; }
     .product-image-sofarosa { width: 45%; height: auto; }
-
-    /* Galería 4 */
     .product-image-sillonverde { width: 50%; height: auto; }
     .product-image-sofaamarillo { width: 90%; height: auto; }
-
-    /* Galería 5 */
     .product-image-sofamarron2 { width: 100%; height: auto; }
     .product-image-sillonazul { width: 45%; height: auto; }
 }
@@ -678,15 +607,11 @@ header {
         letter-spacing: 0.03em;
         font-size: 3rem;
     }
-
-    /* Galerías se vuelven columna */
     .row {
         flex-direction: column !important;
-        border-top: 1px solid var(--marron_oscuro);  /* borde superior */
-        border-bottom: 1px solid var(--marron_oscuro); /* borde inferior */
+        border-top: 1px solid var(--marron_oscuro);  
+        border-bottom: 1px solid var(--marron_oscuro); 
     }
-
-    /* Columnas ocupan 100% y ajuste bordes */
     .col-12.col-md-7,
     .col-12.col-md-5,
     .col-12.col-md-8,
@@ -696,316 +621,20 @@ header {
         border-bottom: 1px solid var(--marron_oscuro);
         padding: 0.5rem !important;
     }
-
-    /* Últimos divs sin border-bottom */
     .col-12.col-md-5:last-child,
     .col-12.col-md-4:last-child {
         border-bottom: none !important;
     }
-
-    /* Ajuste de imágenes exactamente igual que tu diseño original para ≤560px */
-
-    /* Galería 1 */
     .product-image-sofaverde { width: 100%; height: auto; }
     .product-image-sillon1 { width: 70%; height: auto; }
-
-    /* Galería 2 */
     .product-image-sofamarron { width: 120%; height: auto; }
     .product-image-sofazules { width: 90%; height: auto; }
-
-    /* Galería 3 */
     .product-image-sofabeige { width: 110%; height: auto; }
     .product-image-sofarosa { width: 60%; height: auto; }
-
-    /* Galería 4 */
     .product-image-sillonverde { width: 70%; height: auto; }
     .product-image-sofaamarillo { width: 90%; height: auto; }
-
-    /* Galería 5 */
     .product-image-sofamarron2 { width: 100%; height: auto; }
     .product-image-sillonazul { width: 55%; height: auto; }
 
     .cart-icon { margin-top: 0.5rem; }
-}
-
-/* RESPONSIVE NAVBAR Y CARRITO AÑADIDO */
-
-/* MEDIA QUERYS  */
-
-@media (max-width: 1500px) {
-.nav-left {
-    width: 40rem;
-}
-}
-
-@media (max-width: 900px) {
-
-.navbar {
-        display: none;
-}
-
-.mobile-bar {
-    position: fixed;
-    top: 2rem;
-    left: 7%;
-    width: 85%;
-    background: var(--second-color);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    z-index: 1000;
-}
-
-.mobile-bar-logo {
-    height: 32px;
-}
-
-.mobile-bar-btn {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 32px;
-    line-height: 1;
-}
-
-.mobile-open {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: var(--primary-color);
-}
-
-.mobile-menu {
-    position: fixed;
-    inset: 0;
-    background: var(--second-color); 
-    z-index: 2000;
-    display: none;
-    
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-.mobile-close {
-    position: absolute;
-    font-family: var(--font-secundary);
-    top: 3rem;
-    left: 4rem;
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 3rem;
-}
-
-.cart-btn-movil {
-    position: absolute;
-    top: 4rem;
-    right: 3rem;
-    background: none;
-    border: none;
-}
-
-.cart-btn-movil img {
-    width: 3rem;
-}
-
-.mobile-links {
-    position: absolute;
-    bottom: 5rem;
-    left: 5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.mobile-links a {
-    color: var(--primary-color);
-    font-size: 3rem;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.mobile-deco {
-    position: absolute;
-    position: absolute;
-    right: -2rem;
-    bottom: 4.7rem;
-    rotate: -8deg;
-    width: 16rem;
-}
-
-  /* CARRITO  */
-
-.cart-panel {
-    position: fixed;
-    top: 0rem;
-    right: 0rem;
-    border-radius: 0px;
-    width: 100vw;
-    height: 100vh;
-}
-
-.cart-footer {
-    padding-top: 1rem;
-    border-top: 2px solid var(--third-color);
-    display: flex;
-    gap: 1rem;
-    align-items: flex-end;
-    margin-top: 20rem;
-    flex-direction: column;
-}
-  
-}
-
-@media (max-width: 375px) {
-
-.mobile-bar {
-    top: 2rem;
-    left: 7%;
-    width: 85%;
-    border-radius: 10px;
-    padding: 1rem;
-    z-index: 1000;
-}
-
-.mobile-bar-logo {
-    height: 32px;
- }
-
-.mobile-bar-btn {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 32px;
-    line-height: 1;
-}
-.mobile-open {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: var(--primary-color);
-}
-
-.mobile-menu {
-    position: fixed;
-    inset: 0;
-    background: var(--second-color); 
-    z-index: 2000;
-    display: none;
-    
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-.mobile-close {
-    position: absolute;
-    top: 1.5rem;
-    left: 2rem;
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 2.5rem;
-}
-
-.cart-btn-movil {
-    position: absolute;
-    top: 2.5rem;
-    right: 2rem;
-    background: none;
-    border: none;
-}
-
-.cart-btn-movil img {
-    width: 2rem;
-}
-
-.mobile-links {
-    bottom: 4rem;
-    left: 3rem;
-    gap: 1rem;
-}
-
-.mobile-links a {
-    color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-.mobile-deco {
-    right: -2rem;
-    bottom: 4.7rem;
-    rotate: -8deg;
-    width: 11rem;
-}
-
-.cart-header h2 {
-    font-size: 3rem;
-}
-
-.close-cart {
-    font-size: 3em;
-    line-height: 1;
-}
-
-
-.product-img {
-    width: 10rem;
-    height: auto;
-}
-
-.product-name {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 3rem 0 0 0;
-}
-
-.product-price {
-    font-size: 1rem;
-    color: var(--second-color);
-    margin: 0;
-}
-
-.quantity {
-    width: 2rem;
-    height: 2rem;
-    margin-top: 4rem;
-    font-size: 1rem;
-}
-
-.cart-footer {
-    padding-top: 1rem;
-    gap: 1rem;
-    margin-top: 8rem;
-}
-
-.subtotal {
-    font-size: 1.2rem;
-    color: var(--third-color);
-}
-
-.checkout-btn {
-    padding: 0.5rem;
-    border-radius: 8px;
-    font-size: 1.5rem;
-    width: 11rem;
-}
-
-.cart-panel {
-    padding: 1.5rem;
-}
-
 }

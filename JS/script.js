@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "BATHROOM": { bgI: "MEDIA/img/baño.webp", svgI: "MEDIA/svg/Vector 18.png", bgD: "MEDIA/img/baño2.webp", svgD: "MEDIA/svg/Recurso 13.svg" }
   };
 
-  // Precarga rápida
   Object.values(contentByCategory).forEach(cat => {
     Object.values(cat).forEach(src => {
       const img = new Image();
@@ -139,13 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       currentCategory = cat;
 
-      // Timeline ultra-rápido
       const tl = gsap.timeline();
 
       tl.to(allElements, {
         opacity: 0,
-        y: 5, // Movimiento mínimo para no perder tiempo
-        duration: 0.1, // Casi instantáneo
+        y: 5, 
+        duration: 0.1, 
         ease: "power1.in",
         onComplete: () => {
           bgIzq.src = contentByCategory[cat].bgI;
@@ -159,9 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { 
           opacity: 1, 
           y: 0, 
-          duration: 0.25, // Entrada rápida pero perceptible
-          ease: "expo.out", // Curva de velocidad profesional
-          stagger: 0.02 // Stagger casi imperceptible pero que da fluidez
+          duration: 0.25, 
+          ease: "expo.out", 
+          stagger: 0.02 
         }
       );
     });
@@ -172,16 +170,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const prepareText = () => {
   document.querySelectorAll(".texts-main, .text-muebles").forEach((el) => {
-    // Buscamos párrafos, si no hay, usamos el contenedor mismo
     const targets = el.querySelectorAll("p").length > 0 ? el.querySelectorAll("p") : [el];
     
     targets.forEach((target) => {
-      if (target.dataset.prepared) return; // Evita duplicar
+      if (target.dataset.prepared) return; 
 
-      const words = target.innerText.split(/(\s+)/); // Mantiene los espacios originales
+      const words = target.innerText.split(/(\s+)/); 
       target.innerHTML = words
         .map(word => {
-          if (word.trim().length === 0) return word; // Si es un espacio, lo deja tal cual
+          if (word.trim().length === 0) return word; 
           return `<span class="scroll-word" style="opacity: 0.15; transition: opacity 1.2s ease;">${word}</span>`;
         })
         .join("");
@@ -195,7 +192,6 @@ const handleScroll = () => {
   const allWords = document.querySelectorAll(".scroll-word");
   const windowHeight = window.innerHeight;
   
-  // Punto donde la palabra empieza a brillar (ajusta a 0.75 para más lento)
   const triggerPoint = windowHeight * 0.85;
 
   allWords.forEach((word) => {
@@ -209,7 +205,6 @@ const handleScroll = () => {
   });
 };
 
-// Inicialización
 prepareText();
 window.addEventListener("scroll", handleScroll);
 handleScroll();

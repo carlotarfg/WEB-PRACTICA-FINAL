@@ -1,3 +1,5 @@
+// menu responsive 
+
 const openMenu = document.getElementById('openMenu');
 const closeMenu = document.getElementById('closeMenu');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -37,10 +39,58 @@ closeMenu.addEventListener('click', () => {
 
   const mobileCartBtn = document.getElementById('mobileCart');
 
-// Abrir carrito desde móvil
 mobileCartBtn?.addEventListener('click', (e) => {
-  e.stopPropagation(); // evita que se cierre por el listener global
+  e.stopPropagation(); 
   cartPanel.classList.add('open');
 });
 
 });
+
+// --- ocultar/mostrar menu al hacer scroll ---
+
+(function() {
+  const navbar = document.querySelector('.navbar');
+  let lastScrollTop = 0;
+  
+  navbar.style.transition = 'transform 0.4s ease, top 0.4s ease';
+
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      navbar.style.top = '-150px'; 
+    } else {
+      navbar.style.top = '3%';
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }, { passive: true });
+})();
+
+// --- ocultar/mostrar menu movil al hacer scroll ---
+
+(function() {
+  const mobileBar = document.querySelector('.mobile-bar');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let lastScrollTop = 0;
+  
+  if (mobileBar) {
+    mobileBar.style.transition = 'top 0.4s ease';
+    
+    window.addEventListener('scroll', () => {
+      if (mobileMenu && mobileMenu.style.display === 'block') {
+        return; 
+      }
+
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop && scrollTop > 50) {
+        mobileBar.style.top = '-100px'; 
+      } else {
+        mobileBar.style.top = '1rem';
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
+  }
+})();
