@@ -220,6 +220,7 @@ input {
   border-radius: 14px;
   font-family: var(--titulos_tipo);
   font-size: 1.6rem;
+  text-decoration: none;
   letter-spacing: 0.03rem;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(46, 80, 152, 0.35);

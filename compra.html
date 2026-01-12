@@ -52,7 +52,7 @@
                     <a href="galeria.html">catalog</a>
                     <a href="#">about us</a>
                 </nav>
-                <img class="mobile-deco" src="MEDIA/svg/Recurso_15.svg" alt="decoración">
+                <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
             </div>
 
 <!-- __________ CARRITO __________ -->
@@ -136,9 +136,7 @@
                 </div>
                 <section class="checkout-finalizar">
                     <a href="galeria.html" class="continue-shopping">Sigue comprando →</a>
-                    <a href="checkout-success.html">
-                        <button class="btn-primary">Finalizar compra</button>
-                    </a>
+                    <a href="checkout.html" class="btn-primary">Finalizar compra</a>
                 </section>
             </div>
 
@@ -159,32 +157,32 @@
                         </div>
                         <div class="row">
                             <div class="input-group">
-                                <label for="dirección">Dirección:</label>
-                                <input type="text" placeholder="Ej: C/..." required>
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" id="direccion" placeholder="Ej: C/..." required>
                             </div>
                             <div class="input-group">
                                 <label for="apartamento">Apartamento, casa, etc. (opcional):</label>
-                                <input type="text" placeholder="Ej: Apartamento 2">
+                                <input type="text" id="apartamento" placeholder="Ej: Apartamento 2">
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-group">
-                                <label for="código postal">Código Postal:</label>
-                                <input type="text" placeholder="Ej: 00000" required>
+                                <label for="codigo-postal">Código Postal:</label>
+                                <input type="text" id="codigo-postal" placeholder="Ej: 00000" required>
                             </div>
                             <div class="input-group">
-                                <label for="teléfono">Número de Teléfono:</label>
-                                <input type="text" placeholder="Ej: 000 00 00 00" required>
+                                <label for="telefono">Número de Teléfono:</label>
+                                <input type="text" id="telefono" placeholder="Ej: 000 00 00 00" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-group">
-                                <label for="País">País:</label>
-                                <input type="text" placeholder="Ej: España" required>
+                                <label for="pais">País:</label>
+                                <input type="text" id="pais" placeholder="Ej: España" required>
                             </div>
                             <div class="input-group">
-                                <label for="Ciudad">Ciudad:</label>
-                                <input type="text" placeholder="Ej: Madrid" required>
+                                <label for="ciudad">Ciudad:</label>
+                                <input type="text" id="ciudad" placeholder="Ej: Madrid" required>
                             </div>
                         </div>
 
@@ -208,79 +206,81 @@
 
 <!-- _________________________ MASTERCARD _________________________ -->
 
-                        <div class="content">
+                    <div class="content">
                         <div class="category mastercard">
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="nombre">Nombre del titular:</label>
-                                    <input type="text" placeholder="Ej: John Doe" required>
+                                    <label for="nombremc">Nombre del titular:</label>
+                                    <input type="text" id="nombremc" placeholder="Ej: John Doe" required>
                                 </div>
                                 <div class="input-group">
-                                    <label for="número tarjeta">Número de la tarjeta:</label>
-                                    <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
-                                </div>
-                            </div>
-        
-                            <div class="row">
-                                <div class="input-group">
-                                    <label for="Fecha caducidad">Fecha de caducidad:</label>
-                                    <input type="text" placeholder="Ej: 00/00" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="código seguridad">Código de seguridad (CVC2):</label>
-                                    <input type="text" placeholder="000" required>
+                                    <label for="numero-tarjeta-mc">Número de la tarjeta:</label>
+                                    <input type="text" id="numero-tarjeta-mc" placeholder="Ej: 0000 0000 0000 0000" required>
                                 </div>
                             </div>
         
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="dirección facturación">Dirección de facturación:</label>
-                                <input type="text" placeholder="Ej: C/...." required>
+                                    <label for="fecha-caducidad-mc">Fecha de caducidad:</label>
+                                    <input type="text" id="fecha-caducidad-mc" placeholder="Ej: 00/00" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="codigo-seguridad-mc">Código de seguridad (CVC2):</label>
+                                    <input type="text" id="codigo-seguridad-mc" placeholder="000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="direccion-facturacion-mc">Dirección de facturación:</label>
+                                <input type="text" id="direccion-facturacion-mc" placeholder="Ej: C/...." required>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 <!-- _________________________ VISA _________________________ -->
 
-                        <div class="content">
+                    <div class="content">
                         <div class="category visa">
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="nombre">Nombre del titular:</label>
-                                    <input type="text" placeholder="Ej: John Doe" required>
+                                    <label for="nombre-visa">Nombre del titular:</label>
+                                    <input type="text" id="nombre-visa" placeholder="Ej: John Doe" required>
                                 </div>
                                 <div class="input-group">
-                                    <label for="número tarjeta">Número de la tarjeta:</label>
-                                    <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
-                                </div>
-                            </div>
-        
-                            <div class="row">
-                                <div class="input-group">
-                                    <label for="Fecha caducidad">Fecha de caducidad:</label>
-                                    <input type="text" placeholder="Ej: 00/00" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="código seguridad">Código de seguridad (CVV):</label>
-                                    <input type="text" placeholder="Ej: 000" required>
+                                    <label for="numero-tarjeta-visa">Número de la tarjeta:</label>
+                                    <input type="text" id="numero-tarjeta-visa" placeholder="Ej: 0000 0000 0000 0000" required>
                                 </div>
                             </div>
         
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="dirección facturación">Dirección de facturación:</label>
-                                <input type="text" placeholder="Ej: C/...." required>
+                                    <label for="fecha-caducidad-visa">Fecha de caducidad:</label>
+                                    <input type="text" id="fecha-caducidad-visa" placeholder="Ej: 00/00" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="codigo-seguridad-visa">Código de seguridad (CVV):</label>
+                                    <input type="text" id="codigo-seguridad-visa" placeholder="Ej: 000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="direccion-facturacion-visa">Dirección de facturación:</label>
+                                <input type="text" id="direccion-facturacion-visa" placeholder="Ej: C/...." required>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 <!-- _________________________ PAYPAL _________________________ -->
 
-                        <div class="content">
+                    <div class="content">
                         <div class="category paypal">
                             <p>Serás redirigido a PayPal para completar tu pago de forma segura.</p>
                         </div>
-
+                    </div>
 
                         <label class="remember">
                             <input class="checkbox_remember" type="checkbox" required> Guardar mi información para pagar más rápido
