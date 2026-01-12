@@ -1,106 +1,97 @@
-const cartBtnDesktop = document.getElementById('cartBtnDesktop');
-const cartBtnMobile = document.getElementById('cartBtnMobile');
-const cartPanel = document.getElementById('cartPanel');
-const closeCart = document.getElementById('closeCart');
+$(document).ready(function() {
+    const $cartBtnDesktop = $('#cartBtnDesktop');
+    const $cartBtnMobile = $('#cartBtnMobile');
+    const $cartPanel = $('#cartPanel');
+    const $closeCart = $('#closeCart');
+    const $cartItemsContainer = $('.cart-items');
+    const $cartTotalElement = $('#cartTotal');
 
-// --- APERTURA Y CIERRE ---
+    // --- APERTURA Y CIERRE ---
 
-function openCart() {
-  cartPanel.classList.add('open');
-}
+    function openCart() {
+        $cartPanel.addClass('open');
+    }
 
-cartBtnDesktop?.addEventListener('click', openCart);
-cartBtnMobile?.addEventListener('click', openCart);
+    $cartBtnDesktop.on('click', openCart);
+    $cartBtnMobile.on('click', openCart);
 
-closeCart?.addEventListener('click', () => {
-  cartPanel.classList.remove('open');
-});
-
-document.addEventListener('click', (e) => {
-  const clickedInsidePanel = cartPanel && cartPanel.contains(e.target);
-  const clickedOnCartBtn = [cartBtnDesktop, cartBtnMobile].some(btn => btn && (e.target === btn || btn.contains(e.target)));
-
-  if (!clickedInsidePanel && !clickedOnCartBtn) {
-    cartPanel?.classList.remove('open');
-  }
-});
-
-// --- ELIMINAR Y CALCULAR ---
-
-const cartItemsContainer = document.querySelector('.cart-items');
-const cartTotalElement = document.getElementById('cartTotal');
-
-function updateCartTotal() {
-    let total = 0;
-    const items = document.querySelectorAll('.cart-item');
-
-    items.forEach(item => {
-        const priceText = item.querySelector('.product-price').textContent;
-        const price = parseFloat(priceText.replace('€', '').replace(/\./g, '').replace(',', '.').trim());
-        const quantity = parseInt(item.querySelector('.quantity').textContent);
-        
-        total += price * quantity;
+    $closeCart.on('click', function() {
+        $cartPanel.removeClass('open');
     });
 
-    if (cartTotalElement) {
-        cartTotalElement.textContent = total.toLocaleString('es-ES', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }) + ' €';
+    $(document).on('click', function(e) {
+        const clickedInsidePanel = $cartPanel.is(e.target) || $cartPanel.has(e.target).length > 0;
+        const clickedOnCartBtn = $cartBtnDesktop.is(e.target) || $cartBtnDesktop.has(e.target).length > 0 ||
+                                 $cartBtnMobile.is(e.target) || $cartBtnMobile.has(e.target).length > 0;
+
+        if (!clickedInsidePanel && !clickedOnCartBtn) {
+            $cartPanel.removeClass('open');
+        }
+    });
+
+    // --- ELIMINAR Y CALCULAR ---
+
+    function updateCartTotal() {
+        let total = 0;
+        const $items = $('.cart-item');
+
+        $items.each(function() {
+            const priceText = $(this).find('.product-price').text();
+            const price = parseFloat(priceText.replace('€', '').replace(/\./g, '').replace(',', '.').trim());
+            const quantity = parseInt($(this).find('.quantity').text());
+            
+            total += price * quantity;
+        });
+
+        if ($cartTotalElement.length) {
+            $cartTotalElement.text(total.toLocaleString('es-ES', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }) + ' €');
+        }
     }
-}
 
-cartItemsContainer?.addEventListener('click', (e) => {
-    const deleteBtn = e.target.closest('.delete-item');
-    if (deleteBtn) {
-        e.stopPropagation(); 
-        const itemToRemove = deleteBtn.closest('.cart-item');
-        itemToRemove.remove();
-        updateCartTotal();
-    }
-});
-
-// --- AÑADIR ---
-
-function addProductToCart(name, price, imgSrc) {
-    const container = document.querySelector('.cart-items');
-    const newCartItem = document.createElement('div');
-    newCartItem.classList.add('cart-item');
-
-    newCartItem.innerHTML = `
-        <img src="${imgSrc}" alt="${name}" class="product-img">
-        <div class="product-info">
-            <p class="product-name">${name}</p>
-            <p class="product-price">${price}</p>
-        </div>
-        <div class="quantity">1</div>
-        <button class="delete-item" aria-label="Eliminar">
-            <i class="trash-icon"></i>
-        </button>
-    `;
-
-    container.appendChild(newCartItem);
-    updateCartTotal();
-    openCart(); 
-}
-
-// --- ESCUCHADORES DE EVENTOS (BOTONES) ---
-
-const addToCartIcons = document.querySelectorAll('.cart-icon');
-addToCartIcons.forEach(icon => {
-    icon.addEventListener('click', (e) => {
+    $cartItemsContainer.on('click', '.delete-item', function(e) {
         e.stopPropagation();
-        const productCard = icon.closest('.product-card');
-        const name = productCard.querySelector('.product-title').textContent;
-        const price = productCard.querySelector('.product-price').textContent;
-        const imgSrc = productCard.querySelector('img').src;
+        $(this).closest('.cart-item').remove();
+        updateCartTotal();
+    });
+
+    // --- AÑADIR ---
+
+    function addProductToCart(name, price, imgSrc) {
+        const newCartItem = `
+            <div class="cart-item">
+                <img src="${imgSrc}" alt="${name}" class="product-img">
+                <div class="product-info">
+                    <p class="product-name">${name}</p>
+                    <p class="product-price">${price}</p>
+                </div>
+                <div class="quantity">1</div>
+                <button class="delete-item" aria-label="Eliminar">
+                    <i class="trash-icon"></i>
+                </button>
+            </div>
+        `;
+
+        $cartItemsContainer.append(newCartItem);
+        updateCartTotal();
+        openCart(); 
+    }
+
+    // --- ESCUCHADORES DE EVENTOS (BOTONES) ---
+
+    $(document).on('click', '.cart-icon', function(e) {
+        e.stopPropagation();
+        const $productCard = $(this).closest('.product-card');
+        const name = $productCard.find('.product-title').text();
+        const price = $productCard.find('.product-price').text();
+        const imgSrc = $productCard.find('img').attr('src');
         addProductToCart(name, price, imgSrc);
     });
-});
 
-const mainAddBtn = document.querySelector('.add-to-cart');
-if (mainAddBtn) {
-    mainAddBtn.addEventListener('click', (e) => {
+    const $mainAddBtn = $('.add-to-cart');
+    $mainAddBtn.on('click', function(e) {
         e.stopPropagation();
         const name = "Nixon";
         const price = "269,95 €";
@@ -108,4 +99,4 @@ if (mainAddBtn) {
         
         addProductToCart(name, price, imgSrc);
     });
-}
+});
