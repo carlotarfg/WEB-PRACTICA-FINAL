@@ -382,6 +382,7 @@ input.checkbox_remember {
 
   .checkout-left {
     padding-top: 10rem;
+    padding-bottom: 4rem;
   }
 
   .product-card img {
@@ -397,7 +398,8 @@ input.checkbox_remember {
 
 @media (max-width: 991px) {
 
-  body {
+  html, body {
+    height: auto;
     overflow: auto;
   }
 
@@ -409,6 +411,8 @@ input.checkbox_remember {
   .checkout-left,
   .checkout-right {
     width: 100%;
+    height: auto;
+    overflow: visible;
   }
 
   .product-card img {
@@ -417,6 +421,38 @@ input.checkbox_remember {
 
   .h2, h2 {
     font-size: calc(1.12rem + .9vw);
+  }
+
+}
+
+
+@media (max-width: 590px) {
+
+  .tab {
+    padding: 10px 13px;
+  }
+
+  .payment .methods_type_pp {
+    height: 26px;
+  }
+
+  .payment .methods_type_visa {
+    height: 21px;
+  }
+
+  .payment .methods_type_mc {
+    height: 26px;
+  }
+
+  .remember {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;  
+    gap: 8px;
+  }
+
+  .checkout-form {
+    padding: 20px;
   }
 
 }
@@ -434,4 +470,18 @@ input.checkbox_remember {
     font-size: 1rem;
   }
 
+  .checkout-form {
+    padding: 0px;
+  }
+
 }
+
+
+@media (max-width: 375px) {
+  
+  .checkout-form {
+    padding: 0px;
+  }
+
+}
+
