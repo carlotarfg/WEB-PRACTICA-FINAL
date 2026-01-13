@@ -4,15 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MIBO</title>
-        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
-        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
+        <link rel="icon" type="image/svg+xml" href="media/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="media/img/logo-movil.png">
 
 <!-- __________ BOOSTRAP DESDE UN CDN __________ -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 <!-- __________ PROPIO CSS __________ -->
-        <link rel="stylesheet" href="CSS/style.css">
-        <link rel="stylesheet" href="CSS/compra.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/compra.css">
 
 <!-- __________ FONT AWESOME __________ -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,37 +22,38 @@
             <nav class="navbar">
                 <div class="nav-left">
                 <div class="logo">
-                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                    <a href="index.html"> <img src="media/svg/logo.svg" alt="logo MIBO"></a>
                 </div>
                 <div class="nav-links">
                     <a href="galeria.html">catalog</a>
-                    <a href="#">about us</a>
+                    <a href="https://mibocommunity.cargo.site">about us</a>
                 </div>
                 </div>
 
                 <div class="carrito">
                 <button class="cart-btn" id="cartBtnDesktop">
-                    <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                    <img src="media/svg/vector.svg" alt="Carrito">
                 </button>
                 </div>
             </nav>
 
 <!-- __________ MENÚ MÓVIL __________  -->
             <div class="mobile-bar">
-                <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
+                <img src="media/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
                 <button class="mobile-bar-btn" id="openMenu">⋯</button>
             </div>
 
             <div class="mobile-menu" id="mobileMenu">
                 <button class="mobile-close" id="closeMenu">X</button>
                 <button class="cart-btn-movil" id="cartBtnMobile">
-                    <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                    <img src="media/svg/vector.svg" alt="Carrito">
                 </button>
                 <nav class="mobile-links">
+                    <a href="index.html">home</a>
                     <a href="galeria.html">catalog</a>
-                    <a href="#">about us</a>
+                    <a href="https://mibocommunity.cargo.site" target="_blank" rel="noopener noreferrer" class="link-cargo">about us</a>      
                 </nav>
-                <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+                <img class="mobile-deco" src="media/svg/recurso_15.svg" alt="decoracion">
             </div>
 
 <!-- __________ CARRITO __________ -->
@@ -63,7 +64,7 @@
                 </div>
                 <div class="cart-items">
                     <div class="cart-item">
-                    <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
+                    <img src="media/img/mesa.webp" alt="Mesa" class="product-img">
                     <div class="product-info">
                         <p class="product-name">Munden</p>
                         <p class="product-price">435,56 €</p>
@@ -76,7 +77,7 @@
                     </div>
 
                     <div class="cart-item">
-                    <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+                    <img src="media/img/sillon.webp" alt="Sillón Nixon" class="product-img">
                     <div class="product-info">
                         <p class="product-name">Nixon</p>
                         <p class="product-price">269,95 €</p>
@@ -107,7 +108,7 @@
 <!-- _____ PRODUCTOS CHECKOUT IZQUIERDO _____ -->
                 <section class="checkout-product">
                     <div class="product-card">
-                        <img src="MEDIA/svg/sillon_header.svg" alt="Sillón Nixon">
+                        <img src="media/svg/sillon_header.svg" alt="Sillón Nixon">
                         <div class="product-info">
                             <h2>Sillón Nixon</h2>
                             <p class="price">269,95 €</p>
@@ -120,7 +121,7 @@
 
                 <section class="checkout-product">
                     <div class="product-card">
-                        <img src="MEDIA/img/mesa.webp" alt="Mesa">
+                        <img src="media/img/mesa.webp" alt="Mesa">
                         <div class="product-info">
                             <h2>Mesa Munden</h2>
                             <p class="price">435,56 €</p>
@@ -136,9 +137,7 @@
                 </div>
                 <section class="checkout-finalizar">
                     <a href="galeria.html" class="continue-shopping">Sigue comprando →</a>
-                    <a href="checkout-success.html">
-                        <button class="btn-primary">Finalizar compra</button>
-                    </a>
+                    <a href="checkout-success.html" class="btn-primary">Finalizar compra</a>
                 </section>
             </div>
 
@@ -159,32 +158,32 @@
                         </div>
                         <div class="row">
                             <div class="input-group">
-                                <label for="dirección">Dirección:</label>
-                                <input type="text" placeholder="Ej: C/..." required>
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" id="direccion" placeholder="Ej: C/..." required>
                             </div>
                             <div class="input-group">
                                 <label for="apartamento">Apartamento, casa, etc. (opcional):</label>
-                                <input type="text" placeholder="Ej: Apartamento 2">
+                                <input type="text" id="apartamento" placeholder="Ej: Apartamento 2">
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-group">
-                                <label for="código postal">Código Postal:</label>
-                                <input type="text" placeholder="Ej: 00000" required>
+                                <label for="codigo-postal">Código Postal:</label>
+                                <input type="text" id="codigo-postal" placeholder="Ej: 00000" required>
                             </div>
                             <div class="input-group">
-                                <label for="teléfono">Número de Teléfono:</label>
-                                <input type="text" placeholder="Ej: 000 00 00 00" required>
+                                <label for="telefono">Número de Teléfono:</label>
+                                <input type="text" id="telefono" placeholder="Ej: 000 00 00 00" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-group">
-                                <label for="País">País:</label>
-                                <input type="text" placeholder="Ej: España" required>
+                                <label for="pais">País:</label>
+                                <input type="text" id="pais" placeholder="Ej: España" required>
                             </div>
                             <div class="input-group">
-                                <label for="Ciudad">Ciudad:</label>
-                                <input type="text" placeholder="Ej: Madrid" required>
+                                <label for="ciudad">Ciudad:</label>
+                                <input type="text" id="ciudad" placeholder="Ej: Madrid" required>
                             </div>
                         </div>
 
@@ -193,13 +192,13 @@
                             <p>Método de pago</p>        
                             <div class="tabs">
                                 <button class="tab" data-category="mastercard">
-                                    <img class="methods_type_mc" src="MEDIA/img/Mastercard-Logo.png" alt="Mastercard">
+                                    <img class="methods_type_mc" src="media/img/mastercard_logo.png" alt="Mastercard">
                                 </button>
                                 <button class="tab" data-category="visa">
-                                    <img class="methods_type_visa"  src="MEDIA/svg/Visa_Inc._logo.svg.webp" alt="Visa">
+                                    <img class="methods_type_visa"  src="media/svg/visa_inc_logo.webp" alt="Visa">
                                 </button>
                                 <button class="tab" data-category="paypal">
-                                    <img class="methods_type_pp" src="MEDIA/svg/PayPal.svg.webp" alt="PayPal">
+                                    <img class="methods_type_pp" src="media/svg/paypal.webp" alt="PayPal">
                                 </button>
                             </div>
                         </div>
@@ -208,82 +207,84 @@
 
 <!-- _________________________ MASTERCARD _________________________ -->
 
-                        <div class="content">
+                    <div class="content">
                         <div class="category mastercard">
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="nombre">Nombre del titular:</label>
-                                    <input type="text" placeholder="Ej: John Doe" required>
+                                    <label for="nombremc">Nombre del titular:</label>
+                                    <input type="text" id="nombremc" placeholder="Ej: John Doe" required>
                                 </div>
                                 <div class="input-group">
-                                    <label for="número tarjeta">Número de la tarjeta:</label>
-                                    <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
-                                </div>
-                            </div>
-        
-                            <div class="row">
-                                <div class="input-group">
-                                    <label for="Fecha caducidad">Fecha de caducidad:</label>
-                                    <input type="text" placeholder="Ej: 00/00" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="código seguridad">Código de seguridad (CVC2):</label>
-                                    <input type="text" placeholder="000" required>
+                                    <label for="numero-tarjeta-mc">Número de la tarjeta:</label>
+                                    <input type="text" id="numero-tarjeta-mc" placeholder="Ej: 0000 0000 0000 0000" required>
                                 </div>
                             </div>
         
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="dirección facturación">Dirección de facturación:</label>
-                                <input type="text" placeholder="Ej: C/...." required>
+                                    <label for="fecha-caducidad-mc">Fecha de caducidad:</label>
+                                    <input type="text" id="fecha-caducidad-mc" placeholder="Ej: 00/00" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="codigo-seguridad-mc">Código de seguridad (CVC2):</label>
+                                    <input type="text" id="codigo-seguridad-mc" placeholder="000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="direccion-facturacion-mc">Dirección de facturación:</label>
+                                <input type="text" id="direccion-facturacion-mc" placeholder="Ej: C/...." required>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 <!-- _________________________ VISA _________________________ -->
 
-                        <div class="content">
+                    <div class="content">
                         <div class="category visa">
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="nombre">Nombre del titular:</label>
-                                    <input type="text" placeholder="Ej: John Doe" required>
+                                    <label for="nombre-visa">Nombre del titular:</label>
+                                    <input type="text" id="nombre-visa" placeholder="Ej: John Doe" required>
                                 </div>
                                 <div class="input-group">
-                                    <label for="número tarjeta">Número de la tarjeta:</label>
-                                    <input type="text" placeholder="Ej: 0000 0000 0000 0000" required>
-                                </div>
-                            </div>
-        
-                            <div class="row">
-                                <div class="input-group">
-                                    <label for="Fecha caducidad">Fecha de caducidad:</label>
-                                    <input type="text" placeholder="Ej: 00/00" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="código seguridad">Código de seguridad (CVV):</label>
-                                    <input type="text" placeholder="Ej: 000" required>
+                                    <label for="numero-tarjeta-visa">Número de la tarjeta:</label>
+                                    <input type="text" id="numero-tarjeta-visa" placeholder="Ej: 0000 0000 0000 0000" required>
                                 </div>
                             </div>
         
                             <div class="row">
                                 <div class="input-group">
-                                    <label for="dirección facturación">Dirección de facturación:</label>
-                                <input type="text" placeholder="Ej: C/...." required>
+                                    <label for="fecha-caducidad-visa">Fecha de caducidad:</label>
+                                    <input type="text" id="fecha-caducidad-visa" placeholder="Ej: 00/00" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="codigo-seguridad-visa">Código de seguridad (CVV):</label>
+                                    <input type="text" id="codigo-seguridad-visa" placeholder="Ej: 000" required>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="input-group">
+                                    <label for="direccion-facturacion-visa">Dirección de facturación:</label>
+                                <input type="text" id="direccion-facturacion-visa" placeholder="Ej: C/...." required>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 <!-- _________________________ PAYPAL _________________________ -->
 
-                        <div class="content">
+                    <div class="content">
                         <div class="category paypal">
                             <p>Serás redirigido a PayPal para completar tu pago de forma segura.</p>
                         </div>
-
+                    </div>
 
                         <label class="remember">
-                            <input class="checkbox_remember" type="checkbox" required> Guardar mi información para pagar más rápido
+                            <input class="checkbox_remember" type="checkbox" required> Guardar mi información
                         </label>
                     </form>
                 </section>
@@ -301,10 +302,12 @@
         <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
         <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 <!-- __________ MI JAVASCRIPT __________  -->
         <script src="js/menu.js"></script>
         <script src="js/carrito.js"></script>
-        <script src="js/script.js"></script>
-        <script src="JS/compra.js"></script>
+        <script src="js/compra.js"></script>
     </body>
 </html>

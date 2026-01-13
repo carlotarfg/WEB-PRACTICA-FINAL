@@ -4,23 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MIBO</title>
-        <link rel="icon" type="image/svg+xml" href="MEDIA/svg/logo-movil.svg">
-        <link rel="icon" type="image/png" href="MEDIA/img/logo-movil.png">
+        <link rel="icon" type="image/svg+xml" href="media/svg/logo-movil.svg">
+        <link rel="icon" type="image/png" href="media/img/logo-movil.png">
 
 
 <!-- ----------- BOOSTRAP DESDE UN CDN ----------- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 <!-- ----------- PROPIO CSS ----------- -->
-     <link rel="stylesheet" href="CSS/producto.css">
-     <link rel="stylesheet" href="CSS/style.css">
+     <link rel="stylesheet" href="css/producto.css">
+     <link rel="stylesheet" href="css/style.css">
      
 
 <!-- FONT AWESOME  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-
-  <body>
 <!-- MENU  -->
 <body>  
 
@@ -28,40 +26,40 @@
         <nav class="navbar">
             <div class="nav-left">
             <div class="logo">
-                <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                <a href="index.html"> <img src="media/svg/logo.svg" alt="logo MIBO"></a>
             </div>
             <div class="nav-links">
                 <a href="galeria.html">catalog</a>
-                <a href="#">about us</a>
+                <a href="https://mibocommunity.cargo.site">about us</a>
             </div>
             </div>
 
             <div class="carrito">
             <button class="cart-btn" id="cartBtnDesktop">
-                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                <img src="media/svg/vector.svg" alt="Carrito">
             </button>
             </div>
         </nav>
-
-        <!-- MENÚ MÓVIL  -->
+ <!-- MENÚ MÓVIL  -->
             <div class="mobile-bar">
-            <img src="MEDIA/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
-
+            <img src="media/svg/logo.svg" alt="MIBO logo" class="mobile-bar-logo">
+            
             <button class="mobile-bar-btn" id="openMenu">⋯</button>
             </div>
 
             <div class="mobile-menu" id="mobileMenu">
             <button class="mobile-close" id="closeMenu">X</button>
             <button class="cart-btn-movil" id="cartBtnMobile">
-                <img src="MEDIA/svg/Vector.svg" alt="Carrito">
+                <img src="media/svg/vector.svg" alt="Carrito">
             </button>
 
-            <nav class="mobile-links">
+           <nav class="mobile-links">
+                <a href="index.html">home</a>
                 <a href="galeria.html">catalog</a>
-                <a href="#">about us</a>
+                <a href="https://mibocommunity.cargo.site" target="_blank" rel="noopener noreferrer" class="link-cargo">about us</a>      
             </nav>
 
-            <img class="mobile-deco" src="MEDIA/svg/Recurso 15.svg" alt="decoración">
+            <img class="mobile-deco" src="media/svg/recurso_15.svg" alt="decoración">
 
             </div>
 
@@ -75,28 +73,34 @@
 
         <div class="cart-items">
             <div class="cart-item">
-            <img src="MEDIA/img/mesa.webp" alt="Mesa" class="product-img">
+            <img src="media/img/mesa.webp" alt="Mesa" class="product-img">
             <div class="product-info">
                 <p class="product-name">Munden</p>
                 <p class="product-price">435,56 €</p>
             </div>
             <div class="quantity">1</div>
+             <button class="delete-item" aria-label="Eliminar">
+                <i class="trash-icon"></i>
+            </button>
             </div>
 
             <div class="cart-item">
-            <img src="MEDIA/img/sillon.webp" alt="Sillón Nixon" class="product-img">
+            <img src="media/img/sillon.webp" alt="Sillón Nixon" class="product-img">
             <div class="product-info">
                 <p class="product-name">Nixon</p>
                 <p class="product-price">269,95 €</p>
             </div>
             <div class="quantity">1</div>
+             <button class="delete-item" aria-label="Eliminar">
+                <i class="trash-icon"></i>
+            </button>
             </div>
         </div>
 
         <div class="cart-footer">
             <div class="subtotal">
             <span>Subtotal</span>
-            <span>705,51 €</span>
+            <span id="cartTotal">705,51 €</span>
             </div>
             <a class="checkout-btn" href="compra.html">FINALIZAR PAGO </a>
         </div>
@@ -108,7 +112,7 @@
 
 <section class="product-main">
 
-  <model-viewer src="MEDIA/modelos/125719.glb" camera-controls>
+  <model-viewer src="media/modelos/125719.glb" camera-controls>
 
   </model-viewer>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
@@ -118,7 +122,7 @@
      <h1>Nixon</h1>
         <h2>Sillón en borreguito Nixon</h2>
          <p class="product-text">
-         ¿Quieres darle un toque elegante y minimalista a tu hogar? El Sillón en borreguito Nicxon, con su original forma, no pasará desapercibido ante la mirada de tus invitados. Destaca por presentar una forma escultórica,
+         ¿Quieres darle un toque elegante y minimalista a tu hogar? El Sillón en borreguito Nixon, con su original forma, no pasará desapercibido ante la mirada de tus invitados. Destaca por presentar una forma escultórica,
           ideal para espacios relajados y ambientes cálidos.
         </p>
 
@@ -142,7 +146,10 @@
  <button class="add-to-cart">
     AÑADIR AL CARRITO
   </button>
+
+  </div>
 </section>
+
 
 <!-- BOTONES ACORDEON  -->
 
@@ -205,26 +212,24 @@
 <div class="container">
   <div class="photo-gallery">
 
-   
-        <img src="MEDIA/img/producto_salon.webp" alt="">
-        <img src="MEDIA/img/producto_verde.webp" alt="">
-        <img src="MEDIA/img/producto_doble.webp" alt="">
-        <img src="MEDIA/img/producto_habitacion.webp" alt="">
+        <img src="media/img/producto_salon.webp" alt="sillón en ambiente de un salón">
+        <img src="media/img/producto_verde.webp" alt="sillón en color verde">
+        <img src="media/img/producto_doble.webp" alt="dos sillones en ambiente">
+        <img src="media/img/producto_habitacion.webp" alt="sillón en habitación">
      
-        <img src="MEDIA/img/producto_zoom.jpg" alt="" srcset="">
-        <img src="MEDIA/img/producto_minimalista.webp" alt="" srcset="">
-        <img src="MEDIA/img/producto_textura.jpg" alt="" srcset="">
-        <img src="MEDIA/img/producto_sobrio.webp" alt="" srcset="">
+        <img src="media/img/producto_zoom.jpg" alt="zoom al sillón">
+        <img src="media/img/producto_minimalista.webp" alt="sillón en mambiente sobrio">
+        <img src="media/img/producto_textura.jpg" alt="textura del sillón">
+        <img src="media/img/producto_sobrio.webp" alt="sillón sobrio">
   
-        <img src="MEDIA/img/producto_vista_lado.webp" alt="" srcset="">
-        <img src="MEDIA/img/producto_sol.webp" alt="" srcset="">
-        <img src="MEDIA/img/producto_playa.webp" alt="" srcset="">
-        <img src="MEDIA/img/producto_pasillo.webp" alt="" srcset="">
+        <img src="media/img/producto_vista_lado.webp" alt="vista de un lado del sillón">
+        <img src="media/img/producto_sol.webp" alt="sillón con luz natural">
+        <img src="media/img/producto_playa.webp" alt="sillón con cosas de playa">
+        <img src="media/img/producto_pasillo.webp" alt="sillón en el pasillo">
     
   </div>
 </div>
 
-</div>
 
 </main>
 
@@ -237,17 +242,17 @@
               <form class="cta-form">
                 <input type="email" placeholder="Hello@gmail.com" required/>
                 <button type="submit" aria-label="Enviar">
-                    <img class="flecha2" src="MEDIA/img/flecha2.png" alt="flecha">
+                    <img class="flecha2" src="media/img/flecha2.png" alt="flecha">
                 </button>
               </form>
 
             </div>
 
-            <img class="silla-footer" src="MEDIA/svg/Recurso 12.svg" alt="silla amarilla">
+            <img class="silla-footer" src="media/svg/recurso_12.svg" alt="silla amarilla">
 
             <div class="bottom">
                     <div class="logo-footer">
-                    <a href="index.html"> <img src="MEDIA/svg/logo.svg" alt="logo MIBO"></a>
+                    <a href="index.html"> <img src="media/svg/logo.svg" alt="logo MIBO"></a>
                     </div>                
                     <div>
                     <div class="bottom2">
@@ -280,6 +285,9 @@
  <!-- GSAP -->
         <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
         <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
 
         <!-- MI JS  -->

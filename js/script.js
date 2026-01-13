@@ -116,10 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const allElements = [bgIzq, svgIzq, bgDech, svgDech];
 
   const contentByCategory = {
-    "LIVING ROOM": { bgI: "MEDIA/img/salon.webp", svgI: "MEDIA/svg/Vector 4.svg", bgD: "MEDIA/img/salon2.webp", svgD: "MEDIA/svg/Recurso 16.svg" },
-    "BEDROOM": { bgI: "MEDIA/img/dormitorio.webp", svgI: "MEDIA/svg/Group 42.svg", bgD: "MEDIA/img/dormitorio2.webp", svgD: "MEDIA/svg/Recurso 14.svg" },
-    "DINING ROOM": { bgI: "MEDIA/img/comedor.webp", svgI: "MEDIA/svg/Vector 5.svg", bgD: "MEDIA/img/comedor2.webp", svgD: "MEDIA/svg/Recurso 17.svg" },
-    "BATHROOM": { bgI: "MEDIA/img/baño.webp", svgI: "MEDIA/svg/Vector 18.png", bgD: "MEDIA/img/baño2.webp", svgD: "MEDIA/svg/Recurso 13.svg" }
+    "LIVING ROOM": { bgI: "media/img/salon.webp", svgI: "media/svg/vector_4.svg", bgD: "media/img/salon2.webp", svgD: "media/svg/recurso_16.svg" },
+    "BEDROOM": { bgI: "media/img/dormitorio.webp", svgI: "media/svg/group_42.svg", bgD: "media/img/dormitorio2.webp", svgD: "media/svg/recurso_14.svg" },
+    "DINING ROOM": { bgI: "media/img/comedor.webp", svgI: "media/svg/vector_5.svg", bgD: "media/img/comedor2.webp", svgD: "media/svg/recurso_17.svg" },
+    "BATHROOM": { bgI: "media/img/baño.webp", svgI: "media/svg/vector_18.png", bgD: "media/img/baño2.webp", svgD: "media/svg/recurso_13.svg" }
   };
 
   Object.values(contentByCategory).forEach(cat => {
