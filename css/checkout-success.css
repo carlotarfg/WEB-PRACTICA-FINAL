@@ -46,14 +46,6 @@ html, body {
 
 /* __________ PANEL CARRITO __________ */
 
-.cart-panel {
-  position: fixed;
-  right: 0;
-  height: calc(100vh - 80px);
-  overflow-y: auto;
-  z-index: 2000;
-}
-
 input {
   border: 1px solid #ccc;
   padding: 12px;

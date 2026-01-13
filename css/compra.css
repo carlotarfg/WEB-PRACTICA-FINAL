@@ -51,13 +51,6 @@ header {
 
 /* __________ PARA QUE NO DE ERROR EL PANEL DEL CARRITO __________ */
 
-.cart-panel {
-  position: fixed;
-  right: 0;
-  height: calc(100vh - 80px);
-  z-index: 2000;
-}
-
 input {
   border: 1px solid #ccc;
   padding: 12px;
