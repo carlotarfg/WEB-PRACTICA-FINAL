@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     const calcularTotal = () => {
-        const precios = document.querySelectorAll('.product-info .price');
+        const precios = document.querySelectorAll('.product-informacion .price');
         let total = 0;
 
         precios.forEach(precioElemento => {
