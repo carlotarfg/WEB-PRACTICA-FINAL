@@ -52,13 +52,13 @@ model-viewer {
   height: 650px;
 }
 
-.product-info h1 {
+.product-info-sillon h1 {
   font-size: 4rem;
   font-family: var(--titulos_tipo);
   color: var(--marron_oscuro);
 }
 
-.product-info h2 {
+.product-info-sillon h2 {
   font-size: 1.6rem;
   margin-bottom: 20px;
   color: var(--marron_oscuro);
@@ -269,11 +269,11 @@ model-viewer {
     height: 580px;
   }
 
-  .product-info h1 {
+  .product-info-sillon h1 {
     font-size: 3rem;
   }
 
-  .product-info h2 {
+  .product-info-sillon h2 {
     font-size: 1.3rem;
   }
 
@@ -303,7 +303,7 @@ model-viewer {
     height: 490px;
   }
 
-  .product-info {
+  .product-info-sillon {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -325,7 +325,7 @@ model-viewer {
     font-size: 1.2rem;
   }
 
-  .product-info h2 {
+  .product-info-sillon h2 {
     font-size: 1.3rem;
   }
 
@@ -333,7 +333,7 @@ model-viewer {
     font-size: 1rem;
   }
 
-  .product-info h1 {
+  .product-info-sillon h1 {
     font-size: 2.6rem;
   }
 
@@ -376,16 +376,16 @@ model-viewer {
     height: 320px;
   }
 
-  .product-info {
+  .product-info-sillon {
     margin-left: 3rem;
     margin-right: 3rem;
   }
 
-  .product-info h1 {
+  .product-info-sillon h1 {
     font-size: 2rem;
   }
 
-  .product-info h2 {
+  .product-info-sillon h2 {
     font-size: 1.1rem;
   }
 

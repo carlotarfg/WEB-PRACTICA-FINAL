@@ -76,7 +76,7 @@ gsap.from("model-viewer", {
   ease: "power3.out"
 });
 
-gsap.from(".product-info", {
+gsap.from(".product-info-sillon", {
   opacity: 0,
   y: 40,
   duration: 1.2,
