@@ -236,6 +236,7 @@ model-viewer {
   width: 100%;
   margin-bottom: 2rem;
   break-inside: avoid;
+  border-radius: 10px;
 }
 
 .add-to-cart,

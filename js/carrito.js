@@ -95,7 +95,7 @@ $(document).ready(function() {
         e.stopPropagation();
         const name = "Nixon";
         const price = "269,95 €";
-        const imgSrc = "MEDIA/img/sillon.webp";
+        const imgSrc = "media/img/sillon.webp";
         
         addProductToCart(name, price, imgSrc);
     });
