@@ -382,7 +382,7 @@ header {
     margin: 0 auto;
 }
 
-.product-info {
+.muebles-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -402,7 +402,7 @@ header {
     margin-bottom: 0.1rem;
 }
 
-.product-price {
+.muebles-precio{
     font-family: var(--textos_tipo);
     font-size: 0.9rem;
     color: var(--marron_oscuro);
