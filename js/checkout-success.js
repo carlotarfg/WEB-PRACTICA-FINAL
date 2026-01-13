@@ -45,23 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-
-  const isMobile = window.innerWidth < 991;
-
-  const tl = gsap.timeline({
-    defaults: {
-      duration: isMobile ? 0.4 : 0.8,
-      ease: "power3.out"
-    }
-  });
-
-  tl.from(".checkout-layout", {
-    opacity: 0,
-    y: isMobile ? 20 : 0
-  });
-
-});
 
 
 
