@@ -1937,7 +1937,8 @@ footer {
     /* footer  */
 
     .cta-form {
-        width: 25rem;
+        width: 23rem;
+        height: 5rem;
         
     }
 
