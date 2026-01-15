@@ -391,7 +391,7 @@ flex-grow: 1;
 }
 
 .texts-main p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--second-color);
 }
@@ -567,7 +567,7 @@ flex-grow: 1;
 }
 
 .text-muebles p {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: var(--second-color);
     text-align: justify;
 }
