@@ -57,9 +57,11 @@ $(document).ready(function() {
         updateCartTotal();
     });
 
-    // --- AÑADIR ---
+    // --- AÑADIR PRODUCTO ---
 
     function addProductToCart(name, price, imgSrc) {
+        price = price.trim(); 
+
         const newCartItem = `
             <div class="cart-item">
                 <img src="${imgSrc}" alt="${name}" class="product-img">
@@ -79,14 +81,20 @@ $(document).ready(function() {
         openCart(); 
     }
 
-    // --- ESCUCHADORES DE EVENTOS (BOTONES) ---
 
     $(document).on('click', '.cart-icon', function(e) {
         e.stopPropagation();
         const $productCard = $(this).closest('.product-card');
+
         const name = $productCard.find('.product-title').text();
-        const price = $productCard.find('.product-price').text();
+        
+        let price = $productCard.find('.product-price').text();
+        if (!price) {
+            price = $productCard.find('.muebles-precio').text();
+        }
+
         const imgSrc = $productCard.find('img').attr('src');
+
         addProductToCart(name, price, imgSrc);
     });
 
